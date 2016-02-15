@@ -14,11 +14,14 @@ Fullscreen is not allowed in this Video:gegsg
 
 Jekyll also offers powerful support for code snippets:
 
-``` ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
+``` java
+int number = 42; 
+
+public void foo(String name)
+{
+	this.myName = name;
+	// a comment
+}
 ```
 
 
