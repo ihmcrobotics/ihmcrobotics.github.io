@@ -1,0 +1,43 @@
+
+- title: "Getting Started"
+  subcategories:
+  - subtitle: "Welcome PAGE"
+    subhref: "/tutorials/content/welcome"
+  - subtitle: "Install Simulation Construction Set"
+    subhref: "/tutorials/content/guide1"
+
+- title: "Topic 1"
+  subcategories:
+  - subtitle: "Learning sub topic 1"
+    subhref: "/topic1"
+  - subtitle: "Learning sub topic 2"
+    subhref: "/learn2/"
+  - subtitle: "Learning sub topic 3"
+    subhref: "/learn3/"
+
+- title: "Topic 2"
+  subcategories:
+  - subtitle: "Learning sub topic 1"
+    subhref: "/topic1"
+  - subtitle: "Learning sub topic 2"
+    subhref: "/learn2/"
+  - subtitle: "Learning sub topic 2"
+    subhref: "/learn2/"
+  - subtitle: "Learning sub topic 3"
+    subhref: "/learn3/"
+
+- title: "Topic 3"
+  subcategories:
+  - subtitle: "Learning sub topic 1"
+    subhref: "/topic1"
+  - subtitle: "Learning sub topic 2"
+    subhref: "/learn2/"
+  - subtitle: "Learning sub topic 1"
+    subhref: "/topic1"
+  - subtitle: "Learning sub topic 2"
+    subhref: "/learn2/"
+  - subtitle: "Learning sub topic 3"
+    subhref: "/learn3/"
+
+   
+

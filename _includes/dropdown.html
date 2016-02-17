@@ -1,0 +1,25 @@
+
+ <nav class="meta-dropdown">
+    <div class="dropdown">
+    
+      <button class="dropbtn">Tutorial Menu</button>
+      <div class="dropdown-content">
+        <div>
+            {% for item in site.data.sitemap %}
+                {% if item.subcategories != null %}
+                    <ul>
+                        <li class="categories" >{{item.title}}</li> 
+                        {% for subcategory in item.subcategories %}
+                            <li> 
+                                <a href= "{{subcategory.subhref}}"> {{subcategory.subtitle }}</a>
+                            </li>      
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+
+      </div>
+    </div>
+</nav> 

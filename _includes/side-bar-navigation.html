@@ -1,0 +1,19 @@
+
+<nav class="site-side-bar-nav">
+      
+    <div class="trigger">
+        {% for item in site.data.sitemap %}
+            {% if item.subcategories != null %}
+                <ul>
+                    <li class="categories" >{{item.title}}</li> 
+                    {% for subcategory in item.subcategories %}
+                        <li> 
+                            <a href= "{{subcategory.subhref}}"> {{subcategory.subtitle }}</a>
+                        </li>      
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+</nav> 

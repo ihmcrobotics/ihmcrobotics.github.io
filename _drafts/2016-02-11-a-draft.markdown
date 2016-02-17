@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2016-02-12 15:56:19 -0600
+categories: jekyll update
+---
+
+#This is a new post
+
+
+<!-- *This is only a draft*
+
+##TODO:
+1. Write some content
+..1. write summary
+..2. populate it	
+2. Upload it
+..* git pull
+..* git push
+3. Make it pretty
+
+
+## New Indented Paragraph
+...Bla bla bla
+...bla bla
+.. *The End.*
+
+
+###If you want to know more: 
+[I'm an inline link](https://www.google.com)
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+## My Code
+
+```java
+int number = 42; 
+
+public void foo(String name)
+{
+	this.myName = name;
+}
+
+### Quote
+
+> This is my favorite quote
+> bla bla
+
+---
+
+## Youtube videos! -->
+
+
+
+
+
