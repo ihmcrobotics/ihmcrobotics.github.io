@@ -105,8 +105,8 @@
        display: block;
 
         select {
-            max-width:350px;
-            width: 100%;
+            max-width:220px;
+            width: 70%;
             position: relative;
             display: inline-block;
         }
@@ -460,7 +460,6 @@
 
        .flex-content {
             align-self: flex-start;
-            min-width: 500px;
            // background-color: #337799;
             padding-left: 10px;
             padding-right: 10px;
@@ -470,6 +469,7 @@
        .flex-side-bar {
             align-self: flex-end;
             min-width: 300px;
+
        }
 
         @include media-query($on-palm) {
