@@ -143,6 +143,29 @@
 
 }
 
+/**
+    selector
+*/
+
+
+.meta-selector {
+
+    select {
+      display: none;
+    }
+
+    @include media-query($on-palm) {
+       display: block;
+
+        select {
+            max-width:350px;
+            width: 100%;
+            position: relative;
+            display: inline-block;
+        }
+    }
+}
+
 
 /**
     Dropdown
@@ -170,10 +193,10 @@
         .dropbtn {
       
             display: inline-block; 
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            border: none;
+            //background-color: #4CAF50;
+            //color: white;
+            //font-size: 16px;
+            //border: none;
             cursor: pointer;
         }
 

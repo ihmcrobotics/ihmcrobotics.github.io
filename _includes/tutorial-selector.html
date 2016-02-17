@@ -1,0 +1,20 @@
+
+
+<nav class="meta-selector">
+    <form name="form">
+        <!--<select name = "Tutorial_Menu" onChange="top.location.href = this.value; ">-->
+        <select name = "Tutorial_Menu" onChange="top.location.href = this.form.Tutorial_Menu.options[this.form.Tutorial_Menu.selectedIndex].value;">
+            <option selected="selected" disabled="disabled">Select a tutorial...</option>
+            {% for item in site.data.sitemap %}
+            {% if item.subcategories != null %}
+                <optgroup label="{{item.title}}">
+
+                {% for subcategory in item.subcategories %}
+                     <option value="{{subcategory.subhref}}" > {{subcategory.subtitle }} </option>
+                {% endfor %}
+                </optgroup>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </form>
+</nav>
