@@ -4,7 +4,17 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading">Welcome</h1>
+  <p>
+    Welcome text some content
+  </p>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <hr>
+
+  <h1 class="page-heading">Latest Posts</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}
@@ -18,14 +28,11 @@ layout: default
     {% endfor %}
   </ul>
 
-<br>
-Hello World!
-<br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>
-<br>
-<br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>
-<br>
+  <br>
+  Hello World
+  <br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>
+  <br>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
