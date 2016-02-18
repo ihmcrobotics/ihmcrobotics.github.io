@@ -1,7 +1,9 @@
 <header class="site-header">
 
   <div class="wrapper">
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <a class="site-title" href="{{ site.baseurl }}/">
+      <img src="/resources/images/ihmc-robotics-white-70.png" alt="IHMC Running Man Logo" title="{{ site.title }}"/>
+    </a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -17,7 +19,9 @@
         {% for my_page in sorted_pages %}
           {% if my_page.title %}
             {% if my_page.categories != "Tutorials" %}
-            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            <div id="link-container">
+              <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            </div>
             {% endif %}
           {% endif %}
         {% endfor %}

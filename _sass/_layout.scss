@@ -4,29 +4,32 @@
 .site-header {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
-    min-height: 100px;
+    min-height: $header-height;
     background-color:$header-footer-background-color;
+
     // Positioning context for the mobile navigation icon
     position: relative;
-
     @include media-query($on-palm) {
-        min-height: 50px;
+        min-height: $header-height-mobile;
     }
 
 
 }
 
 .site-title {
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
 
+    float: left;
+    color: $header-text-color;
+    margin-top:5px;
+    margin-bottom:5px;
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: $header-text-color
+    }
+
+    @include media-query($on-palm) {
+         margin-bottom:5px;
+         margin-top:0px;
     }
 }
 
@@ -233,20 +236,42 @@
 
 .site-nav {
     float: right;
-    line-height: 56px;
 
     .menu-icon {
         display: none;
     }
 
+    #link-container
+    {
+        display: inline-block;
+        width: 120px;
+        height: $header-height;
+        text-align:center;
+    }
+
+    #link-container:hover
+    {
+        background-color: #282830;
+    }
+
     .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
+        text-transform: uppercase;
+        color: $header-text-color;
+        text-align:center;
+        vertical-align:-50px;
+
+        margin-left:0px;
+        margin-right:0px;
+
 
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
-            margin-right: 20px;
+        //   margin-right: 0px;
         }
+    }
+
+    .page-link:hover {
+        text-decoration: none;
     }
 
     @include media-query($on-palm) {
@@ -277,17 +302,8 @@
             }
         }
 
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
         .page-link {
+            color: $grey-color-dark;
             display: block;
             padding: 5px 10px;
 
@@ -296,6 +312,19 @@
             }
             margin-left: 20px;
         }
+
+
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+                display: block;
+                padding-bottom: 5px;
+        }
+
     }
 }
 

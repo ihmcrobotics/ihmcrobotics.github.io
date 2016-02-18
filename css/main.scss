@@ -15,14 +15,20 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: #fdfdfd;
+
+$background-color: #ecebe8;
+
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+$header-text-color: #dddddd;
 
-$header-footer-background-color: $grey-color-light;
+$header-footer-background-color: #373739;
+
+$header-height:80px;
+$header-height-mobile:50px;
 
 // Width of the content area
 $header-footer-width:1000px;
