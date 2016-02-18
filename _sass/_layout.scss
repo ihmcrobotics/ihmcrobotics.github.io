@@ -276,12 +276,23 @@
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 9px;
+        top: 15px;
         right: $spacing-unit / 2;
-        background-color: $background-color;
+        background-color: #CCCCCC;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
-        text-align: right;
+
+        #link-container
+        {
+            display: block;
+            width: 200px;
+            height: 20px;
+        }
+
+        #link-container:hover
+        {
+            background-color: #BBBBBB;
+        }
 
         .menu-icon {
             display: block;
@@ -305,12 +316,12 @@
         .page-link {
             color: $grey-color-dark;
             display: block;
-            padding: 5px 10px;
+            //padding: 5px 10px;
 
             &:not(:last-child) {
                 margin-right: 0;
             }
-            margin-left: 20px;
+            //margin-left: 20px;
         }
 
 
