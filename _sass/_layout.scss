@@ -8,6 +8,12 @@
     background-color:$header-footer-background-color;
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    @include media-query($on-palm) {
+        min-height: 50px;
+    }
+
+
 }
 
 .site-title {
