@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 permalink: /support/
 title: Support
 order: 4
