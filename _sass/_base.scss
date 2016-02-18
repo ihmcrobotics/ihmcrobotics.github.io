@@ -156,8 +156,8 @@ pre {
  * Wrapper
  */
 .wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: -webkit-calc(#{$header-footer-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$header-footer-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
@@ -165,13 +165,40 @@ pre {
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        max-width: -webkit-calc(#{$header-footer-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$header-footer-width} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }
 }
 
+
+/**
+ * Wrapper for content
+ */
+.wrapper-content {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: calc(#{$spacing-unit} + (#{$content-width} - #{$header-footer-width} ));
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        //padding-left: $spacing-unit / 2;
+        padding-left: calc(#{$spacing-unit} / 2 + (#{$content-width} - #{$header-footer-width}));
+    }
+
+    @include media-query($on-palm) {
+        max-width: -webkit-calc(#{$header-footer-width} - (#{$spacing-unit} * 2));
+        max-width:         calc(#{$header-footer-width} - (#{$spacing-unit} * 2));
+        padding-left: $spacing-unit;
+    }
+}
 
 
 /**

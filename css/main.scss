@@ -22,8 +22,11 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$header-footer-background-color: $grey-color-light;
+
 // Width of the content area
-$content-width:    1000px;
+$header-footer-width:1000px;
+$content-width:    1100px;
 
 $on-palm:          800px;
 $on-laptop:        70%;
@@ -51,3 +54,4 @@ $on-laptop:        70%;
         "layout",
         "syntax-highlighting"
 ;
+

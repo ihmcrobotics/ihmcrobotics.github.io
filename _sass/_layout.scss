@@ -4,8 +4,8 @@
 .site-header {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
+    min-height: 100px;
+    background-color:$header-footer-background-color;
     // Positioning context for the mobile navigation icon
     position: relative;
 }
@@ -40,29 +40,33 @@
     }
 
     .categories {
-        text-align: center;
-       // background-color: #336699;
-        line-height: 40px; 
+        line-height: 30px;
+        font-size:18px;
+        font-weight:500;
+        text-align: left;
+        margin-top:10px;
     }
 
     ul {
         list-style-position: inside;
         list-style-type: none;
-        text-align: left;
-        background-color: #f1f1f1;
-        max-width:250px;
+        //max-width:250px;
         margin: 0;
-        padding: 0;  
+        padding: 0;
+    }
+
+    li hr {
+        border-style:groove;
+        width:90%;
+        margin-left:10px;
     }
 
     li a {
         display: block;
+        font-size:15px;
         color: #000;
         padding: 8px 0 8px 16px;
-        text-decoration: none;
         margin: 0;
-        padding-right: 10px; 
-        padding-left: 5px; 
     }
 
     /* Change the link color on hover */
@@ -74,16 +78,9 @@
        text-decoration: none;
        margin: 0;
        padding-right: 10px;
-       padding-left: 5px;
+       padding-left: 10px;
 
     }
-
-    .active { /* DOESNT WORK YET */
-        background-color: #4CAF50;
-        color: blue;
-    }
-
-    
 
     @include media-query($on-palm) {
         display: none;
@@ -105,8 +102,8 @@
        display: block;
 
         select {
-            max-width:220px;
-            width: 70%;
+            max-width:200px;
+            width: 50%;
             position: relative;
             display: inline-block;
         }
@@ -302,8 +299,9 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
+    border-top: 1px solid $grey-color;
     padding: $spacing-unit 0;
+    background-color:$header-footer-background-color;
 }
 
 .footer-heading {
@@ -460,16 +458,18 @@
 
        .flex-content {
             align-self: flex-start;
-           // background-color: #337799;
+            //background-color: #337799;
             padding-left: 10px;
             padding-right: 10px;
-            flex: 2;
+            flex: 4;
        }
 
        .flex-side-bar {
             align-self: flex-end;
-            min-width: 300px;
-
+            min-width: 180px;
+            max-width: 205px;
+          //  background-color: #337700;
+            //flex: 2;
        }
 
         @include media-query($on-palm) {

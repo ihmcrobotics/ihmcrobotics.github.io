@@ -5,10 +5,11 @@
         {% for item in site.data.sitemap %}
             {% if item.subcategories != null %}
                 <ul>
-                    <li class="categories" >{{item.title}}</li> 
+                    <li class="categories" >{{item.title}}</li>
                     {% for subcategory in item.subcategories %}
-                        <li> 
+                        <li>
                             <a href= "{{subcategory.subhref}}"> {{subcategory.subtitle }}</a>
+                            <hr>
                         </li>      
                     {% endfor %}
                 </ul>
