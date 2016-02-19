@@ -77,11 +77,17 @@
     }
 
     @include media-query($on-palm) {
-       display: block;
+
+        position: absolute;
+        top: $header-height;
+        left: 0;
+        border: 0;
+
+        display: block;
 
         select {
-            max-width:150px;
-            width: 35%;
+            max-width:200px;
+            //width: 35%;
             position: relative;
             display: inline-block;
         }
