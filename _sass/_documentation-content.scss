@@ -6,22 +6,30 @@
 
 .site-side-bar-nav {
 
+    border-radius: 5px;
     line-height: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    background-color: #f6f8f7;
 
     .menu-icon {
         display: none;
     }
 
     .categories {
-        text-transform: uppercase;
+        width: 205px;
+        border-radius: 5px;
+        background-color: #93b874;
+
+
+        //text-transform: uppercase;
         line-height: 30px;
         font-size:18px;
         font-weight:500;
         text-align: left;
-        margin-top:10px;
+        margin-top:5px;
         margin-left:0px;
     }
 
@@ -31,20 +39,28 @@
         margin: 0;
         padding: 0;
     }
-
+/*
     li hr {
-        border-width:1px;
-        color: #000099;
-        border-style:solid;
-        width:70%;
-        margin-left:0px;
-    }
+             border-width:1px;
+             color: #336699;
+             border-style:solid;
+             width:70%;
+             margin-left:0px;
+         }
+*/
+     li hr {
+         border-width:1px;
+         color: #666666;
+         border-style:groove;
+         width:100%;
+         margin-left:0px;
+     }
 
     li a {
         display: block;
         font-weight: 400;
         font-size:16px;
-        color: #000;
+        color: #333;
         padding: 8px 0 8px 16px;
         margin: 0;
     }
@@ -86,7 +102,6 @@
         display: block;
 
         select {
-            //max-width:150px;
             width: 50%;
             position: relative;
             display: inline-block;
@@ -97,3 +112,184 @@
 }
 
 
+/**
+    TOPIC HEADER
+
+
+<div class="topic-header">
+    <h1>Topic title</h1>
+    <div class="topic-summary">
+        <div >number of parts:</p>
+        <ul>
+            <li><a href="">part 1</a></li>
+            <li><a href="">part 2</a></li>
+            <li><a href="">part 3</a></li>
+        </ul>
+    </div>
+    <p>
+        Some text: Sed ut perspiciatis,
+        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+        quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
+        quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt,
+        neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+        incidunt
+    </p>
+</div>
+
+*/
+
+.topic {
+
+    .topic-header {
+
+        background-color: #fff;
+
+
+        h1 {
+
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding-top: 10px;
+            padding-bottom: 0px;
+            color: #222;
+            font-size:35px;
+            font-weight:bold;
+            text-indent:15px;
+        }
+
+
+        .topic-summary {
+            background-color: #f6f8f7;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        ul {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-left: 10px;
+            margin-right: 5px;
+            list-style-type: square;
+        }
+
+        li {
+             display: inline;
+             margin-left:5px;
+             margin-right:5px;
+
+             @include media-query($on-palm) {
+                display:block;
+             }
+        }
+
+        a {
+            font-weight: 500;
+            color:#363;
+        }
+
+        p {
+            text-align: justify;
+            padding: 10px 20px 20px 20px;
+        }
+    }
+
+
+    /**
+
+    TOPIC CONTENT
+
+    <div class= "part-content">
+
+        <div class = "part-header">
+            <h2>first awesome thing </h2>
+        </div>
+
+        <div class="step-content">
+            <h3>step</h3>
+
+            <p>
+                Step content introductory text: unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
+                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt,
+            </p>
+
+            <ol>
+                <li>
+                    <p>
+                        Task: Sed ut perspiciatis,
+                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
+                        <a href=""> Link to an interesting page </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Some text: Sed ut perspiciatis,
+                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Some text: Sed ut perspiciatis,
+                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    */
+
+    .part-content {
+
+        .part-header {
+            background-color:#f6f8f7;
+
+            h2 {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding-top: 10px;
+                padding-bottom: 0px;
+                color: #222;
+                font-size:30px;
+                font-weight:bold;
+                text-indent:15px;
+            }
+        }
+
+        .step-content {
+
+            background-color:#fff;
+
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            h3 {
+                color: #222;
+                font-size:24px;
+                font-weight:bold;
+                text-indent:15px;
+            }
+
+
+            .video
+            {
+                margin-top:5px;
+                margin-bottom:10px;
+                position: relative;
+                left:0px;
+
+            }
+
+
+        }
+
+    }
+
+}

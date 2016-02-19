@@ -81,11 +81,17 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1 {
     font-weight: $base-font-weight;
+    //text-shadow: 0px 0.5px 0.5px #003366;
+    color: #6699cc;
 }
 
-
+h2, h3, h4, h5, h6 {
+    font-weight: $base-font-weight;
+    color:#006699;
+    //text-shadow: 0px 0.5px 0.5px #004477;
+}
 
 /**
  * Links
