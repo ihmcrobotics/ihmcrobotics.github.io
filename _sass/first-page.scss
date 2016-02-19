@@ -1,0 +1,110 @@
+/**
+    First page: index.html
+*/
+
+/*
+Title
+*/
+
+.home {
+
+     h1 {
+        font-size: 55px;
+        font-weight:450;
+        text-shadow: 0px 1px 1px #333333;
+        letter-spacing: -1px;
+        line-height: 1;
+        margin-top: 20px;
+        margin-bottom: 50px;
+
+        @include media-query($on-laptop) {
+           font-size: 42px;
+        }
+
+        @include media-query($on-palm) {
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+     }
+
+
+      h2 {
+         font-size: 31.5px;
+         font-weight:450;
+         text-shadow: 0px 1px 1px #333333;
+         letter-spacing: -1px;
+         line-height: 1;
+
+         @include media-query($on-laptop) {
+            font-size: 28px;
+         }
+
+         @include media-query($on-palm) {
+            font-size: 24px;
+         }
+
+      }
+
+      hr {
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        @include media-query($on-palm) {
+                  font-size: 24px;
+               }
+      }
+
+      #category-container {
+
+        display:flex;
+
+        div {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        a {
+           font-weight:bold;
+           line-height: 1;
+        }
+
+
+        @include media-query($on-palm) {
+
+            flex-direction: column;
+        }
+
+
+      }
+
+      #github-ribbon {
+
+        @include media-query($on-palm) {
+            display:none;
+        }
+      }
+}
+
+
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: 15px;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 22px;
+    font-weight:normal;
+    line-height: 1;
+}

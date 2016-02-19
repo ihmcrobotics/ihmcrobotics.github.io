@@ -4,12 +4,12 @@ title:  "Java code"
 date:   2016-02-17 15:56:19 -0600
 categories: Tests
 
-description: A post displaying some java code ... 
+description: A post displaying some java code 2 ... 
 
 ---
 
- TODO fix markdown for this
-# H1 
+Comments HERE!!
+# H1 jjjjjj
 ## H2
 ### H3
 #### H4

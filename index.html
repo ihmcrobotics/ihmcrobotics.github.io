@@ -3,38 +3,87 @@ layout: default
 ---
 <div class="home">
 
-    <h1 class="page-heading">Welcome</h1>
-    <p>
-        Welcome text some content!
-    </p>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
+
+    <h1>IHMC Open Source Software initiative</h1>
+
+    <div id="category-container">
+        <div>
+            <h2> A category title </h2>
+            <p>
+                Some text: Sed ut perspiciatis,
+                unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
+                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt,
+                neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt
+                <br/>
+                <a href=""> Link to an interesting page  </a>
+            </p>
+        </div>
+
+        <div>
+            <h2> A category title </h2>
+            <p>
+                Some text: Sed ut perspiciatis,
+                unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
+                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt,
+                neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt
+                <br/>
+                <a href=""> Link to an interesting page </a>
+
+            </p>
+        </div>
+
+        <div>
+            <h2> A category title </h2>
+            <p>
+                Some text: Sed ut perspiciatis,
+                unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
+                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt,
+                neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt
+                <br/>
+                <a href=""> Link to an interesting page </a>
+
+            </p>
+        </div>
+    </div>
+
     <hr>
 
-    <h1 class="page-heading">Latest Posts</h1>
+    <h2>News</h2>
 
     <ul class="post-list">
         {% for post in site.posts %}
         <li>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-            <h2>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
+            <p>
+                {{ post.description }}
+            </p>
         </li>
         {% endfor %}
     </ul>
 
     <br>
-    Hello World
+
     <!--<div class="auto-resizable-iframe">-->
-        <!--<div>-->
-            <!--<iframe src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>-->
-        <!--</div>-->
+    <!--<div>-->
+    <!--<iframe src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>-->
+    <!--</div>-->
     <!--</div>-->
     <br>
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+
+    <a id="github-ribbon" href="https://github.com/ihmcrobotics">
+        <img style="position: absolute; top: 0; left: 0; border: 0;"
+             src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67"
+             alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png">
+    </a>
 
 </div>

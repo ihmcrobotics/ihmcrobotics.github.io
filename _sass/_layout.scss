@@ -1,5 +1,5 @@
 /**
- * Site header
+ * SITE HEADER
  */
 .site-header {
     border-top: 5px solid $grey-color-dark;
@@ -33,181 +33,13 @@
     }
 }
 
-/**
-    Site Navigation Bars
-*/
-
-.site-side-bar-nav {
-
-    line-height: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
-
-    .menu-icon {
-        display: none;
-    }
-
-    .categories {
-        line-height: 30px;
-        font-size:18px;
-        font-weight:500;
-        text-align: left;
-        margin-top:10px;
-    }
-
-    ul {
-        list-style-position: inside;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    li hr {
-        border-style:groove;
-        width:90%;
-        margin-left:10px;
-    }
-
-    li a {
-        display: block;
-        font-size:15px;
-        color: #000;
-        padding: 8px 0 8px 16px;
-        margin: 0;
-    }
-
-    /* Change the link color on hover */
-    li a:hover {
-       font-weight: bold;
-       display: block;
-       color: #000;
-       padding: 8px 0 8px 16px;
-       text-decoration: none;
-       margin: 0;
-       padding-right: 10px;
-       padding-left: 10px;
-
-    }
-
-    @include media-query($on-palm) {
-        display: none;
-    }
-}
-
-/**
-    selector
-*/
 
 
-.meta-selector {
 
-    select {
-      display: none;
-    }
-
-    @include media-query($on-palm) {
-       display: block;
-
-        select {
-            max-width:150px;
-            width: 35%;
-            position: relative;
-            display: inline-block;
-        }
-    }
-}
 
 
 /**
-    Dropdown
-*/
-
-.meta-dropdown {
-    
-    .dropbtn {
-         display: none;
-    }
-
-    .dropdown  {
-         display: none;
-    }
-
-    @include media-query($on-palm) {
-        
-        display: block;
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        /* Style The Dropdown Button */
-        .dropbtn {
-      
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        /* The container <div> - needed to position the dropdown content */
-
-        /* Dropdown Content (Hidden by Default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        }
-
-        ul {
-            margin-left: 0px;
-            padding-left: 5px; 
-        }
-
-        li {
-            text-align: left;
-            list-style-type: none;
-            padding: 0px;
-            margin: 0px;
-        }
-
-        li.categories {
-            font-weight: bold;
-            min-width: 160px;
-        }   
-       
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: black;
-            padding: 0px;
-            text-decoration: none;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {background-color: #f1f1f1}
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Change the background color of the dropdown button when the dropdown content is shown */
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
-        }
-
-    }
-
- 
-   
-}
-
-
-/**
-    Youtube videos resize
+    VIDEO RESIZE
 */
 
 .auto-resizable-iframe {
@@ -230,19 +62,27 @@
 }
 
 
-
+/**
+    HEADER NAVIGATION BAR
+*/
 
 .site-nav {
 
-    float: right;
+    float:right;
+
     .menu-icon {
         display: none;
     }
 
+    .trigger {
+      display:flex;
+      justify-content: space-between;
+
+    }
     #link-container
     {
-        display: inline-block;
-        width: 120px;
+        padding-left:10px;
+        padding-right:10px;
         height: $header-height;
         text-align:center;
     }
@@ -335,8 +175,10 @@
 
 
 /**
- * Site footer
+ * SITE FOOTER
  */
+
+
 .site-footer {
     border-top: 1px solid $grey-color;
     padding: $spacing-unit 0;
@@ -404,41 +246,41 @@
 }
 
 
+/**
+
+*/
+
+.home-title {
+      font-size: 55px;
+        font-weight:450;
+        text-shadow: 0px 1px 2px #333333;
+        letter-spacing: -1px;
+        line-height: 1;
+}
+
 
 /**
- * Page content
+ * PAGE CONTENT
  */
 .page-content {
     padding: $spacing-unit 0;
 }
 
 .page-heading {
-    font-size: 20px;
+
+        font-size: 31.5px;
+        font-weight:450;
+        text-shadow: 0px 1px 2px #333333;
+        letter-spacing: -1px;
+        line-height: 1;
+
 }
 
-.post-list {
-    margin-left: 0;
-    list-style: none;
-
-    > li {
-        margin-bottom: $spacing-unit;
-    }
-}
-
-.post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-}
-
-.post-link {
-    display: block;
-    font-size: 24px;
-}
 
 
 
 /**
- * Posts
+ * POSTS
  */
 
 
@@ -522,3 +364,89 @@
 }
 
 
+
+
+
+
+/**
+    Dropdown
+*/
+
+.meta-dropdown {
+
+    .dropbtn {
+         display: none;
+    }
+
+    .dropdown  {
+         display: none;
+    }
+
+    @include media-query($on-palm) {
+
+        display: block;
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        /* Style The Dropdown Button */
+        .dropbtn {
+
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        ul {
+            margin-left: 0px;
+            padding-left: 5px;
+        }
+
+        li {
+            text-align: left;
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li.categories {
+            font-weight: bold;
+            min-width: 160px;
+        }
+
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 0px;
+            text-decoration: none;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+    }
+}
