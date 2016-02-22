@@ -31,3 +31,7 @@ show_drafts: FALSE
 # Build settings
 markdown: kramdown
 
+kramdown:
+    input: GFM
+
+
