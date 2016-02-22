@@ -3,18 +3,21 @@ layout: post
 title:  "Java code"
 date:   2016-02-17 15:56:19 -0600
 categories: Tests
-
-description: A post displaying some java code 2 ... 
-
+description: A post displaying some java code 2 ...
 ---
 
-Comments HERE!!
-# H1 jjjjjj
-## H2
+## Comments HERE!!
+
 ### H3
-#### H4
-##### H5
-###### H6
+
+Here's a line for us to start with.
+
+This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
+
+This line is also a separate paragraph, but...<br/>
+This line is only separated by a single newline and a line break character, so it's a separate line in the *same paragraph*.
+
+Emphasis, aka italics, with *asterisks* or _underscores_.
 
 {% highlight java %}
 	
