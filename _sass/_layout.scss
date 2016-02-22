@@ -307,6 +307,7 @@
 
 
 .post-content {
+
     margin-bottom: $spacing-unit;
 
     h1 {
@@ -339,47 +340,6 @@
 
         @include media-query($on-laptop) {
             font-size: 18px;
-        }
-    }
-
-    .flex-container {
-
-         display: -webkit-flex;
-         display: flex;
-         justify-content: space-between;
-         width: 100%;
-
-        //background-color: #336699;
-
-
-       .flex-content {
-            align-self: flex-start;
-           // background-color: #337799;
-
-            padding-right:10px;
-            padding-left:10px;
-
-            margin-right:10px;
-            margin-left:10px;
-
-            flex: 4;
-       }
-
-       .flex-side-bar {
-            position: relative;
-            align-self: flex-end;
-            min-width: 180px;
-            max-width: 205px;
-            //background-color: #337700;
-
-       }
-
-        @include media-query($on-palm) {
-
-          .flex-side-bar {
-               display: none;
-           }
-
         }
     }
 }

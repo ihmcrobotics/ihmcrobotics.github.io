@@ -1,36 +1,27 @@
 
 
+$tutorial-topic-text-color:#585;
+$tutorial-topic-title-background:#f6f8f7;
+
+
+
 /**
     TUTORIAL NAVIGATION BAR
 */
 
 .site-side-bar-nav {
 
-    border-radius: 5px;
+    width : 100%;
+    border-radius: 10px;
     line-height: 15px;
 
-    padding-top: 5px;
     padding-bottom: 5px;
 
-    background-color: #f6f8f7;
+    background-color: #fff;
+    //border-style: outset;
 
     .menu-icon {
         display: none;
-    }
-
-    .categories {
-        width: 205px;
-        border-radius: 5px;
-        background-color: #93b874;
-
-
-        //text-transform: uppercase;
-        line-height: 30px;
-        font-size:18px;
-        font-weight:500;
-        text-align: left;
-        margin-top:5px;
-        margin-left:0px;
     }
 
     ul {
@@ -39,22 +30,34 @@
         margin: 0;
         padding: 0;
     }
-/*
-    li hr {
-             border-width:1px;
-             color: #336699;
-             border-style:solid;
-             width:70%;
-             margin-left:0px;
-         }
-*/
+
+
+    .categories {
+
+        border-radius: 3px;
+        background-color: $tutorial-topic-title-background;
+
+        border-color: #abd09a;
+        line-height: 30px;
+        font-size:18px;
+        font-weight:500;
+        text-align: left;
+
+        color: $tutorial-topic-text-color;
+
+        margin-left:0px;
+        padding-left:5px;
+
+    }
+
+
+
      li hr {
          border-width:1px;
-         color: #666666;
-         border-style:groove;
-         width:100%;
+         width:99%;
          margin-left:0px;
      }
+
 
     li a {
         display: block;
@@ -68,10 +71,15 @@
     /* Change the link color on hover */
     li a:hover {
 
-
+       background-color: #DDDDDD;
        display: block;
        color: #666;
        text-decoration: none;
+    }
+
+    li:a:active {
+
+       background-color: #DDDFFF;
     }
 
     @include media-query($on-palm) {
@@ -142,6 +150,7 @@
 
     .topic-header {
 
+
         background-color: #fff;
 
 
@@ -159,13 +168,13 @@
 
 
         .topic-summary {
-            background-color: #f6f8f7;
+            background-color: $tutorial-topic-title-background;
         }
 
         svg {
             width: 14px;
             height: 10px;
-            fill: #363;
+            fill: $tutorial-topic-text-color;
         }
 
         span {
@@ -192,7 +201,7 @@
 
         a {
             font-weight: 500;
-            color:#363;
+            color:$tutorial-topic-text-color;
         }
 
         p {
@@ -250,7 +259,7 @@
     .part-content {
 
         .part-header {
-            background-color:#f6f8f7;
+            background-color:$tutorial-topic-title-background;
 
             h2 {
                 margin-top: 0px;

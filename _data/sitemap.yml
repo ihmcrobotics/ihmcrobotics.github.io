@@ -2,9 +2,9 @@
 - title: "Getting Started"
   subcategories:
   - subtitle: "Welcome PAGE"
-    subhref: "/tutorials/content/welcome"
+    subhref: "/documentation/index"
   - subtitle: "Install Simulation Construction Set"
-    subhref: "/tutorials/content/guide1"
+    subhref: "/documentation/content/guide1"
 
 - title: "Topic 1"
   subcategories:
