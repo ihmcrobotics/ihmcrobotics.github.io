@@ -12,6 +12,11 @@ $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
+$base-h1-color: #6699cc;
+$base-h23456-color: #006699;
+
+$code-background-color: #eef;
+
 $spacing-unit:     30px;
 
 $text-color:       #111;
@@ -23,9 +28,12 @@ $brand-color:      #2a7ae2;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
-$header-text-color: #dddddd;
 
-$header-footer-background-color: #373739;
+$header-footer-background: #373739;
+$header-text-color: #dddddd;
+$header-hover-background: #282830;
+$header-dropdown-background: #CCCCCC;
+$header-dropdown-hover-background: #BBBBBB;
 
 $header-height:80px;
 $header-height-mobile:50px;

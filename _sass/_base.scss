@@ -84,12 +84,12 @@ li {
 h1 {
     font-weight: $base-font-weight;
     //text-shadow: 0px 0.5px 0.5px #003366;
-    color: #6699cc;
+    color: $base-h1-color;
 }
 
 h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
-    color:#006699;
+    color:$base-h23456-color;
     //text-shadow: 0px 0.5px 0.5px #004477;
 }
 
@@ -138,7 +138,7 @@ code {
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: $code-background-color;
 }
 
 code {

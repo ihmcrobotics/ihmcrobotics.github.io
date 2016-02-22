@@ -1,9 +1,15 @@
 
 
-$tutorial-topic-text-color:#585;
-$tutorial-topic-title-background:#f6f8f7;
-
-
+$topic-text-color: #585;
+$topic-title-background: #f6f8f7;
+$sub-topic-text-color: #333;
+$sub-topic-background: #fff;
+$sub-topic-hover-text-color: #333;
+$sub-topic-hover-background: #DDDDDD;
+$topic-header-background: #fff;
+$topic-header-text-color: #222;
+$topic-content-background: #fff;
+$topic-content-text-color: #222;
 
 /**
     TUTORIAL NAVIGATION BAR
@@ -11,13 +17,13 @@ $tutorial-topic-title-background:#f6f8f7;
 
 .site-side-bar-nav {
 
-    width : 100%;
+    width: 100%;
     border-radius: 10px;
     line-height: 15px;
 
     padding-bottom: 5px;
 
-    background-color: #fff;
+    background-color: $sub-topic-background;
     //border-style: outset;
 
     .menu-icon {
@@ -31,39 +37,30 @@ $tutorial-topic-title-background:#f6f8f7;
         padding: 0;
     }
 
-
     .categories {
-
         border-radius: 3px;
-        background-color: $tutorial-topic-title-background;
-
-        border-color: #abd09a;
+        background-color: $topic-title-background;
         line-height: 30px;
         font-size:18px;
         font-weight:500;
         text-align: left;
-
-        color: $tutorial-topic-text-color;
-
+        color: $topic-text-color;
         margin-left:0px;
         padding-left:5px;
 
     }
 
-
-
-     li hr {
-         border-width:1px;
-         width:99%;
-         margin-left:0px;
-     }
-
+    li hr {
+        border-width:1px;
+        width:99%;
+        margin-left:0px;
+    }
 
     li a {
         display: block;
         font-weight: 400;
         font-size:16px;
-        color: #333;
+        color: $sub-topic-text-color;
         padding: 8px 0 8px 16px;
         margin: 0;
     }
@@ -71,22 +68,16 @@ $tutorial-topic-title-background:#f6f8f7;
     /* Change the link color on hover */
     li a:hover {
 
-       background-color: #DDDDDD;
+       background-color: $sub-topic-hover-background;
        display: block;
-       color: #666;
+       color: $sub-topic-hover-text-color;
        text-decoration: none;
-    }
-
-    li:a:active {
-
-       background-color: #DDDFFF;
     }
 
     @include media-query($on-palm) {
         display: none;
     }
 }
-
 
 
 /**
@@ -114,7 +105,6 @@ $tutorial-topic-title-background:#f6f8f7;
             position: relative;
             display: inline-block;
         }
-
 
     }
 }
@@ -150,9 +140,7 @@ $tutorial-topic-title-background:#f6f8f7;
 
     .topic-header {
 
-
-        background-color: #fff;
-
+        background-color: $topic-header-background;
 
         h1 {
 
@@ -160,21 +148,20 @@ $tutorial-topic-title-background:#f6f8f7;
             margin-bottom: 0px;
             padding-top: 10px;
             padding-bottom: 0px;
-            color: #222;
+            color: $topic-header-text-color;
             font-size:35px;
             font-weight:bold;
             text-indent:15px;
         }
 
-
         .topic-summary {
-            background-color: $tutorial-topic-title-background;
+            background-color: $topic-title-background;
         }
 
         svg {
             width: 14px;
             height: 10px;
-            fill: $tutorial-topic-text-color;
+            fill: $topic-text-color;
         }
 
         span {
@@ -201,7 +188,7 @@ $tutorial-topic-title-background:#f6f8f7;
 
         a {
             font-weight: 500;
-            color:$tutorial-topic-text-color;
+            color:$topic-text-color;
         }
 
         p {
@@ -259,14 +246,14 @@ $tutorial-topic-title-background:#f6f8f7;
     .part-content {
 
         .part-header {
-            background-color:$tutorial-topic-title-background;
+            background-color:$topic-title-background;
 
             h2 {
                 margin-top: 0px;
                 margin-bottom: 0px;
                 padding-top: 10px;
                 padding-bottom: 0px;
-                color: #222;
+                color: $topic-content-text-color;
                 font-size:30px;
                 font-weight:bold;
                 text-indent:15px;
@@ -275,7 +262,7 @@ $tutorial-topic-title-background:#f6f8f7;
 
         .step-content {
 
-            background-color:#fff;
+            background-color:$topic-content-background;
 
             margin-top: 0px;
             margin-bottom: 0px;
@@ -286,12 +273,11 @@ $tutorial-topic-title-background:#f6f8f7;
             padding-right: 10px;
 
             h3 {
-                color: #222;
+                color: $topic-content-text-color;
                 font-size:24px;
                 font-weight:bold;
                 text-indent:15px;
             }
-
 
             .video
             {
@@ -301,7 +287,6 @@ $tutorial-topic-title-background:#f6f8f7;
                 left:0px;
 
             }
-
 
         }
 
