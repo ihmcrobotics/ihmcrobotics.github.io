@@ -34,4 +34,7 @@ markdown: kramdown
 kramdown:
     input: GFM
 
+collections:
+- documentation
+
 

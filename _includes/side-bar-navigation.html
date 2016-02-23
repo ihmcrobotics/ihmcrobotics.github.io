@@ -1,26 +1,32 @@
 
 <nav class="site-side-bar-nav">
 
-    <!--<div class="trigger">-->
-        {% for item in site.data.sitemap %}
-            {% if item.subcategories != null %}
-                <ul>
-                    <li class="categories" >
-                        {{item.title}}
-                        <!--<hr>-->
-                    </li>
-                    {% for subcategory in item.subcategories %}
-                        <li>
-                            {% if item.subcategories != null %}
-                            <a href= "{{subcategory.subhref}}"> {{subcategory.subtitle }}</a>
-                            {% endif %}
-                            <!--<hr>-->
-                        </li>      
-                    {% endfor %}
-                </ul>
-            {% endif %}
+    <ul>
+        {% for page in site.pages %}
+
+            {% if page.doc-category-title %}
+
+            <ul>
+                <li class="categories" >
+                   {{ page.doc-category-title }}
+                </li>
+
+                {% for topic in site.pages %}
+
+                {% if topic.doc-topic-title and topic.doc-category == page.doc-category %}
+                <li>
+                    <a href= "{{ topic.permalink }}"> {{ topic.doc-topic-title }} </a>
+                </li>
+                {% endif %}
+
+                {% endfor %}
+
+
+            </ul>
+            {% endif%}
+
         {% endfor %}
-    <!--</div>-->
+    </ul>
 
 </nav>
 
