@@ -5,12 +5,16 @@
         <!--<select name = "Tutorial_Menu" onChange="top.location.href = this.value; ">-->
         <select name = "Tutorial_Menu" onChange="top.location.href = this.form.Tutorial_Menu.options[this.form.Tutorial_Menu.selectedIndex].value;">
             <option selected="selected" disabled="disabled">Select a tutorial...</option>
-            {% for item in site.data.sitemap %}
-            {% if item.subcategories != null %}
-                <optgroup label="{{item.title}}">
 
-                {% for subcategory in item.subcategories %}
-                     <option value="{{subcategory.subhref}}" > {{subcategory.subtitle }} </option>
+            {% for page in site.pages %}
+            {% if page.doc-category-title %}
+
+            <optgroup label="{{ page.doc-category-title }}">
+
+                {% for topic in site.pages %}
+                {% if topic.doc-topic-title and topic.doc-category == page.doc-category %}
+                     <option value="{{topic.permalink}}" > {{ topic.doc-topic-title }} </option>
+                {% endif %}
                 {% endfor %}
                 </optgroup>
             {% endif %}

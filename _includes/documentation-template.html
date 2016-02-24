@@ -6,7 +6,9 @@
         <div class="topic-summary">
             <ul>
                 <span>Number of parts:</span> <!--TODO ADD NUMBER OF PARTS -->
-                {% for part in site.documentation %}
+                {% assign sorted-parts = site.documentation | sort: "doc-part-order" %}
+                {% for part in sorted-parts %}
+
                 {% if part.doc-part-title and part.doc-category == page.doc-category and part.doc-topic == page.doc-topic %}
 
                 <li>
@@ -35,7 +37,8 @@
 
     <div class="part-content">
 
-        {% for partial in site.documentation %}
+        {% assign sorted-parts = site.documentation | sort: "doc-part-order" %}
+        {% for partial in sorted-parts %}
         {% if partial.doc-part-title and partial.doc-category == page.doc-category and partial.doc-topic == page.doc-topic %}
 
         <span id="{{ partial.doc-part-title }}"> </span>
