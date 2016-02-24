@@ -1,12 +1,60 @@
 ---
-layout: page
+layout: installation-page
 permalink: /installation/
 title: Installation
 order: 1
 ---
 
-<h1>Installation</h1>
+<div class="topic">
 
-<h2>Installation</h2>
+    <div class="topic-header">
+        <div class="topic-summary">
+            <ul>
+                {% assign sorted-parts = site.installation | sort: "order" %}
+                {% for part in sorted-parts %}
 
-<h3>Installation</h3>
+                {% if part.title %}
+
+                <li>
+                    <svg>
+                        <rect width="8" height="8"/>
+                    </svg>
+                    <a href="#{{part.title}}"> {{ part.title }} </a>
+                </li>
+
+                {% endif %}
+                {% endfor %}
+
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="part-content">
+
+        {% assign sorted-parts = site.installation | sort: "order" %}
+        {% for partial in sorted-parts %}
+        {% if partial.title %}
+
+        <span id="{{ partial.title }}"> </span>
+
+        <div class="part-header">
+            {% if partial.full-title %}
+                <h2> {{ partial.full-title }}</h2>
+            {% else %}
+                <h2> {{ partial.title }}</h2>
+            {% endif %}
+        </div>
+
+        <div class="step-content">
+            {{ partial.content }}
+        </div>
+
+        <h1></h1>
+
+        {% endif %}
+        {% endfor %}
+
+    </div>
+

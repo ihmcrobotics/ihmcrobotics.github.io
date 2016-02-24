@@ -36,5 +36,6 @@ kramdown:
 
 collections:
 - documentation
+- installation
 
 
