@@ -6,12 +6,14 @@
         <select name = "Tutorial_Menu" onChange="top.location.href = this.form.Tutorial_Menu.options[this.form.Tutorial_Menu.selectedIndex].value;">
             <option selected="selected" disabled="disabled">Select a tutorial...</option>
 
-            {% for page in site.pages %}
+            {% assign sorted-category = site.pages | sort: "doc-category-order" %}
+            {% for page in sorted-category %}
             {% if page.doc-category-title %}
 
             <optgroup label="{{ page.doc-category-title }}">
 
-                {% for topic in site.pages %}
+                {% assign sorted-topics = site.pages | sort: "doc-topic-order" %}
+                {% for topic in sorted-topics %}
                 {% if topic.doc-topic-title and topic.doc-category == page.doc-category %}
                      <option value="{{topic.permalink}}" > {{ topic.doc-topic-title }} </option>
                 {% endif %}
@@ -22,3 +24,5 @@
         </select>
     </form>
 </nav>
+
+

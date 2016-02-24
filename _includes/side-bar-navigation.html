@@ -2,8 +2,8 @@
 <nav class="site-side-bar-nav">
 
     <ul>
-        {% for page in site.pages %}
-
+        {% assign sorted-categories = site.pages | sort: "doc-category-order" %}
+        {% for page in sorted-categories %}
             {% if page.doc-category-title %}
 
             <ul>
@@ -11,7 +11,9 @@
                    {{ page.doc-category-title }}
                 </li>
 
-                {% for topic in site.pages %}
+                {% assign sorted-topics = site.pages | sort: "doc-topic-order" %}
+                {% for topic in sorted-topics %}
+
 
                 {% if topic.doc-topic-title and topic.doc-category == page.doc-category %}
                 <li>
