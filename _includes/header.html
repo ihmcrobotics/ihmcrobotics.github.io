@@ -20,7 +20,8 @@
           {% if my_page.title %}
 
             <div id="link-container">
-              <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+              <!--<a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>-->
+              <a class="page-link" href="{{ my_page.permalink | prepend: site.baseurl }}">{{ my_page.title }}</a>
             </div>
             {% endif %}
 

@@ -9,9 +9,14 @@
     border-top: 1px solid $grey-color;
     padding: $spacing-unit 0;
     background-color:$header-footer-background;
+
+    p {
+     font-size: 13px;
+    }
 }
 
 .footer-heading {
+    display:none;
     font-size: 18px;
     margin-bottom: $spacing-unit / 2;
 }

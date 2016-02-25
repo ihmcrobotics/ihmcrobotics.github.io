@@ -11,12 +11,12 @@ title: IHMC Robotics
 
 email: amoucheboeuf@ihmc.us
 
-description: > # this means to ignore newlines until "baseurl:"
-  "IHMC researchers have been advancing the state of the art in robotics and exoskeletons since 2002.
+description:
+  IHMC researchers have been advancing the state of the art in robotics and exoskeletons since 2002.
   Their work has been bringing attention to the innovative research being done in this quiet beach community of Pensacola
   through successes like our 2nd place finish in the international robotics competition called the DARPA Robotics Challenge.
   The group is led by IHMC’s scientists Jerry Pratt (bipedal walking), Peter Neuhaus (exoskeletons) and Matthew Johnson (human-robot system design)
-  who together work on developing advanced humanoid robot capabilities."
+  who together work on developing advanced humanoid robot capabilities.
 
 baseurl: ""
 

@@ -1,148 +1,69 @@
 ---
 layout: documentation-page
 title: Documentation
+permalink: /documentation-main/
 category: Main Pages
 order: 2
 ---
-<div class="topic">
 
-    <div class="topic-header">
-        <h1>Current Topic Title</h1>
-        <div class="topic-summary">
-            <ul>
-                <span>Number of parts:</span>
-                <li><svg><rect width="8" height="8"/></svg><a href="">Do this first awesome thing</a></li>
-                <li><svg><rect width="8" height="8"/></svg><a href="">Do this second awesome thing</a></li>
-                <li><svg><rect width="8" height="8"/></svg><a href="">Do this third awesome thing</a></li>
-                <li><svg><rect width="8" height="8"/></svg><a href="">Do this fourth awesome thing</a></li>
+{% assign sorted-categories = site.pages | sort: "doc-category-order" %}
+{% for page in sorted-categories %}
+{% if page.doc-category-title %}
 
-            </ul>
-        </div>
-        <p>
-            Some text: Sed ut perspiciatis,
-            unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
-            quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
-            quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt,
-            neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-            incidunt
-        </p>
-    </div>
+    <h1> {{page.doc-category-title}} </h1>
+    <p>
+       {{ page.content }}
+    </p>
 
-    <div class="part-content">
+    <div class="topic">
 
-        <div class="part-header">
-            <h2>First Part </h2>
-        </div>
+            {% assign sorted-topics = site.pages | sort: "doc-topic-order" %}
+            {% for topic in sorted-topics %}
+                {% if topic.doc-topic-title and topic.doc-category == page.doc-category %}
 
-        <div class="step-content">
-            <h3>step</h3>
+                <div class="topic-header">
+                    <h3> {{ topic.doc-topic-title }} </h3>
+                    <div class="topic-summary">
+                        <ul>
+                            <span>Contents:</span> <!--TODO ADD NUMBER OF PARTS -->
 
-            <p>
-                Step content introductory text: unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
-                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
-                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
-            </p>
+                            {% assign sorted-parts = site.documentation | sort: "doc-part-order" %}
+                            {% for part in sorted-parts %}
 
+                            {% if part.doc-part-title and part.doc-category == topic.doc-category and part.doc-topic == topic.doc-topic %}
 
-            <ol>
-                <li>
-                    <p>
-                        Task: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                        <a href=""> Link to an interesting page </a>
-                    </p>
+                            <li>
+                                <svg>
+                                    <rect width="8" height="8"/>
+                                </svg>
+                                <a href=" {{topic.url}}/#{{part.doc-part-title}}"> {{ part.doc-part-title }} </a>
+                            </li>
 
-                    <div class="video">
-                        <div class="auto-resizable-iframe">
-                            <div>
-                                <iframe src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
+                            {% endif %}
+                            {% endfor %}
+
+                        </ul>
                     </div>
 
-                </li>
-                <li>
-                    <p>
-                        Some text: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Some text: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                    </p>
-                </li>
-            </ol>
-        </div>
+                    {% for summary in site.documentation %}
+                    {% if summary.doc-type == "summary" and summary.doc-topic == topic.doc-topic and summary.doc-category == topic.doc-category%}
 
-        <div class="step-content">
-            <h3>step</h3>
+                        {{ summary.content }}
 
-            <p>
-                Step content introductory text: unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
-                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
-                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
-            </p>
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
 
 
-            <ol>
-                <li>
-                    <p>
-                        Task: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                        <a href=""> Link to an interesting page </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Some text: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Some text: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                    </p>
-                </li>
-            </ol>
-        </div>
 
-        <div class="step-content">
-            <h3>step</h3>
-
-            <p>
-                Step content introductory text: unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
-                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
-                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
-            </p>
-
-
-            <ol>
-                <li>
-                    <p>
-                        Task: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                        <a href=""> Link to an interesting page </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Some text: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Some text: Sed ut perspiciatis,
-                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa
-                    </p>
-                </li>
-            </ol>
-        </div>
+                {% endif %}
+            {% endfor %}
 
     </div>
 
-</div>
+{% endif%}
+{% endfor %}
+
+
 
