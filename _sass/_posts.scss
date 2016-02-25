@@ -1,0 +1,78 @@
+
+
+
+
+
+
+
+/**
+ * POSTS
+ */
+
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+
+     font-size: 38px;
+     font-weight:450;
+     letter-spacing: -1px;
+     line-height: 1;
+
+     @include media-query($on-laptop) {
+        font-size: 33px;
+
+     }
+
+     @include media-query($on-palm) {
+        font-size: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+     }
+}
+
+
+.post-content {
+
+    margin-bottom: $spacing-unit;
+
+    h1 {
+        font-size: 31.5px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+
+    h2 {
+        font-size: 28px;
+
+        @include media-query($on-laptop) {
+            font-size: 24px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+
+    @include media-query($on-palm) {
+
+        padding-left: 10px;
+        padding-right: 10px;
+     }
+}

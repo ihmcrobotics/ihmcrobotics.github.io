@@ -31,30 +31,26 @@ order: 1
     </div>
 
 
+    {% assign sorted-parts = site.installation | sort: "order" %}
+    {% for partial in sorted-parts %}
+    {% if partial.title %}
     <div class="part-content">
-
-        {% assign sorted-parts = site.installation | sort: "order" %}
-        {% for partial in sorted-parts %}
-        {% if partial.title %}
-
         <span id="{{ partial.title }}"> </span>
 
         <div class="part-header">
             {% if partial.full-title %}
-                <h2> {{ partial.full-title }}</h2>
+            <h2> {{ partial.full-title }}</h2>
             {% else %}
-                <h2> {{ partial.title }}</h2>
+            <h2> {{ partial.title }}</h2>
             {% endif %}
         </div>
 
         <div class="step-content">
             {{ partial.content }}
         </div>
-
-        <h1></h1>
-
-        {% endif %}
-        {% endfor %}
-
     </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
 

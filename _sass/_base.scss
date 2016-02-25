@@ -158,6 +158,7 @@ pre {
 
 
 
+
 /**
  * Wrapper
  */
@@ -166,8 +167,10 @@ pre {
     max-width:         calc(#{$header-footer-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
+
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+
     @extend %clearfix;
 
     @include media-query($on-laptop) {
@@ -183,12 +186,18 @@ pre {
  * Wrapper for content
  */
 .wrapper-content {
+
+    padding: $spacing-unit 0;
+
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
+
     padding-right: $spacing-unit;
-    padding-left: calc(#{$spacing-unit} + (#{$content-width} - #{$header-footer-width} ));
+    padding-left: $spacing-unit;
+    //padding-left: calc(#{$spacing-unit} + (#{$content-width} - #{$header-footer-width} ));
+
     @extend %clearfix;
 
     @include media-query($on-laptop) {
@@ -200,9 +209,11 @@ pre {
     }
 
     @include media-query($on-palm) {
+
         max-width: -webkit-calc(#{$header-footer-width} - (#{$spacing-unit} * 2));
         max-width:         calc(#{$header-footer-width} - (#{$spacing-unit} * 2));
-        padding-left: $spacing-unit;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 }
 
@@ -239,12 +250,28 @@ pre {
 }
 
 
-
 /**
-Label
+    Video Resize
 */
 
+.auto-resizable-iframe {
+  max-width: 600px;
+  margin: 0px auto;
+}
 
+.auto-resizable-iframe div {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0px;
+}
+
+.auto-resizable-iframe iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
 
 
 

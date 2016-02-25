@@ -65,11 +65,13 @@ $on-laptop:        70%;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout",
+        "posts",
+        "header",
+        "footer",
         "syntax-highlighting",
-        "_documentation-content",
-        "_tutorial-page-template-layout",
-        "first-page"
+        "documentation-content",
+        "documentation-page-template-layout",
+        "landing-page"
 
 ;
 

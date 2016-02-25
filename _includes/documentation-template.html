@@ -2,10 +2,10 @@
 <div class="topic">
 
     <div class="topic-header">
-        <h1>Current This Topic Title: {{page.doc-topic-title}}</h1>
+        <h1>{{page.doc-topic-title}}</h1>
         <div class="topic-summary">
             <ul>
-                <span>Number of parts:</span> <!--TODO ADD NUMBER OF PARTS -->
+                <span>Contents:</span> <!--TODO ADD NUMBER OF PARTS -->
                 {% assign sorted-parts = site.documentation | sort: "doc-part-order" %}
                 {% for part in sorted-parts %}
 
@@ -35,12 +35,12 @@
     </div>
 
 
+
+    {% assign sorted-parts = site.documentation | sort: "doc-part-order" %}
+    {% for partial in sorted-parts %}
+    {% if partial.doc-part-title and partial.doc-category == page.doc-category and partial.doc-topic == page.doc-topic %}
+
     <div class="part-content">
-
-        {% assign sorted-parts = site.documentation | sort: "doc-part-order" %}
-        {% for partial in sorted-parts %}
-        {% if partial.doc-part-title and partial.doc-category == page.doc-category and partial.doc-topic == page.doc-topic %}
-
         <span id="{{ partial.doc-part-title }}"> </span>
 
         <div class="part-header">
@@ -48,13 +48,10 @@
         </div>
 
         <div class="step-content">
-
             {{ partial.content }}
         </div>
-
-        {% endif %}
-        {% endfor %}
-
     </div>
+        {% endif %}
+    {% endfor %}
 
 </div>
