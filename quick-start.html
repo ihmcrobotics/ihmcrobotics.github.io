@@ -1,7 +1,7 @@
 ---
 layout: installation-page
-permalink: /installation/
-title: Installation
+permalink: /quick-start/
+title: Quick Start
 order: 1
 ---
 
@@ -10,7 +10,7 @@ order: 1
     <div class="topic-header">
         <div class="topic-summary">
             <ul>
-                {% assign sorted-parts = site.installation | sort: "order" %}
+                {% assign sorted-parts = site.quick-start | sort: "order" %}
                 {% for part in sorted-parts %}
 
                 {% if part.title %}
@@ -31,7 +31,7 @@ order: 1
     </div>
 
 
-    {% assign sorted-parts = site.installation | sort: "order" %}
+    {% assign sorted-parts = site.quick-start | sort: "order" %}
     {% for partial in sorted-parts %}
     {% if partial.title %}
     <div class="part-content">
@@ -53,4 +53,3 @@ order: 1
     {% endfor %}
 
 </div>
-

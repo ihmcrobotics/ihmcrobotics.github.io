@@ -36,6 +36,4 @@ kramdown:
 
 collections:
 - documentation
-- installation
-
-
+- quick-start
