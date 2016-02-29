@@ -7,7 +7,7 @@
 
 .site-footer {
     border-top: 1px solid $grey-color;
-    padding: $spacing-unit 0;
+    padding: 10px 0;
     background-color:$header-footer-background;
 
     p {
@@ -16,7 +16,7 @@
 }
 
 .footer-heading {
-    display:none;
+    //display:none;
     font-size: 18px;
     margin-bottom: $spacing-unit / 2;
 }
@@ -26,6 +26,60 @@
     list-style: none;
     margin-left: 0;
 }
+
+.footer-line-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #777;
+
+
+    object {
+        width:40px;
+        height:40px;
+    }
+
+    .footer-line1-column-wrapper {
+
+        display: flex;
+        //flex-wrap: nowrap;
+        justify-content: space-around;
+
+        .column-left {
+            flex: 1;
+        }
+
+        //.column-center {
+
+           .icon-group {
+
+                transform: scale(0.7);
+
+                display:flex;
+                justify-content: center;
+            }
+        //}
+
+        .column-right {
+            flex: 1;
+
+        }
+
+    }
+
+    .line2 {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+
+
+/*
+
+
 
 .footer-col-wrapper {
     font-size: 15px;
@@ -75,3 +129,5 @@
         width:         calc(100% - (#{$spacing-unit} / 2));
     }
 }
+
+*/

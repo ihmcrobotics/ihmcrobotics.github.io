@@ -1,42 +1,50 @@
 <footer class="site-footer">
 
-  <div class="wrapper">
+    <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+        <div class="footer-line-wrapper">
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
+            <div class="footer-line1-column-wrapper">
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          <li><a href="http://facebook.com">{% include facebook_circle_color.svg %}</a></li>
-          <li><a href="https://github.com">{% include github_circle_color.svg %}</a></li>
-          <li><a href="http://facebook.com">{% include twitter_circle_color.svg %}</a></li>
-          <li><a href="http://facebook.com">{% include youtube_circle_color.svg %}</a></li>
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
+                <!--<div class="column-left">-->
 
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
+                    <!--<p>-->
+                        <!--<a href="http://robots.ihmc.us/blog/"> <img src="/resources/images/running-man-logo.png" label="IHMC Robotics Blog"> </a>-->
+                        <!--<b> <a href="http://robots.ihmc.us/blog/">Check out our blog!</a> </b>-->
+                    <!--</p>-->
 
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
+
+                <!--</div>-->
+
+                <!--<div class="column-center">-->
+
+                    <div class="icon-group">
+                        <a href="https://www.facebook.com/TheIHMC">{% include facebook_circle_color.svg %}</a>
+                        <a href="https://github.com/ihmcrobotics">{% include github_circle_color.svg %}</a>
+                        <a href="http://twitter.com/ihmcrobotics">{% include twitter_circle_color.svg %}</a>
+                        <a href="http://www.youtube.com/DRCihmcRobotics">{% include youtube_circle_color.svg %}</a>
+                    </div>
+                <!--</div>-->
+
+                <!--<div class="column-right">-->
+
+                    <!--<p>-->
+                        <!--Florida Institute for Human and Machine Cognition <br>-->
+                        <!--40 South Alcaniz Street Pensacola, Florida 32502 <br>-->
+                        <!--(850)202-4480 <br>-->
+                    <!--</p>-->
+
+                <!--</div>-->
+
+            </div>
+
+
+            <div class="line-2">
+
+                <p>{{ site.description }}</p>
+            </div>
+
+        </div>
     </div>
-
-  </div>
 
 </footer>

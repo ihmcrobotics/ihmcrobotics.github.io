@@ -31,6 +31,7 @@ show_drafts: FALSE
 # Build settings
 markdown: kramdown
 
+
 collections:
 - documentation
 - quick-start
