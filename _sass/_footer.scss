@@ -54,10 +54,26 @@
 
            .icon-group {
 
-                transform: scale(0.7);
+                transform: scale($footer-icon-group-scale);
 
                 display:flex;
                 justify-content: center;
+
+                svg {
+                    g .background {
+                			fill: $footer-icon-group-icon-background;
+                	}
+                	g:hover .background {
+                			fill: $footer-icon-group-icon-hover-background;
+                	}
+                    g .main-image {
+                			fill: $footer-icon-group-icon-foreground;
+                	}
+                    g:hover .main-image {
+                			fill: $footer-icon-group-icon-hover-foreground;
+                	}
+                }
+
             }
         //}
 
