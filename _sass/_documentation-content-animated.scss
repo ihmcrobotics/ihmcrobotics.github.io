@@ -41,7 +41,8 @@ $nav-topic-text-hover-color: #444;
     font-size:14px;
     //border:1px solid #542437;
     border-radius:10px;
-    width:300px;
+    //width:300px;
+
     padding:10px;
 
     background: $nav-accordion-background;
@@ -58,7 +59,7 @@ $nav-topic-text-hover-color: #444;
     padding:0;
 }
 
-.accordion [type=checkbox] {
+.accordion [type=radio], .accordion [type=checkbox] {
     display:none;
 }
 .accordion label {
@@ -76,7 +77,7 @@ $nav-topic-text-hover-color: #444;
     cursor:pointer;
     //text-transform:uppercase;
 }
-.accordion ul li label:hover, .accordion [type=checkbox]:checked ~ label {
+.accordion ul li label:hover,.accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
 
     background:$nav-sub-category-background-hover-color;
 
@@ -87,8 +88,8 @@ $nav-topic-text-hover-color: #444;
     padding:0 10px;
     overflow:hidden;
     //border:1px solid #fff;
-    -webkit-transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
 }
 .accordion p {
     color:#333;
@@ -127,7 +128,7 @@ $nav-topic-text-hover-color: #444;
 .vertical ul li label {
     padding:10px;
 }
-.vertical [type=checkbox]:checked ~ label {
+.vertical [type=radio]:checked ~ label, [type=checkbox]:checked ~ label {
     //border-bottom:0;
 }
 .vertical ul li label:hover {
@@ -136,9 +137,9 @@ $nav-topic-text-hover-color: #444;
 .vertical ul li .content {
     height:0px;
     //border-top:0;
-    transition: all .5s ease-out;
+    transition: all .1s linear;
 }
-.vertical [type=checkbox]:checked ~ label ~ .content {
+.vertical [type=radio]:checked ~ label ~ .content, [type=checkbox]:checked ~ label ~ .content {
     height:auto;
     padding-top: 10px;
     //border:1px solid #542437;

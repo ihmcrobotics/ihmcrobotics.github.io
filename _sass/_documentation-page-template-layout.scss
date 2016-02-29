@@ -27,8 +27,15 @@ layout: default
 
 .documentation-content {
 
-   //background-color: #990000;
+   //background-color: #990099;
 
+
+    min-height: 500px;
+
+    @include media-query($on-palm) {
+
+       min-height:0;
+    }
 
 
 /**

@@ -5,7 +5,13 @@
         {% if page.doc-category-title %}
 
             <li>
-                <input type="checkbox" id="-{{ page.doc-category-title }}" name="checkbox-accordion" />
+                {% if include.current-category == page.doc-category %}
+                    {% assign is-checked = "checked" %}
+                {% else %}
+                    {% assign is-checked = "" %}
+                {% endif %}
+
+                <input type="radio" id="-{{ page.doc-category-title }}" name="checkbox-accordion"  {{is-checked}} />
                 <label for="-{{ page.doc-category-title }}">{{ page.doc-category-title }}</label>
                 <div class="content">
                     {% assign sorted-topics = site.pages | sort: "doc-topic-order" %}
