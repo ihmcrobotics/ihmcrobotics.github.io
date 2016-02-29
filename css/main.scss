@@ -6,6 +6,8 @@
 
 
 // Our variables
+//$base-font-family:"proxima-nova", "Open Sans","Gill Sans MT","Gill Sans",Corbel,Arial,sans-serif; // TODO use this for font text
+
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -75,7 +77,7 @@ $on-laptop:        70%;
         "header",
         "footer",
         "syntax-highlighting",
-        "documentation-content",
+        "documentation-content-animated",
         "documentation-page-template-layout",
         "landing-page"
 
