@@ -11,6 +11,7 @@ $topic-background: #fff;
 $topic-header-text-color: #222;
 $topic-content-background: #fff;
 $topic-content-text-color: #222;
+$topic-h2-text-color: #444;
 
 
 
@@ -520,8 +521,8 @@ $nav-topic-text-hover-color: #000;
                 margin-bottom: 0px;
                 padding-top: 10px;
                 padding-bottom: 0px;
-                color: $topic-content-text-color;
-                font-size:30px;
+                color: $topic-h2-text-color;
+                font-size:24px;
                 font-weight:bold;
                 text-indent:15px;
 

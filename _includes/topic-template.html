@@ -13,7 +13,7 @@
     {% assign sorted-pages = site.pages | sort: 'url' %}
     {% for sorted-page in sorted-pages %}
         {% assign path = sorted-page.url | split:"/" %}
-        {% if path[1] == "documentation" and path.size == 6 and path[4] == topic %}
+        {% if path[1] == "documentation" and path.size == 6 and path[2] == category and path[3] == sub-category and path[4] == topic %}
             {% if sorted-page.category == 'Summary' %}
                 {% capture summary %}{{ sorted-page.content }}{% endcapture %}
             {% else %}
