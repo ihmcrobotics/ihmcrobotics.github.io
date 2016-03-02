@@ -13,8 +13,7 @@ $topic-content-background: #fff;
 $topic-content-text-color: #222;
 $topic-h2-text-color: #444;
 
-
-
+/*
 $nav-accordion-background: #fff;
 $nav-category-background-color: #DDD;
 $nav-category-background-hover-color: #585;
@@ -28,6 +27,28 @@ $nav-sub-category-text-hover-color: #585;
 
 $nav-topic-background-color: #fff;
 $nav-topic-background-hover-color: #fff;
+$nav-topic-text-color: #777;
+$nav-topic-text-hover-color: #000;
+*/
+
+
+
+$nav-accordion-background: #FBFBFB;
+
+$nav-category-background-color: #585;
+$nav-category-background-hover-color: #fff;
+$nav-category-text-color: #f6f8f7;
+$nav-category-text-hover-color: #f6f8f7;
+
+$nav-sub-category-background-color: #f6f8f7;
+$nav-sub-category-background-hover-color: #99cc66;
+
+$nav-sub-category-text-color: #585;
+$nav-sub-category-text-hover-color: #222;
+
+$nav-topic-background-color: $nav-accordion-background;
+$nav-topic-background-hover-color: $nav-accordion-background;
+
 $nav-topic-text-color: #777;
 $nav-topic-text-hover-color: #000;
 
@@ -66,6 +87,7 @@ $nav-topic-text-hover-color: #000;
     background: $nav-category-background-color;
     padding: 5px 5px;
     margin:0;
+    opacity: 0.8;
 }
 
 /**
@@ -103,13 +125,15 @@ $nav-topic-text-hover-color: #000;
     color:$nav-sub-category-text-color;
     font-weight:700;
     cursor:pointer;
-    //text-transform:uppercase;
+
+
 }
 .accordion ul li label:hover,.accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
 
     background:$nav-sub-category-background-hover-color;
 
     color:$nav-sub-category-text-hover-color;
+    opacity: 0.6;
 
 }
 .accordion .content {
