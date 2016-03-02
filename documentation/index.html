@@ -1,0 +1,44 @@
+---
+layout: documentation-page
+header-navigation-title: Docs
+title: Docs
+permalink: /documentation/
+category: Main Pages
+order: 1
+---
+
+<h1> Documentation 2 </h1>
+
+<h2>Maybe a Shorter Way</h2>
+{% assign sorted-pages = site.pages | sort: 'url' %}
+{% for page in sorted-pages %}
+  {% assign path = page.url | split:"/" %}
+  {% if path[1] == "documentation" and path.size == 3 %}
+    {% capture categories %}{{categories}},{{path[2]}}{% endcapture %}
+    <h3><a href="{{page.url}}">{{path[2]}}</a></h3>
+{% endif %}
+{% if path[1] == "documentation" and path.size == 4 %}
+<h4 style="text-indent:10px;"><a href="{{page.url}}">{{path[3]}}</a></h4>
+{% endif %}
+{% if path[1] == "documentation" and path.size == 5 %}
+<h5 style="text-indent:20px;"><a href="{{page.url}}">{{path[4]}}</a></h5>
+{% endif %}
+{% if path[1] == "documentation" and path.size == 6 %}
+<h6 style="text-indent:30px;"><a href="{{page.url}}">{{path[5]}}</a></h6>
+{% endif %}
+{% endfor %}
+
+<h2>Categories</h2>
+{{categories}} <br>
+
+<h2>Unique Categories</h2>
+{% assign categories = categories | split:"," %}
+{% for category in categories %}
+{% if forloop.first %}
+{% continue %}
+{% endif %}
+{{category}} <br>
+{% endfor %}
+
+
+

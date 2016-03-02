@@ -20,7 +20,7 @@ description:
 
 baseurl: ""
 
-url: "http://robots.ihmc.us/" # the base hostname & protocol for your site
+url: "http://robots.ihmc.us" # the base hostname & protocol for your site
 
 twitter_username: ihmcrobotics
 

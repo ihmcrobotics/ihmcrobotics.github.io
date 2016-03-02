@@ -1,6 +1,7 @@
 ---
 layout: page 
 permalink: /about/
+header-navigation-title: About
 title: About
 order: 5
 ---
