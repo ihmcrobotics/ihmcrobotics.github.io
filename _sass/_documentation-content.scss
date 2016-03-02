@@ -1,19 +1,174 @@
-
-
+// TODO move these colors to main css
 $topic-text-color: #585;
 $topic-title-background: #f6f8f7;
-$sub-topic-text-color: #333;
-$sub-topic-background: #fff;
-$sub-topic-hover-text-color: #333;
-$sub-topic-hover-background: #DDDDDD;
-$topic-header-background: #fff;
+
+$sub-category-text-color: #333;
+$sub-category-background: #fff;
+$sub-category-hover-text-color: #333;
+$sub-category-hover-background: #DDD;
+
+$topic-background: #fff;
 $topic-header-text-color: #222;
 $topic-content-background: #fff;
 $topic-content-text-color: #222;
 
+
+
+$nav-accordion-background: #fff;
+$nav-category-background-color: #DDD;
+$nav-category-background-hover-color: #585;
+$nav-category-text-color: $base-h23456-color;
+$nav-category-text-hover-color: #f6f8f7;
+
+$nav-sub-category-background-color: #f6f8f7;
+$nav-sub-category-background-hover-color: #AAA;
+$nav-sub-category-text-color: #585;
+$nav-sub-category-text-hover-color: #585;
+
+$nav-topic-background-color: #fff;
+$nav-topic-background-hover-color: #fff;
+$nav-topic-text-color: #777;
+$nav-topic-text-hover-color: #000;
+
+
 /**
-    TUTORIAL NAVIGATION BAR
+    NAVIGATION BAR
 */
+
+/**
+   >> OUTTER
+*/
+
+.outter-accordion {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    background: $nav-accordion-background;
+
+}
+
+.outter-accordion ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.outter-accordion li {
+    margin:0;
+    padding-bottom:0px;
+
+
+}
+
+
+.outter-accordion h2 {
+    color: $nav-category-text-color;
+    background: $nav-category-background-color;
+    padding: 5px 5px;
+    margin:0;
+}
+
+/**
+   >> INNER
+*/
+
+
+.accordion {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    background: $nav-accordion-background;
+    margin:0;
+}
+
+.accordion ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.accordion li {
+    margin:0;
+    padding:0;
+}
+
+.accordion [type=radio], .accordion [type=checkbox] {
+    display:none;
+}
+.accordion label {
+    display:block;
+    font-size:16px;
+    line-height:16px;
+    text-indent: 5px;
+    background:$nav-sub-category-background-color;
+    color:$nav-sub-category-text-color;
+    font-weight:700;
+    cursor:pointer;
+    //text-transform:uppercase;
+}
+.accordion ul li label:hover,.accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
+
+    background:$nav-sub-category-background-hover-color;
+
+    color:$nav-sub-category-text-hover-color;
+
+}
+.accordion .content {
+    padding:0 10px;
+    overflow:hidden;
+    //border:1px solid #fff;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+}
+.accordion p {
+    color:#333;
+    //margin:0 0 10px;
+}
+
+
+
+
+
+.accordion a {
+    color: $nav-topic-text-color;
+    background-color:$nav-topic-background-color;
+    font-weight:500;
+}
+
+.accordion a:hover {
+    text-decoration: none;
+    color: $nav-topic-text-hover-color;
+    background-color:$nav-topic-background-hover-color;
+}
+
+
+
+
+
+.vertical ul li {
+    overflow:hidden;
+    margin:0 0 1px;
+}
+.vertical ul li label {
+    padding: 10px 0;
+}
+.vertical [type=radio]:checked ~ label, [type=checkbox]:checked ~ label {
+    //border-bottom:0;
+}
+.vertical ul li label:hover {
+    //border:1px solid #542437;
+}
+.vertical ul li .content {
+    height:0px;
+    transition: all .1s linear;
+}
+.vertical [type=radio]:checked ~ label ~ .content, [type=checkbox]:checked ~ label ~ .content {
+    height:auto;
+    padding-top: 10px;
+
+}
+
+
+
+
 
 .site-side-bar-nav {
 
@@ -23,7 +178,7 @@ $topic-content-text-color: #222;
 
     padding-bottom: 5px;
 
-    background-color: $sub-topic-background;
+    background-color: $sub-category-background;
     //border-style: outset;
 
     .menu-icon {
@@ -60,7 +215,7 @@ $topic-content-text-color: #222;
         display: block;
         font-weight: 400;
         font-size:16px;
-        color: $sub-topic-text-color;
+        color: $sub-category-text-color;
         padding: 8px 0 8px 16px;
         margin: 0;
     }
@@ -68,15 +223,115 @@ $topic-content-text-color: #222;
     /* Change the link color on hover */
     li a:hover {
 
-       background-color: $sub-topic-hover-background;
+       background-color: $sub-category-hover-background;
        display: block;
-       color: $sub-topic-hover-text-color;
+       color: $sub-category-hover-text-color;
        text-decoration: none;
     }
 
     @include media-query($on-palm) {
         display: none;
     }
+
+
+
+
+
+
+    /*Define Accordion box*/
+    .accordion {
+         width:400px;
+         overflow:hidden;
+         margin:10px auto;
+         color:#474747;
+         background:#474747;
+         padding:10px;
+    }
+
+    .accordion section{
+
+          float:left;
+          overflow:hidden;
+          color:#333;
+          cursor:pointer;
+          background:$topic-title-background;
+          margin:3px;
+
+
+
+          width:100%;
+           height:40px;
+           -webkit-transition:height 0.2s ease-out;
+           -moz-transition:height 0.2s ease-out;
+           -o-transition:height 0.2s ease-out;
+           transition:height 0.2s ease-out;
+
+    }
+
+    /*Set height of the slide*/
+    .accordion :target{
+         height:250px;
+         width:97%;
+    }
+
+    .accordion section:hover {
+          background:#444;
+    }
+
+   .accordion p:hover {
+
+           font-weight:bold;
+
+    }
+
+   .accordion section p {
+          display:none;
+    }
+
+    .accordion section:after{
+          position:relative;
+          font-size:24px;
+          color:#000;
+          font-weight:bold;
+    }
+
+
+
+    .accordion section:target {
+          background:#FFF;
+          padding:10px;
+    }
+    .accordion section:target:hover {
+          background:#FFF;
+    }
+    .accordion section:target h3 {
+          width:100%;
+    }
+    .accordion section:target h3 a{
+          color:#333;
+          padding:0;
+    }
+    .accordion section:target p {
+          display:block;
+    }
+    .accordion section h3 a{
+
+          padding:8px 10px;
+          display:block;
+          font-size:16px;
+          font-weight:normal;
+          color:$topic-text-color;
+          text-decoration:none;
+    }
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -140,7 +395,7 @@ $topic-content-text-color: #222;
 
     .topic-header {
 
-        background-color: $topic-header-background;
+        background-color: $topic-background;
 
         h1 {
 

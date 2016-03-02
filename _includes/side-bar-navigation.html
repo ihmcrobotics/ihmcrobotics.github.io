@@ -1,36 +1,91 @@
-<div class="accordion vertical">
-    <ul>
-        {% assign sorted-categories = site.pages | sort: "doc-category-order" %}
-        {% for page in sorted-categories %}
-        {% if page.doc-category-title %}
 
-            <li>
-                {% if include.current-category == page.doc-category %}
-                    {% assign is-checked = "checked" %}
+
+
+{% assign category = "" %}
+{% assign subcategory = "" %}
+{% assign topic = "" %}
+
+{% assign current-page-path = page.url | split:"/" %}
+
+
+{% assign sorted-pages = site.pages | sort: 'url' %}
+<div class="outter-accordion">
+
+    <ul>
+
+    {% for temp-page in sorted-pages %}
+
+        {% assign path = temp-page.url | split:"/" %}
+
+        {% if path[1] == "documentation" and path.size == 3 %}
+
+            {% if category != "" and category != path[2] %}
+
+                                 </div>
+
+                                </li> <!-- end of subcategory item -->
+                            </ul>
+
+                    </div>
+                </li> <!-- end of category item -->
+
+                {% assign subcategory = "" %}
+
+            {% endif %}
+
+            {% if category != path[2] %}
+                <li> <!-- start of category item -->
+
+
+                <h2> {{ temp-page.title }} </h2>
+
+                <div class="accordion vertical">
+                    <ul>
+
+                {% assign category = path[2] %}
+            {% endif %}
+
+        {% endif %}
+
+        {% if path[1] == "documentation" and path.size == 4 %}
+
+            {% if subcategory != "" and subcategory != path[3] %}
+                </div>
+            </li> <!-- end of subcategory item -->
+            {% endif %}
+
+            {% if subcategory != path[3] %}
+            <li><!-- start of subcategory item -->
+
+
+                {% assign subcategory = path[3] %}
+
+                {% if current-page-path[3] == subcategory and current-page-path[2] == category %}
+                {% assign is-checked = "checked" %}
                 {% else %}
-                    {% assign is-checked = "" %}
+                {% assign is-checked = "" %}
                 {% endif %}
 
-                <input type="radio" id="-{{ page.doc-category-title }}" name="checkbox-accordion"  {{is-checked}} />
-                <label for="-{{ page.doc-category-title }}">{{ page.doc-category-title }}</label>
+
+                <input type="radio" id="-{{ temp-page.title }}" name="checkbox-accordion"  {{is-checked}} />
+                <label for="-{{ temp-page.title }}">{{ temp-page.title }}</label>
+
                 <div class="content">
-                    {% assign sorted-topics = site.pages | sort: "doc-topic-order" %}
-                    {% for topic in sorted-topics %}
-                    {% if topic.doc-topic-title and topic.doc-category == page.doc-category %}
+
+
+            {% endif %}
+
+        {% endif %}
+
+        {% if path[1] == "documentation" and path.size == 5 %}
                     <p>
-                        <a href= "{{ topic.permalink }}"> {{ topic.doc-topic-title }} </a>
+                        <a href= "{{ temp-page.url }}"> {{ temp-page.title }} </a>
                     </p>
+        {% endif %}
 
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </li>
 
-        {% endif%}
-        {% endfor %}
+    {% endfor %}
 
     </ul>
+
 </div>
-
-
-
