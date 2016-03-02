@@ -9,7 +9,6 @@ order: 1
 
 <h1> Documentation 2 </h1>
 
-<h2>Maybe a Shorter Way</h2>
 {% assign sorted-pages = site.pages | sort: 'url' %}
 {% for page in sorted-pages %}
   {% assign path = page.url | split:"/" %}

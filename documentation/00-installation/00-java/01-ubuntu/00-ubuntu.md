@@ -1,6 +1,6 @@
 ---
 
-part-title: Installing Java on Ubuntu 14.04
+title: Installing Java on Ubuntu 14.04
 
 ---
 
