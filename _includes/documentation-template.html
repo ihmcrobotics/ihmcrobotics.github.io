@@ -26,14 +26,13 @@
 
         {% for partial in site.documentation %}
         {% if partial.doc-type and partial.doc-topic == page.doc-topic and partial.doc-category == page.doc-category%}
-
-        {{ partial.content }}
-
+        <p>
+            {{ partial.content }}
+        </p>
         {% endif %}
         {% endfor %}
 
     </div>
-
 
 
     {% assign sorted-parts = site.documentation | sort: "doc-part-order" %}

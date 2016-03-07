@@ -1,17 +1,21 @@
 // TODO move these colors to main css
-$topic-text-color: #585;
+$topic-text-color: #363;
+
 $topic-title-background: #f6f8f7;
+$topic-title-background-shadow: #d6d8d7;
 
 $sub-category-text-color: #333;
 $sub-category-background: #fff;
 $sub-category-hover-text-color: #333;
 $sub-category-hover-background: #DDD;
 
-$topic-background: #fff;
-$topic-header-text-color: #222;
+$topic-background: #93B874;
+$topic-header-text-color: #475347;
 $topic-content-background: #fff;
 $topic-content-text-color: #222;
 $topic-h2-text-color: #444;
+
+$topic-summary-border-color: #73AD21;
 
 /*
 $nav-accordion-background: #fff;
@@ -65,7 +69,7 @@ $nav-topic-text-hover-color: #000;
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
     background: $nav-accordion-background;
-
+    box-shadow: 0px 0px 10px $topic-title-background-shadow;
 }
 
 .outter-accordion ul {
@@ -88,6 +92,7 @@ $nav-topic-text-hover-color: #000;
     padding: 5px 5px;
     margin:0;
     opacity: 0.8;
+    text-shadow: 0px 0px 1px $topic-title-background-shadow;
 }
 
 /**
@@ -203,6 +208,8 @@ $nav-topic-text-hover-color: #000;
 
     padding-bottom: 5px;
 
+    border: 3px solid #73AD21;
+
     background-color: $sub-category-background;
     //border-style: outset;
 
@@ -227,7 +234,6 @@ $nav-topic-text-hover-color: #000;
         color: $topic-text-color;
         margin-left:0px;
         padding-left:5px;
-
     }
 
     li hr {
@@ -271,6 +277,7 @@ $nav-topic-text-hover-color: #000;
          color:#474747;
          background:#474747;
          padding:10px;
+
     }
 
     .accordion section{
@@ -374,7 +381,7 @@ $nav-topic-text-hover-color: #000;
     @include media-query($on-palm) {
 
         position: absolute;
-        top: $header-height;
+        top: 110px;
         left: 10px;
         border: 0;
 
@@ -419,19 +426,19 @@ $nav-topic-text-hover-color: #000;
 .topic {
 
     .topic-header {
-
+        margin-bottom: 10px;
         background-color: $topic-background;
-
+        opacity: 0.95;
         h1 {
 
             margin-top: 0px;
             margin-bottom: 0px;
-            padding-top: 10px;
+            padding-top: 5px;
             padding-bottom: 0px;
             color: $topic-header-text-color;
             font-size:35px;
-            font-weight:bold;
-            text-indent:15px;
+            font-weight:600;
+            text-indent:30px;
 
             @include media-query($on-palm) {
               padding-top: 0px;
@@ -439,10 +446,12 @@ $nav-topic-text-hover-color: #000;
               text-align:center;
               text-indent:0px;
             }
+
         }
 
         .topic-summary {
-            background-color: $topic-title-background;
+            background-color: #f6f8f7;
+
         }
 
         svg {
@@ -461,6 +470,7 @@ $nav-topic-text-hover-color: #000;
             margin-left: 10px;
             margin-right: 5px;
             list-style-type: square;
+            margin-bottom: 0px;
         }
 
         li {
@@ -479,11 +489,13 @@ $nav-topic-text-hover-color: #000;
         }
 
         p {
+            //border: 1px solid $topic-summary-border-color;
+            //border-right: 5px solid #73AD21;
+            background-color: #fff;
+            font-weight: bold;
             text-align: justify;
             padding: 10px 20px 20px 20px;
         }
-
-
 
     }
 
@@ -536,6 +548,7 @@ $nav-topic-text-hover-color: #000;
     .part-content {
 
         margin-bottom: 15px;
+        box-shadow: 0px 0px 10px $topic-title-background-shadow;
 
         .part-header {
             background-color:$topic-title-background;

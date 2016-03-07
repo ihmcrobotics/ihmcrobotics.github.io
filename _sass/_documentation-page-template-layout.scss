@@ -1,4 +1,38 @@
 
+
+
+
+
+
+
+/*
+    <body>
+
+    {% include header.html %}
+
+    <article class="post">
+
+        {% include tutorial-selector.html %}
+        <header class="post-header">
+            <h1 class="post-title">{{ page.title }}
+        </header>
+
+
+
+        <div class="documentation-content">
+            <div class="flex-container">
+                <div class="flex-side-bar">{% include side-bar-navigation.html %}</div>
+                <div class="flex-content">{{ content }}</div>
+
+            </div>
+        </div>
+
+    </article>
+*/
+
+
+
+
 /*
 ---
 layout: default
@@ -27,8 +61,9 @@ layout: default
 
 .documentation-content {
 
-   //background-color: #990099;
 
+    margin-left: 20px;
+    margin-right: 20px;
 
     min-height: 500px;
 
@@ -44,45 +79,40 @@ layout: default
 
     .flex-container {
 
-
-
          display: -webkit-flex;
          display: flex;
+
          justify-content: space-between;
          width: 100%;
 
 
        .flex-content {
 
-            align-self: flex-start;
-            padding-right:10px;
-            padding-left:10px;
-
-            margin-right:10px;
-            margin-left:10px;
-
             flex: 4;
 
             // DEBUG
             //background-color: #337799;
+
        }
+
 
        .flex-side-bar {
 
-            min-width: 180px;
-            max-width: 205px;
-
-           //DEBUG
-           //background-color: #337700;
-
+            flex: 1;
+            margin-left: 20px;
+            min-width: 240px;
+            max-width: 240px;
+            margin-bottom: 10px;
+            //background-color: #007700;
        }
+
 
         @include media-query($on-palm) {
 
           .flex-side-bar {
                display: none;
            }
-
         }
+
     }
 }

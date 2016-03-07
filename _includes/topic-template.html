@@ -6,7 +6,7 @@
     {% assign sub-category = path[3] %}
     {% assign topic = path[4] %}
 
-    {% assign summary = '' %}
+
     {% assign part-contents = '' %}
     {% assign table-of-contents = '' %}
 
@@ -50,7 +50,11 @@
                 {{ table-of-contents }}
             </ul>
         </div>
-        {{ summary }}
+        {% if summary %}
+        <p>
+            {{ summary }}
+        </p>
+        {% endif %}
     </div>
     {{ part-contents }}
 </div>

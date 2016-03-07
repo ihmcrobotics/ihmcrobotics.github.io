@@ -35,3 +35,4 @@ markdown: kramdown
 collections:
 - documentation
 - quick-start
+- overview
