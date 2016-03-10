@@ -1,60 +1,56 @@
+---
+
+layout: installation-page
+header-navigation-title: Quick Start
+title: Quick Start
+permalink: /quickstart/
+category: Main Pages
+order: 1
+
+---
 
 <div class="topic">
-
-    {% assign path = page.url | split:"/" %}
-    {% assign category = path[2] %}
-    {% assign sub-category = path[3] %}
-    {% assign topic = path[4] %}
-
-
     {% assign part-contents = '' %}
     {% assign table-of-contents = '' %}
 
-    {% assign sorted-pages = site.pages | sort: 'url' %}
+    {% assign sorted-pages = site.pages | sort: "order" %}
     {% for sorted-page in sorted-pages %}
-        {% assign path = sorted-page.url | split:"/" %}
-        {% if path[1] == "documentation" and path.size >= 6 and path[2] == category and path[3] == sub-category and path[4] == topic %}
-            {% if sorted-page.category == 'Summary' %}
-                {% capture summary %}{{ sorted-page.content }}{% endcapture %}
-            {% else %}
-                {% capture table-of-contents %}{{ table-of-contents }}
+        {% if sorted-page.category == 'quickStart' %}
+            {% capture table-of-contents %}{{ table-of-contents }}
                 <li>
                     <svg>
                         <rect width="8" height="8"/>
                     </svg>
                     <a href="#{{sorted-page.title}}"> {{ sorted-page.title }} </a>
                 </li>
-                {% endcapture %}
-                {% capture part-contents %}{{part-contents}}
+            {% endcapture %}
+            {% capture part-contents %}{{part-contents}}
                 <div class="part-content">
                     <span id="{{ sorted-page.title }}"> </span>
 
                     <div class="part-header">
-                        <h2> {{ sorted-page.title }}</h2>
+                        {% if sorted-page.full-title %}
+                            <h2> {{ sorted-page.full-title }}</h2>
+                        {% else %}
+                            <h2> {{ sorted-page.title }}</h2>
+                        {% endif %}
                     </div>
 
                     <div class="step-content">
                         {{ sorted-page.content }}
                     </div>
                 </div>
-                {% endcapture %}
-            {% endif %}
+            {% endcapture %}
         {% endif %}
     {% endfor %}
 
     <div class="topic-header">
-        <h1>{{page.title}}</h1>
         <div class="topic-summary">
             <ul>
                 <span>Contents:</span> <!--TODO ADD NUMBER OF PARTS -->
                 {{ table-of-contents }}
             </ul>
         </div>
-        {% if summary %}
-        <p>
-            {{ summary }}
-        </p>
-        {% endif %}
     </div>
     {{ part-contents }}
 </div>
