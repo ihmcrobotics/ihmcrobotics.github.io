@@ -1,8 +1,6 @@
 ---
 
-layout: documentation-page
 title: Installing Gradle on Ubuntu
-category: Documentation
 
 ---
 

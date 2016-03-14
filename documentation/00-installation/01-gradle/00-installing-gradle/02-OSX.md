@@ -1,10 +1,6 @@
 ---
 
-layout: documentation-page
-
 title: Installing Gradle on OS X
-
-category: Documentation
 
 ---
 
