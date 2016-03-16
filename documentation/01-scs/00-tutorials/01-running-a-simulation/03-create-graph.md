@@ -1,10 +1,12 @@
 ---
 
-title: Graph properties
+title: Graphing the Variables
 
 ---
-Click on the "New Graph" button under the graphs. This will create a new empty graph.
-Find q_rh (the angle of the robot's right hip) in the first variable panel on the left (labeled SpringFlamingo). Left click on it, which will highlight the variable. 
+SCS allows you to display 2D graphs of any variable in the simulation.
+
+1. Click on the `New Graph` button under the graphs section at the bottom of the GUI window. This will create a new empty graph.
+2. Find `q_leftHipPitch` (the pitch angle of the robot's left hip) in the variable panel on the left (labeled SpringFlamingo). Left click on it, which will highlight the variable. 
 Middle click on the new empty graph (labeled "Click to graph selected variable.") This will graph q_rh in that graph. Each graph can contain up to 4 variables. 
 Create some more new graphs, choose some more variables and place them in the graphs. Note that as more graphs are created, the others get smaller to accommodate them.
 Notice that the name and current value of each variable is underneath the graph it appears in. Ungraph some of the variables by clicking their name with the middle mouse button. 

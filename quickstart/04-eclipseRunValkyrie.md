@@ -33,7 +33,8 @@ Once your program launches you should see the SCS Splash Screen, followed by the
 
 ![Valkyrie Sim](/resources/images/quickstart/scsValkyrieStanding.png)
 
-To make Valkyrie walk, type "walk" in the Variable search field. Find the variable named "walk", and set it's value to "1.0". If Valkyrie does not start walking, click the `Simulate` button, and Valkyrie should begin the flat ground walking track script. Congratulations! Everything is installed correctly!
+
+<a name="walk"></a>To make Valkyrie walk, type "walk" in the Variable search field. Find the variable named "walk", and set it's value to "1.0". If Valkyrie does not start walking, click the `Simulate` button, and Valkyrie should begin the flat ground walking track script. Congratulations! Everything is installed correctly!
 
 ![Walking](/resources/images/quickstart/scsValkyrieWalking.png)
 
