@@ -13,7 +13,7 @@ The camera always looks at what is called the **Fix Point**.  This is a point in
 
 Play with moving the camera via the mouse until you are comfortable with it.
 
-You can also change the camera parameters by using the dialog accessed through Viewport->Camera Properties… from the menu bar.
+You can also change the camera parameters by using the dialog accessed through `Viewport->Camera Properties…` from the menu bar.
 
 ![Replay](/resources/images/scs-tutorials/scsCameraProps.png)
 
