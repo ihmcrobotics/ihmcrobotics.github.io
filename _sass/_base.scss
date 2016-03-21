@@ -290,62 +290,48 @@ pre {
 }
 
 
+//$code-background: #f6f8f7;
+$code-background: #EEE;
 
-/** COLLAPSE CONTENT
-
-override a checkbox
-
-
-
-.collapse-content [type=radio], .accordion [type=checkbox] {
-    display:none;
-}
-
-.collapse-content label {
-    display:block;
-    font-size:16px;
-    line-height:16px;
-    text-indent: 5px;
-    background:$nav-sub-category-background-color;
-    color:$nav-sub-category-text-color;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.collapse-content label:hover, .collapse-content [type=radio]:checked ~ label, .collapse-content [type=checkbox]:checked ~ label {
-
-    background:$nav-sub-category-background-hover-color;
-
-    color:$nav-sub-category-text-hover-color;
+/** COLLAPSE CONTENT **/
+summary:after
+{
+   content:" Code Snippet ";
+   font-weight:normal;
+   float: right;
+   margin-right: 10px;
 
 }
+summary
+{
+    font-weight:bold;
+    border-top: 1px dashed grey;
+    border-bottom: 1px dashed grey;
+    background-color: $code-background;
+}
 
-.collapse-content .content {
-    padding:0 10px;
-    overflow:hidden;
-    //border:1px solid #fff;
-    -webkit-transition: all .1s linear;
-    -moz-transition: all .1s linear;
+summary::-webkit-details-marker {
+ color: #00ACF3;
+ font-size: 125%;
+ margin-right: 2px;
+}
+summary:focus {
+	outline-style: none;
+}
+article > details > summary {
+	font-size: 28px;
+	margin-top: 16px;
+}
+details > p {
+	margin-left: 24px;
+}
+details details {
+	margin-left: 36px;
+}
+details details summary {
+	font-size: 16px;
 }
 
 
-.vertical [type=radio]:checked ~ label, [type=checkbox]:checked ~ label {
-    //border-bottom:0;
-}
 
-.vertical ul li label:hover {
-    //border:1px solid #542437;
-}
 
-.vertical ul li .content {
-    height:0px;
-    transition: all .1s linear;
-}
-
-.vertical [type=radio]:checked ~ label ~ .content, [type=checkbox]:checked ~ label ~ .content {
-    height:auto;
-    padding-top: 10px;
-
-}
-
-**/

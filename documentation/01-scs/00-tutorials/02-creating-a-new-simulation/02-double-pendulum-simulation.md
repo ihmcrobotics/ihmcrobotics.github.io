@@ -5,6 +5,8 @@ title: DoublePendulumSimulation.java
 1.Add a new class by going to File->New->Class on the menu. For the Class Name enter "DoublePendulumSimulation". For the package enter com.yobotics.exampleSimulations.doublePendulum. Click Finish.
 2. Fill in DoublePendulumSimulation as shown below:
 
+<details>
+<summary> Double Pendulum Simulation </summary>
 {% highlight java %}
 package us.ihmc.exampleSimulations.doublePendulum;
  
@@ -31,6 +33,7 @@ public class DoublePendulumSimulation
    }
 }
 {% endhighlight %}
+</details>
 
 1. When your simulation is run **(NOTE: You need to actually add the DoublePendulumRobot class first before you can run the above code)**, first the main method will be called.
 It creates a new DoublePendulumSimulation. In creating a DoublePendulumSimulation, a DoublePendulumRobot is first created, and then a SimulationConstructionSet object is created with that robot.
