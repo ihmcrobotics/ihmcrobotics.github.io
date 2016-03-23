@@ -18,7 +18,8 @@ In the new window that appears, select the Arguments tab and uncheck _'Use the -
  
 2.Fill in DoublePendulumRobot as shown below:
 
-
+<details>
+<summary> Double Pendulum Robot </summary>
 {% highlight java %}
 
 package us.ihmc.exampleSimulations.doublePendulum;
@@ -102,6 +103,7 @@ public class DoublePendulumRobot extends Robot
 }
 
 {% endhighlight %}
+</details>
 
 
 Let's go through DoublePendulumRobot one line at a time:
