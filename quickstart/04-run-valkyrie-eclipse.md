@@ -4,6 +4,7 @@ title: Run ValkyrieDemo
 full-title: Run ValkyrieDemo from Eclipse
 order: 4
 category: quickStart
+tab: Eclipse
 
 ---
 

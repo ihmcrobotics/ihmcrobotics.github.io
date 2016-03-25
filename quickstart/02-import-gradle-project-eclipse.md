@@ -1,10 +1,13 @@
 ---
 
-title: Import GradleProject into Eclipse
+title: Setup GradleProject in your IDE
 order: 2
 category: quickStart
+tab: Eclipse
 
 ---
+
+
 
 The Eclipse IDE for Java Developers Mars.1 or higher has the Buildship plugin pre-installed. Buildship is a tool that brings Gradle integration to the Eclipse IDE.
 
