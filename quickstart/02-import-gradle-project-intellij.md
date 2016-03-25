@@ -16,22 +16,23 @@ Gradle files are marked with ![icon gradle](/resources/images/quickstart/icon_gr
 
 In addition to this tutorial, you can find more information about Gradle and IntelliJ on [IntelliJ's website](https://www.jetbrains.com/help/idea/2016.1/getting-started-with-gradle.html). 
 
-At this point of the tutorial you can either chose to create a new Gradle Project or use Importing Project from Gradle model. 
+
+![note](/resources/images/attention-40.png) **NOTE: At this point of the tutorial you can either chose to create a new Gradle Project or use Importing Project from Gradle model.** 
 
 # Importing Project from Gradle Model
 
 On the main menu, select `File > Open`, from the dialog that opens select `build.gradle` file and click `OK`.  
-IntelliJ IDEA will import Gradle project even if the project was not opened or imported before.  
+![import build gradle project](/resources/images/quickstart/intellij/open-build-gradle.png)
 
-On the next page, select the model from which you want to import and click Next. If IntelliJ IDEA guessed what you are importing, then this page will be skipped.  
+Specify few settings before importing the project
+![import build gradle project](/resources/images/quickstart/intellij/import-project-from-gradle.png)
 
-On the next page of the wizard, specify the Gradle project settings and global Gradle settings and click Finish.  
-
-[IMAGE HERE]
-
+Wait few minutes IntelliJ IDEA will import Gradle project even if the project was not opened or imported before.  
+![downloading dependencies](/resources/images/quickstart/intellij/import-build-gradle.png)
 
 
-<!--Alternatively you can chose to create a new project and copy the content of your `build.gradle` script :  [Creating Gradle Project]() -->
+
+<!--Alternatively you can chose to create a new project and copy the content of your `build.gradle` script. -->
  <!---->
  <!--Select `File > New Project...` to open the Project Wizard.  -->
  <!--On the left pane select **Gradle**   -->

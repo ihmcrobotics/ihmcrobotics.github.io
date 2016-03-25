@@ -15,14 +15,14 @@ Once you have imported your build.gradle file and have a new project window open
 ![new project window](/resources/images/quickstart/intellij/new-project-view.png)
 
 
-# Update your project's list of dependencies
+# Check your project's list of dependencies
 
-On the upper right corner you should see a gradle logo, click on it to expand the "Gradle Projects" tool window then click on the refresh button.
+On the upper right corner you should see a Gradle logo, click on it to expand the "Gradle Projects" tool window 
 
 ![gradle menu window](/resources/images/quickstart/intellij/gradle-menu.png)
 
-Wait few minutes while libraries are automatically being downloaded from the remote repositories specified in your build.gradle script and linked to your project.   
-You should now see a full list of dependencies under the Dependencies folder. 
+You should see a full list of dependencies under the Dependencies folder.   
+These libraries have automatically been downloaded from the remote repositories specified in your build.gradle script and linked to your project.
 
 ![gradle menu dependencies loaded](/resources/images/quickstart/intellij/gradle-menu-dependencies-loaded.png) 
  
