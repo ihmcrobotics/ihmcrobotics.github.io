@@ -38,3 +38,10 @@ Double click on a variable name in one of the graphs. A Graph Properties Dialog 
 * To "Step" forward through the data, one point at a time, either go to `Run->Step Forward` on the menu, push the Step Forward button ![StepForward](/resources/images/scs-tutorials/scsStepForwardButton.png) or push the right arrow key on your keyboard after clicking in the graph. 
 * To "Step" backward through the data, one point at a time, either go to `Run->Step Backward` on the menu, push the Step Backward button ![StepBackward](/resources/images/scs-tutorials/scsStepBackwardButton.png), or push the left arrow key on your keyboard after clicking in the graph.
 * "Pan" the data by first zooming into a section and then clicking on the data with the right mouse button and dragging left and right. This will move the data that you are zoomed into.
+
+### New Graph Window
+
+Go to `Window->New Graph Window` to create a new window for graphs. The new graph window operates similarly to the graphs on the main window.  Here is an example of two variables in phase plot mode in a new Graph Window.
+
+![GraphWindow](/resources/images/scs-tutorials/scsGraphWindow.png)
+
