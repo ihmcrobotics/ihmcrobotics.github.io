@@ -2,7 +2,7 @@
 title: SimplePendulumRobot.java
 ---
 
-1. Now create a SimplePendulumRobot by adding a new class. For the class name, enter "SimplePendulumRobot". 
+
 
 <!--The pendulum will be stationary. You will shortly learn how to change its initial condition have it move.-->
 
@@ -15,44 +15,60 @@ title: SimplePendulumRobot.java
 <!--On Eclipse for OS X, select the project, _SimplePendulum_, click the drop down next to the run arrow and select _Run Configuration_. -->
 <!--In the new window that appears, select the Arguments tab and uncheck _'Use the -XstartOnFirstThread argument when launching with SWT'_.-->
 
+The robot we are going to build now is a simple pendulum.   
+*"A pendulum is a weight suspended from a pivot so that it can swing freely.
+When a pendulum is displaced sideways from its resting, equilibrium position, it is subject to a restoring force due to gravity that will accelerate it back toward the equilibrium position.
+When released, the restoring force combined with the pendulum's mass causes it to oscillate about the equilibrium position, swinging back and forth. 
+The time for one complete cycle, a left swing and a right swing, is called the period. The period depends on the length of the pendulum and also to a slight degree on the amplitude, the width of the pendulum's swing."*  
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Pendulum)
+
+In order to build this pendulum in SCS we'll use two objects: one Link and one Joint. 
+
+Link definition  
+Joint definition
  
-2.Fill in SimplePendulumRobot as shown below:
+
+In our case
+
+1. Now create a SimplePendulumRobot by adding a new class. For the class name, enter "SimplePendulumRobot". 
+2. Fill in SimplePendulumRobot.java as shown below:
 
 
 Let's go through SimplePendulumRobot one line at a time:
 
-## 1. Class declaration, Namespace, and Imports 
-<details>
-<summary> Constructor: SimplePendulumRobot() </summary>
+<!--## 1. Class declaration, Namespace, and Imports -->
+<!--<details open>-->
+<!--<summary> Constructor: SimplePendulumRobot() </summary>-->
 
-{% highlight java %}
-package us.ihmc.exampleSimulations.simplePendulum; 
+<!--{% highlight java %}-->
+<!--package us.ihmc.exampleSimulations.simplePendulum; -->
 
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
-import us.ihmc.robotics.Axis;
-import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
+<!--import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;-->
+<!--import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;-->
+<!--import us.ihmc.robotics.Axis;-->
+<!--import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;-->
 
-// These lines import all the classes from the SimulationConstructionSet Library.
-import us.ihmc.simulationconstructionset.Link;
-import us.ihmc.simulationconstructionset.PinJoint;
-import us.ihmc.simulationconstructionset.Robot;
+<!--// These lines import all the classes from the SimulationConstructionSet Library.-->
+<!--import us.ihmc.simulationconstructionset.Link;-->
+<!--import us.ihmc.simulationconstructionset.PinJoint;-->
+<!--import us.ihmc.simulationconstructionset.Robot;-->
 
-import javax.vecmath.Vector3d;
+<!--import javax.vecmath.Vector3d;-->
 
-{% endhighlight %}
-</details>
+<!--{% endhighlight %}-->
+<!--</details>-->
 
-* **package us.ihmc.exampleSimulations.SimplePendulum;** This line states which package this file is in. See a Java reference book for more information on packages.
-* **import us.ihmc.simulationconstructionset.*;** T
-* **import javax.vecmath.Vector3d;** This imports the vector math library functions that come with the Java3d extension. In particular, we will use Vector3d in creating this robot. 
-PLEASE Read the NOTE comment in the previous page.
-* **public class SimplePendulumRobot extends Robot** This line declares the class SimplePendulumRobot to be a public class that extends Robot. 
-The class Robot is included in the Simulation Construction Set and has built in graphics, dynamics, etc. Extending the class is an easy way to make a new type of robot, in this case a SimplePendulumRobot.
+<!--Make sure that your IDE automatically declared these imports-->
+<!--* **package us.ihmc.exampleSimulations.SimplePendulum;** This line states which package this file is in. See a Java reference book for more information on packages.-->
+<!--* **import us.ihmc.simulationconstructionset.*;** T-->
+<!--* **import javax.vecmath.Vector3d;** This imports the vector math library functions that come with the Java3d extension. In particular, we will use Vector3d in creating this robot. -->
+<!--PLEASE Read the NOTE comment in the previous page.-->
+<!--* **public class SimplePendulumRobot extends Robot** This line declares the class SimplePendulumRobot to be a public class that extends Robot. -->
+<!--The class Robot is included in the Simulation Construction Set and has built in graphics, dynamics, etc. Extending the class is an easy way to make a new type of robot, in this case a SimplePendulumRobot.-->
 
 
 ## 2. Define the parameters of the robot:
-<details>
+<details open>
 <summary> Constructor: SimplePendulumRobot() </summary>
 
 {% highlight java %}
@@ -91,7 +107,7 @@ Define the parameters of the robot
 lengths are expressed in meters (m), masses in kilograms (kg)
 
 ## 3. Define the constructor of the robot:
-<details>
+<details open>
 <summary> Constructor: SimplePendulumRobot() </summary>
 {% highlight java %}
    public SimplePendulumRobot()
@@ -135,7 +151,7 @@ Provide a reference
 
    
 ## 4. Create the Link for the SimplePendulumRobot:  
-<details>
+<details open>
 <summary> Method: pendulumLink() </summary>
 {% highlight java %}
     private Link pendulumLink()
@@ -183,7 +199,123 @@ Therefore, if the moment of inertia is set to zero, the link will be a point mas
 <details>
 <summary> Simple Pendulum Robot </summary>
 
-    FULL CODE HERE!
+    {% highlight java %}
+    package us.ihmc.exampleSimulations.simplePendulum;
+    
+    import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
+    import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+    import us.ihmc.robotics.Axis;
+    import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
+    import us.ihmc.simulationconstructionset.Link;
+    import us.ihmc.simulationconstructionset.PinJoint;
+    import us.ihmc.simulationconstructionset.Robot;
+    
+    import javax.vecmath.Vector3d;
+    
+    /**
+     *
+     * In this tutorial, lengths are expressed in meters (m), masses in kilograms (kg)
+     *
+     */
+    public class SimplePendulumRobot extends Robot
+    {
+       /*
+          1. Define the parameters of the robot
+       */
+       public static final double ROD_LENGTH = 1.0;
+       public static final double ROD_RADIUS = 0.01;
+       public static final double ROD_MASS = 0.01;
+    
+       public static final double FULCRUM_RADIUS = 0.02;
+    
+       public static final double BALL_RADIUS = 0.05;
+       public static final double BALL_MASS = 1.0;
+    
+       public static final double FULCRUM_MOMENT_OF_INERTIA_ABOUT_Y =
+             ROD_LENGTH * ROD_LENGTH * BALL_MASS; // I = mrˆ2 pendulum's resistance to changes to its rotation in  kg.mˆ2
+    
+       private double fulcrumInitialPositionDegrees = 90.0;
+       private double fulcrumInitialPositionRadians = fulcrumInitialPositionDegrees * Math.PI / 180.0;
+       private double fulcrumInitialVelocity = 0.0;
+    
+       private DoubleYoVariable tau_fulcrum, q_fulcrum, qd_fulcrum; // Respectively Torque, Position, Velocity
+    
+       /*
+          2. Define its constructor
+        */
+       public SimplePendulumRobot()
+       {
+          // a. Call parent class Robot constructor
+          super("pendulum");
+    
+          // b. Add a joint to the robot
+          PinJoint fulcrumPinJoint = new PinJoint("FulcrumPin", new Vector3d(0.0, 0.0, 1.5), this, Axis.Y);
+          fulcrumPinJoint.setInitialState(fulcrumInitialPositionRadians, fulcrumInitialVelocity);
+          fulcrumPinJoint.setLink(pendulumLink());
+          fulcrumPinJoint.setDamping(0.3);
+    
+          q_fulcrum = fulcrumPinJoint.getQ();
+          qd_fulcrum = fulcrumPinJoint.getQD();
+          tau_fulcrum = fulcrumPinJoint.getTau();
+    
+          this.addRootJoint(fulcrumPinJoint);
+       }
+    
+       /**
+        * Fulcrum's angular position in radians
+        * @return angular position in radians
+        */
+       public double getFulcrumAngularPosition()
+       {
+          return q_fulcrum.getDoubleValue();
+       }
+    
+       /**
+        * Fulcrum's angular velocity in radians per seconds
+        * @return angular velocity in radians per seconds
+        */
+       public double getFulcrumAngularVelocity()
+       {
+          return qd_fulcrum.getDoubleValue();
+       }
+    
+       /**
+        * Fulcrum's torque in Newton meter
+        * @return Torque in Newton meter
+        */
+       public double getFulcrumTorque()
+       {
+          return tau_fulcrum.getDoubleValue();
+       }
+    
+       public void setFulcrumTorque(double tau)
+       {
+          this.tau_fulcrum.set(tau);
+       }
+    
+       /**
+        * Create the first link for the DoublePendulumRobot.
+        */
+       private Link pendulumLink()
+       {
+          Link pendulumLink = new Link("PendulumLink");
+          pendulumLink.setMomentOfInertia(0.0, FULCRUM_MOMENT_OF_INERTIA_ABOUT_Y, 0.0);
+          pendulumLink.setMass(BALL_MASS);
+          pendulumLink.setComOffset(0.0, 0.0, -ROD_LENGTH);
+    
+          Graphics3DObject pendulumGraphics = new Graphics3DObject();
+          pendulumGraphics.addSphere(FULCRUM_RADIUS, YoAppearance.BlueViolet());
+          pendulumGraphics.translate(0.0, 0.0, -ROD_LENGTH);
+          pendulumGraphics.addCylinder(ROD_LENGTH, ROD_RADIUS, YoAppearance.Black());
+          pendulumGraphics.translate(0.0, 0.0, 0.0);
+          pendulumGraphics.addSphere(BALL_RADIUS, YoAppearance.Chartreuse());
+          pendulumLink.setLinkGraphics(pendulumGraphics);
+    
+          return pendulumLink;
+       }
+    
+    }
+    {% endhighlight %}
 
 
 </details>

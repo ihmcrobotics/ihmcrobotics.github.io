@@ -8,7 +8,6 @@ In this tutorial, we will create a simple simulation of a simple pendulum. By th
 
 1. Start your editor.  
 2. Create a new Java Project as described in the Quickstart guide using the Gradle build script below, and name it "SimulationConstructionSetTutorial". All exercises in this tutorial will be contained in this project.  
-    
     {% highlight groovy %}
     
     apply plugin: 'java'  
@@ -43,8 +42,8 @@ dependencies {
 {% endhighlight %}
 
 3. Make sure that the project dependencies have been correctly imported by expanding the "Gradle Projects" tool window. You should see a full list of dependencies under the Dependencies folder.   
-4. For our first tutorial we are going to learn how to create a simple simulation. In the java directory fo your project. under `src/main/java`, create a new package named `exampleSimulations.simplePendulum`. 
-5. Every simulation requires a Robot class and a Simulation class; Therefore in the `simplePendulum` package we will create a two new Java classes named **SimplePendulumRobot** and **SimplePendulumSimulation**.
+4. For our first tutorial we are going to learn how to create a simple simulation. In the java directory of your project under `src/main/java`, create a new package named `exampleSimulations.simplePendulum`. 
+5. Every simulation requires a Robot class and a Simulation class; Therefore in the `simplePendulum` package we will create two new Java classes named **SimplePendulumRobot** and **SimplePendulumSimulation**.
 
 
 
