@@ -56,6 +56,8 @@ $nav-topic-background-hover-color: $nav-accordion-background;
 $nav-topic-text-color: #777;
 $nav-topic-text-hover-color: #000;
 
+$tabs-base-color: lighten($nav-category-background-color, 5);
+$tabs-text-color: $nav-category-text-color;
 
 /**
     NAVIGATION BAR
@@ -547,7 +549,6 @@ $nav-topic-text-hover-color: #000;
 
     .part-content {
 
-        margin-bottom: 15px;
         box-shadow: 0px 0px 10px $topic-title-background-shadow;
 
         .part-header {
@@ -579,7 +580,7 @@ $nav-topic-text-hover-color: #000;
             background-color:$topic-content-background;
 
             margin-top: 0px;
-            margin-bottom: 0px;
+            margin-bottom: 15px;
 
             padding-top: 10px;
             padding-bottom: 10px;
@@ -654,73 +655,65 @@ $nav-topic-text-hover-color: #000;
 }
 
 
-
-
 /**
     TABS
-    Not satisfying solution
 **/
 
-$background: #9b59b6;
-$tabs-base-color: #8e44ad;
-
 .tabs {
-  //width: 650px;
-  //float: none;
+  float: none;
   list-style: none;
   position: relative;
-  margin: 10px 0 0 10px;
-  text-align: left;
-  li {
-    float: left;
-    display: block;
-  }
+
   input[type="radio"] {
-   display: none;
+    display: none;
   }
+
+  [id^="tab"]:checked + label {
+      background: darken($tabs-base-color, 15);
+  }
+
   label {
-    display: block;
-    padding: 14px 21px;
-    border-radius: 2px 2px 0 0;
-    font-size: 20px;
+    color: $tabs-text-color;
+    display: inline;
+    padding: 5px 5px;
+    margin-right: 5px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 25px;
     font-weight: normal;
-    //text-transform: uppercase;
     background: $tabs-base-color;
     cursor: pointer;
     position: relative;
-    top: 4px;
-   // @include transition(all 0.2s ease-in-out);
+    top: 1px;
     &:hover {
       background: darken($tabs-base-color, 10);
     }
   }
+
+  /* Styling the Box */
   .tab-content{
-    //z-index: 2;
     display: none;
-    //overflow: hidden;
     width: 100%;
     font-size: 17px;
     line-height: 25px;
-    padding: 25px;
-    position: absolute;
-    top: 53px;
-    left: 0;
-    background: darken($tabs-base-color, 15);
+    margin-top: 0px;
   }
-  //The Magic
-  [id^="tab"]:checked + label {
-    top: 0;
-    padding-top: 17px;
-    background: darken($tabs-base-color, 15);
-  }
-  [id^="tab"]:checked ~ [id^="tab-content"] {
-    display: block;
+
+  #tab1:checked ~ #tab1-content,
+  #tab2:checked ~ #tab2-content,
+  #tab3:checked ~ #tab3-content,
+  #tab4:checked ~ #tab4-content,
+  #tab5:checked ~ #tab5-content,
+  #tab6:checked ~ #tab6-content,
+  #tab7:checked ~ #tab7-content,
+  #tab8:checked ~ #tab8-content,
+  #tab9:checked ~ #tab9-content,
+  #tab10:checked ~ #tab10-content,
+  #tab11:checked ~ #tab11-content,
+  #tab12:checked ~ #tab12-content,
+  #tab13:checked ~ #tab13-content,
+  #tab14:checked ~ #tab14-content,
+  #tab15:checked ~ #tab15-content,
+  #tab16:checked ~ #tab16-content{
+  	display: block
   }
 }
-
-
-
-
-
-
-

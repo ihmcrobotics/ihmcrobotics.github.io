@@ -9,114 +9,154 @@ order: 1
 
 ---
 
-<div class="topic">
-    {% assign part-contents = '' %}
-    {% assign table-of-contents = '' %}
-    {% assign current-part-title = ''%}
-    {% assign tabbed-part = ''%}
+<!--<div class="tabs">-->
+<!--<input type="radio" name="tab" class="tab" id="tab1" checked/>-->
+<!--<label for="tab1">This is a Really long Tab Name (1)</label>-->
+<!--<input type="radio" name="tab" class="tab" id="tab2"/>-->
+<!--<label for="tab2">This is the 2nd really long tab name</label>-->
+<!--<input type="radio" name="tab" class="tab" id="tab3"/>-->
+<!--<label for="tab3">Finally, this is the longest tab name of them all!!</label>-->
+<!--<br>-->
 
-    {% assign sorted-pages = site.pages | sort: "order" %}
-    {% for sorted-page in sorted-pages %}
-        {% if sorted-page.category == 'quickStart' %}
+<!--<div id="tab1-content" class="tab-content">-->
+<!--<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>-->
+<!--</div>-->
 
+<!--<div id="tab2-content" class="tab-content">-->
+<!--<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla?</p>-->
+<!--</div>-->
 
-            <!-- Not the first section, but start of new section, need to close previous section if it was tabbed -->
-            {% if current-part-title != '' and current-part-title != sorted-page.title %}
-                {% if tabbed-part != '' %}
+<!--<div id="tab3-content" class="tab-content">-->
+<!--<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,..."</p>-->
+<!--</div>-->
 
-                    {% assign tabbed-part = '' %}
-                    <!-- closing tab section -->
-                    {% capture part-contents %}{{part-contents}}
-                    </div>
-                    {% endcapture %}
+<!--</div>-->
+
+{% assign part-contents = '' %}
+{% assign table-of-contents = '' %}
+{% assign current-part-title = ''%}
+{% assign tabbed-part = ''%}
+{% assign tabs = '' %}
+
+{% assign sorted-pages = site.pages | sort: "order" %}
+{% for sorted-page in sorted-pages %}
+    {% if sorted-page.category == 'quickStart' %}
+
+        <!--Continuing a section with tabs-->
+        {% if current-part-title == sorted-page.title and sorted-page.tab %}
+            {% unless tabs contains sorted-page.tab %}
+                {% capture tabs %}{{tabs}}-|-{{sorted-page.tab}}{% endcapture %}
+            {% endunless %}
+            <!-- Find the index of this tab in the tabs string -->
+            {% assign tab-labels = tabs | split:"-|-" %}
+            {% assign tab-index = '1' %}
+            {% for label in tab-labels %}
+                {% if label == sorted-page.tab %}
+                    {% assign tab-index = forloop.index0 %}
                 {% endif %}
-            {% endif %}
+            {% endfor %}
+            {% capture part-contents %}{{part-contents}}
+                <div id="tab{{tab-index}}-content" class="part-content tab-content">
+                    <div class="step-content">
+                        {{ sorted-page.content }}
+                    </div>
+                </div>
+            {% endcapture %}
+        {% endif %}
 
-            <!--Continuing a section with tabs-->
-            {% if current-part-title == sorted-page.title and sorted-page.tab %}
+        <!-- Starting a new section -->
+        {% if current-part-title != sorted-page.title %}
+            {% assign current-part-title = sorted-page.title %}
+            {% capture table-of-contents %}{{ table-of-contents }}
+                <li>
+                    <svg>
+                        <rect width="8" height="8"/>
+                    </svg>
+                    <a href="#{{sorted-page.title}}"> {{ sorted-page.title }} </a>
+                </li>
+            {% endcapture %}
+
+            {% capture part-contents %}{{part-contents}}
+                <div class="part-content">
+                    <span id="{{ sorted-page.title }}"> </span>
+
+                    <div class="part-header">
+                        {% if sorted-page.full-title %}
+                            <h2> {{ sorted-page.full-title }}</h2>
+                        {% else %}
+                            <h2> {{ sorted-page.title }}</h2>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endcapture %}
+
+            <!--Starting a new section with details-->
+            {% if sorted-page.tab %}
+                {% assign tabbed-part = "Tabbed" %}
+                {% unless tabs contains sorted-page.tab %}
+                    {% capture tabs %}{{tabs}}-|-{{sorted-page.tab}}{% endcapture %}
+                {% endunless %}
+                <!-- Find the index of this tab in the tabs string -->
+                {% assign tab-labels = tabs | split:"-|-" %}
+                {% assign tab-index = '1' %}
+                {% for label in tab-labels %}
+                    {% if label == sorted-page.tab %}
+                        {% assign tab-index = forloop.index0 %}
+                    {% endif %}
+                {% endfor %}
+                <!-- Now start the tab-content section here. -->
                 {% capture part-contents %}{{part-contents}}
-                        <details class="collapsible-topic" open >
-                            <summary> {{sorted-page.tab}} </summary>
-                                {{ sorted-page.content }}
-                        </details>
-
+                    <div id="tab{{tab-index}}-content" class="part-content tab-content">
+                        <div class="step-content">
+                            {{ sorted-page.content }}
+                        </div>
+                    </div>
                 {% endcapture %}
-            {% endif %}
-
-
-            <!-- Starting a new section with no tabs -->
-           {% if current-part-title != sorted-page.title %}
-
-                {% assign current-part-title = sorted-page.title %}
-
-                {% capture table-of-contents %}{{ table-of-contents }}
-                    <li>
-                        <svg>
-                            <rect width="8" height="8"/>
-                        </svg>
-                        <a href="#{{sorted-page.title}}"> {{ sorted-page.title }} </a>
-                    </li>
-                {% endcapture %}
-
-
-
+            {% else %}
                 {% capture part-contents %}{{part-contents}}
                     <div class="part-content">
-                        <span id="{{ sorted-page.title }}"> </span>
-
-                        <div class="part-header">
-                            {% if sorted-page.full-title %}
-                                <h2> {{ sorted-page.full-title }}</h2>
-                            {% else %}
-                                <h2> {{ sorted-page.title }}</h2>
-                            {% endif %}
+                        <div class="step-content">
+                            {{ sorted-page.content }}
                         </div>
+                    </div>
                 {% endcapture %}
-
-                <!--Starting a new section with details-->
-                {% if sorted-page.tab %}
-                        {% assign tabbed-part = "Tabbed" %}
-                    {% capture part-contents %}{{part-contents}}
-
-                        <details class="collapsible-topic" >
-                            <summary> {{sorted-page.tab}} </summary>
-                                {{ sorted-page.content }}
-                        </details>
-
-                    {% endcapture %}
-                {% else %}
-                    {% capture part-contents %}{{part-contents}}
-                            <div class="step-content">
-                                {{ sorted-page.content }}
-                            </div>
-                        </div>
-                    {% endcapture %}
-                {% endif %}
-
-
             {% endif %}
-
-
-
         {% endif %}
-    {% endfor %}
+    {% endif %}
+{% endfor %}
 
-    <!-- last section, need to close previous section if it was tabbed -->
-    {% if current-part-title != '' and tabbed-part != '' %}
-        <!-- closing tab section -->
-        {% capture part-contents %}{{part-contents}}
-        </div>
-        {% endcapture %}
+<div class="topic">
+    <!-- Show the Tab Options here if they exist -->
+    {% if tabs != '' %}
+    <div class="tabs">
+        {% assign tab-labels = tabs | split:"-|-" %}
+        {% for label in tab-labels %}
+            {% if forloop.index0 != 0 %}
+                {% if forloop.index0 == 1 %}
+                    {% assign checked = ' checked' %}
+                {% else %}
+                    {% assign checked = '' %}
+                {% endif %}
+        <input type="radio" name="tab" class="tab" id="tab{{forloop.index0}}"{{checked}}/>
+        <label for="tab{{forloop.index0}}">{{label}}</label>
+            {% endif %}
+        {% endfor %}
+        <br>
+        <br>
     {% endif %}
 
-
-    <div class="topic-header">
-        <div class="topic-summary">
-            <ul>
-                <span>Contents:</span> <!--TODO ADD NUMBER OF PARTS -->
-                {{ table-of-contents }}
-            </ul>
+        <div class="topic-header">
+            <div class="topic-summary">
+                <ul>
+                    <span>Contents:</span>
+                    {{ table-of-contents }}
+                </ul>
+            </div>
         </div>
-    </div>
+
     {{ part-contents }}
+
+    {% if tabbed-part != '' %}
+    </div>
+    {% endif %}
 </div>
