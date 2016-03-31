@@ -294,6 +294,8 @@ pre {
 $code-background: #EEE;
 
 /** COLLAPSE CONTENT **/
+
+
 summary:after
 {
    content:" Code Snippet ";
@@ -302,6 +304,7 @@ summary:after
    margin-right: 10px;
 
 }
+
 summary
 {
     font-weight:bold;
@@ -313,7 +316,7 @@ summary
 summary::-webkit-details-marker {
  color: #00ACF3;
  font-size: 125%;
- margin-right: 2px;
+ margin-right: 12px;
 }
 summary:focus {
 	outline-style: none;
@@ -326,11 +329,16 @@ details > p {
 	margin-left: 24px;
 }
 details details {
-	margin-left: 36px;
+	//margin-left: 36px;
 }
 details details summary {
 	font-size: 16px;
 }
+
+
+
+
+
 
 
 

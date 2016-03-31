@@ -12,37 +12,103 @@ order: 1
 <div class="topic">
     {% assign part-contents = '' %}
     {% assign table-of-contents = '' %}
+    {% assign current-part-title = ''%}
+    {% assign tabbed-part = ''%}
 
     {% assign sorted-pages = site.pages | sort: "order" %}
     {% for sorted-page in sorted-pages %}
         {% if sorted-page.category == 'quickStart' %}
-            {% capture table-of-contents %}{{ table-of-contents }}
-                <li>
-                    <svg>
-                        <rect width="8" height="8"/>
-                    </svg>
-                    <a href="#{{sorted-page.title}}"> {{ sorted-page.title }} </a>
-                </li>
-            {% endcapture %}
-            {% capture part-contents %}{{part-contents}}
-                <div class="part-content">
-                    <span id="{{ sorted-page.title }}"> </span>
 
-                    <div class="part-header">
-                        {% if sorted-page.full-title %}
-                            <h2> {{ sorted-page.full-title }}</h2>
-                        {% else %}
-                            <h2> {{ sorted-page.title }}</h2>
-                        {% endif %}
-                    </div>
 
-                    <div class="step-content">
-                        {{ sorted-page.content }}
+            <!-- Not the first section, but start of new section, need to close previous section if it was tabbed -->
+            {% if current-part-title != '' and current-part-title != sorted-page.title %}
+                {% if tabbed-part != '' %}
+
+                    {% assign tabbed-part = '' %}
+                    <!-- closing tab section -->
+                    {% capture part-contents %}{{part-contents}}
                     </div>
-                </div>
-            {% endcapture %}
+                    {% endcapture %}
+                {% endif %}
+            {% endif %}
+
+            <!--Continuing a section with tabs-->
+            {% if current-part-title == sorted-page.title and sorted-page.tab %}
+                {% capture part-contents %}{{part-contents}}
+                        <details class="collapsible-topic" open >
+                            <summary> {{sorted-page.tab}} </summary>
+                                {{ sorted-page.content }}
+                        </details>
+
+                {% endcapture %}
+            {% endif %}
+
+
+            <!-- Starting a new section with no tabs -->
+           {% if current-part-title != sorted-page.title %}
+
+                {% assign current-part-title = sorted-page.title %}
+
+                {% capture table-of-contents %}{{ table-of-contents }}
+                    <li>
+                        <svg>
+                            <rect width="8" height="8"/>
+                        </svg>
+                        <a href="#{{sorted-page.title}}"> {{ sorted-page.title }} </a>
+                    </li>
+                {% endcapture %}
+
+
+
+                {% capture part-contents %}{{part-contents}}
+                    <div class="part-content">
+                        <span id="{{ sorted-page.title }}"> </span>
+
+                        <div class="part-header">
+                            {% if sorted-page.full-title %}
+                                <h2> {{ sorted-page.full-title }}</h2>
+                            {% else %}
+                                <h2> {{ sorted-page.title }}</h2>
+                            {% endif %}
+                        </div>
+                {% endcapture %}
+
+                <!--Starting a new section with details-->
+                {% if sorted-page.tab %}
+                        {% assign tabbed-part = "Tabbed" %}
+                    {% capture part-contents %}{{part-contents}}
+
+                        <details class="collapsible-topic" >
+                            <summary> {{sorted-page.tab}} </summary>
+                                {{ sorted-page.content }}
+                        </details>
+
+                    {% endcapture %}
+                {% else %}
+                    {% capture part-contents %}{{part-contents}}
+                            <div class="step-content">
+                                {{ sorted-page.content }}
+                            </div>
+                        </div>
+                    {% endcapture %}
+                {% endif %}
+
+
+            {% endif %}
+
+
+
         {% endif %}
     {% endfor %}
+
+    <!-- last section, need to close previous section if it was tabbed -->
+    {% if current-part-title != '' and tabbed-part != '' %}
+        <!-- closing tab section -->
+        {% capture part-contents %}{{part-contents}}
+        </div>
+        {% endcapture %}
+    {% endif %}
+
 
     <div class="topic-header">
         <div class="topic-summary">

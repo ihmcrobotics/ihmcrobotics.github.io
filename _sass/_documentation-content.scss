@@ -614,3 +614,113 @@ $nav-topic-text-hover-color: #000;
     }
 
 }
+
+/*
+    Collapsible Topic
+*/
+
+
+.collapsible-topic
+{
+    background-color: $topic-content-background;
+
+    h1
+    {
+        margin-left:24px;
+    }
+
+    summary:after
+    {
+       content:" Topic Content";
+       font-weight:normal;
+       float: right;
+       margin-right: 10px;
+    }
+
+    summary
+    {
+        font-weight:bold;
+        border-top: 1px dashed grey;
+        border-bottom: 1px dashed grey;
+        background-color: $topic-title-background;
+    }
+
+    summary::-webkit-details-marker {
+     color: #99CC33;
+     font-size: 125%;
+     margin-right: 10px;
+    }
+
+}
+
+
+
+
+/**
+    TABS
+    Not satisfying solution
+**/
+
+$background: #9b59b6;
+$tabs-base-color: #8e44ad;
+
+.tabs {
+  //width: 650px;
+  //float: none;
+  list-style: none;
+  position: relative;
+  margin: 10px 0 0 10px;
+  text-align: left;
+  li {
+    float: left;
+    display: block;
+  }
+  input[type="radio"] {
+   display: none;
+  }
+  label {
+    display: block;
+    padding: 14px 21px;
+    border-radius: 2px 2px 0 0;
+    font-size: 20px;
+    font-weight: normal;
+    //text-transform: uppercase;
+    background: $tabs-base-color;
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+   // @include transition(all 0.2s ease-in-out);
+    &:hover {
+      background: darken($tabs-base-color, 10);
+    }
+  }
+  .tab-content{
+    //z-index: 2;
+    display: none;
+    //overflow: hidden;
+    width: 100%;
+    font-size: 17px;
+    line-height: 25px;
+    padding: 25px;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    background: darken($tabs-base-color, 15);
+  }
+  //The Magic
+  [id^="tab"]:checked + label {
+    top: 0;
+    padding-top: 17px;
+    background: darken($tabs-base-color, 15);
+  }
+  [id^="tab"]:checked ~ [id^="tab-content"] {
+    display: block;
+  }
+}
+
+
+
+
+
+
+

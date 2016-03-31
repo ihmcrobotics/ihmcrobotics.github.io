@@ -1,10 +1,10 @@
 ---
 
 title: Create the ValkyrieDemo Class
-full-title: Create the ValkyrieDemo Class in Your Eclipse Project
+full-title: Create the ValkyrieDemo Class in Your Project
 order: 3
 category: quickStart
-
+tab: Eclipse
 ---
 
 # Open the Java Perspective
