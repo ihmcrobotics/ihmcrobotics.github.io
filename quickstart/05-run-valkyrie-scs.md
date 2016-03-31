@@ -16,7 +16,7 @@ Once your program launches you should see the SCS Splash Screen, followed by the
 
 ![Walking](/resources/images/quickstart/scsValkyrieWalking.png)
 
-If the simulation 'crashes', you will need to quit it and restart from Eclipse.
+If the simulation 'crashes', you will need to quit it and restart from your IDE.
 
 ![Crashing](/resources/images/quickstart/scsValkyrieCrashing.png)
 

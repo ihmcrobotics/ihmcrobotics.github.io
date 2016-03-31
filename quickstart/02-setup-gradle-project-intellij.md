@@ -1,6 +1,7 @@
 ---
 
-title: Setup GradleProject in your IDE
+title: Setup GradleProject In Your IDE
+full-title: Setup GradleProject In Your IDE
 order: 2
 category: quickStart
 tab: IntelliJ

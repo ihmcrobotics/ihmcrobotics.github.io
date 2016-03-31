@@ -1,7 +1,7 @@
 ---
 
-title: Create the ValkyrieDemo Class
-full-title: Create the ValkyrieDemo Class In Your Project
+title: Create The ValkyrieDemo Class
+full-title: Create The ValkyrieDemo Class In Your Project
 order: 3
 category: quickStart
 tab: IntelliJ
