@@ -1,11 +1,17 @@
 ---
 
-title: Take Snapshots
+title: Export Snapshots and Video of the 3D View
 
 ---
 
-Save a snapshot of the 3D graphics image in jpeg format by going to File->Export Snapshot on the menu or by clicking on the Export Snapshot button worddav5744dac7361cf213ff3810f8189a8aad.png [imported from a Word document] . 
-Enter the directory and name of the file. Make sure to end it with either a ".jpg" or ".jpeg" extension. Find the file and load it into an image viewer (double clicking on the file should do the trick) to see that it was saved.
-Save a QuickTime movie of the simulation by going to File->Export Movie on the menu or by clicking on the Export Movie button worddavef87418006da471a7874143e79ee03d3.png [imported from a Word document] . 
-Enter the directory and name of the file. Make sure to end it with a ".mov" extension. Creating the movie may take a few minutes depending on how long of a window was selected with the in point and out point.
-After the movie is finished, find it and load it using the Apple QuickTime viewer (double clicking on the file should do the trick).
+### Export a JPEG Image
+
+To save a snapshot of the 3D graphics view as an image in jpeg format, select `File->Export Snapshot` from the menu or click on the Export Snapshot button ![ExportSnapshot](/resources/images/scs-tutorials/scsExportSnapshotButton.png). Enter the directory and name of the file. Make sure to end it with either a ".jpg" or ".jpeg" extension.
+
+### Export a Video
+
+To save a QuickTime movie of the 3D view which plays from the data buffer in point to the out point, select `File->Export Movie` on the menu or click on the Export Movie button ![ExportMovie](/resources/images/scs-tutorials/scsExportMovieButton.png). If this is the first time exporting video you will have to accept the OpenH264 Video Codec License to proceed.
+
+![ExportVideoDialog](/resources/images/scs-tutorials/scsExportVideoDialog.png)
+
+From the Export Video dialog, choose the output dimensions, Frame Rate, Playback Rate, and then press the `Export` button.  Next, from the Save dialog, select a directory and enter the name of the file. Make sure to end it with a ".mov" extension. Creating the movie may take a few minutes depending on how long of a window was selected with the in point and out point.

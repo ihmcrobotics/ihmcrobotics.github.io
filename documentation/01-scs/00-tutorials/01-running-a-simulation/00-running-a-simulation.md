@@ -14,7 +14,7 @@ This tutorial assumes that you have followed the [Quick Start] guide and have th
 3. After letting the simulation run for a few seconds, stop it by either going to `Run->Stop` on the menu bar or by pushing the stop button ![Stop](/resources/images/scs-tutorials/scsStopButton.png). The simulation should now stop.
 4. Replay the simulated data by either going to `Run->Play` on the menu or by pushing the play button ![Replay](/resources/images/scs-tutorials/scsReplayButton.png) . The simulated data will be played back in the 3D graphics window in real time.
 
-* Note that if you replay the Valkyrie simulation then you will have to restart SCS inorder to simulate it again.
+* Note that if you replay the Valkyrie simulation, in order to simulate again without restarting, choose `Run->Goto Out Point` from the menu or press the Goto Out Point toolbar button ![GotoOut](/resources/images/scs-tutorials/scsGotoOutPointButton.png).
 
 [Quick Start]: /quickstart
 [Figure 1]: #figure1
