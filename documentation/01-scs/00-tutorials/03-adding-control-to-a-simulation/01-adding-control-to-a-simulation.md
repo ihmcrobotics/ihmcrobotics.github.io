@@ -2,6 +2,42 @@
 title: Adding control to a simulation
 ---
 
+
+
+
+
+
+/*
+ Some joint state variables
+*/
+private DoubleYoVariable tau_fulcrum, q_fulcrum, qd_fulcrum; // Respectively Torque, Position, Velocity
+
+![note](/resources/images/attention-40.png) **Note on naming:** *By convention, adding a prefix of 'q', 'qd', and 'tau', refers to the joint angle, joint velocity, and joint torque, respectively.
+E.g.  'q_FulcrumPin',  'qd_FulcrumPin', 'tau_FulcrumPin'.*
+
+
+      q_fulcrum = fulcrumPinJoint.getQ();
+      qd_fulcrum = fulcrumPinJoint.getQD();
+      tau_fulcrum = fulcrumPinJoint.getTau();
+
+
+* **Access joint properties:**  
+`q_fulcrum = fulcrumPinJoint.getQ();`  
+`qd_fulcrum = fulcrumPinJoint.getQD();`  
+`tau_fulcrum = fulcrumPinJoint.getTau();`  
+Hold references to some properties of this joint using DoubleYoVariables
+
+<!--![concept](/resources/images/concept-50.png) **Concept: YoVariables**  -->
+
+### YoVariables
+
+YoVariables: short definition + typical use
+
+
+
+
+
+
 In this tutorial, we will apply a control algorithm for balancing the double pendulum in the previous example.
 We will treat the double pendulum as an "Acrobot" in which the first joint (shoulder) is a free bearing and thus can apply no torque. 
 
