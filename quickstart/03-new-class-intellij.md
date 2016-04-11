@@ -8,39 +8,41 @@ tab: IntelliJ
 
 ---
 
-# Open the Java Perspective
-
-Once you have imported your build.gradle file and have a new project window open. Your "Project View" should look like that:
+Once GradleProject has been imported into IntelliJ IDEA, the project window should open.
 
 ![new project window](/resources/images/quickstart/intellij/new-project-view.png)
 
+# Open the "Gradle projects" Tool Window
 
-# Check your project's list of dependencies
+#### 1. Hide/Show Tools tabs
 
-On the upper right corner you should see a Gradle logo, click on it to expand the "Gradle Projects" tool window 
+In the lower left corner of the project window you will see the Hide/Show tools icon.  If you do not see the `Gradle` tab on the right select this icon to show it.
 
-![gradle menu window](/resources/images/quickstart/intellij/gradle-menu.png)
+#### 2. Open the "Gradle projects" Tool Window
 
-You should see a full list of dependencies under the Dependencies folder.   
-These libraries have automatically been downloaded from the remote repositories specified in your build.gradle script and linked to your project.
+On the right of the project window you should see a Gradle tab, select it to expand the "Gradle projects" tool window.
 
-![gradle menu dependencies loaded](/resources/images/quickstart/intellij/gradle-menu-dependencies-loaded.png) 
- 
+#### 3. List Gradle Dependencies
 
-# Create a New Class 
+Select the triangle next to `Dependencies` in the "Gradle projects" tool window.  You should now see a full list of dependencies. These libraries have been automatically downloaded from the remote repositories specified in your build.gradle script and linked to your project.
 
-Java classes are organized by "packages". Many IHMC packages start with `us.ihmc`, you can use your organization, a personal website, or whatever you'd like as your package. 
-Here we're going to use `us.ihmc.demo` as the package, and `ValkyrieDemo` as the name of the class. 
+You can hide/show the "Gradle projects" tool window by selecting the `Gradle` tab on the right.
 
-In the project tool window, right click on the `java` folder, and create a new package.
- 
-![create new package](/resources/images/quickstart/intellij/create-new-package.png)
+# Create a New Class to Run the Valkyrie Simulation
 
-When this new package is created, right click on it and select `new > Java class`, name it `ValkyrieDemo`   
+Java classes are organized by "packages". Many IHMC packages start with `us.ihmc`, you can use your organization, a personal website, or whatever you'd like as your package. Here we're going to use `us.ihmc.demo` as the package, and `ValkyrieDemo` as the name of the class. 
+
+In the project tool window on the right, right click on the `java` folder, and select `Java Class` under the `New` menu.
+
+![create new class](/resources/images/quickstart/intellij/select-new-java-class.png)
+
+Enter `us.ihmc.demo.ValkyrieDemo` for the `Name` field and select `OK`.
 
 ![create new class](/resources/images/quickstart/intellij/create-new-class.png)
 
-Fill in the class to look like the following:
+# ValkyrieDemo Class
+
+You should now see a skeleton of your ValkyrieDemo class.  Replace the skeleton text with the following java source code:
 
 {% highlight java %}
 package us.ihmc.demo;

@@ -1,7 +1,7 @@
 ---
 
-title: Run Configuration ValkyrieDemo
-full-title: Run Configuration ValkyrieDemo
+title: ValkyrieDemo Run Configuration
+full-title: Create the Run Configuration for ValkyrieDemo
 order: 4
 category: quickStart
 tab: IntelliJ
@@ -16,17 +16,20 @@ Right click on `ValkyrieDemo.java` in your project window, and select  `Run 'Val
 
 ![NewRunConfiguration](/resources/images/quickstart/intellij/run-valkyrie-demo.png)
 
-Quit the java application window and select `Edit Configurations...` from the menu bar at the top.
+The simulation may or may not start up depending on your system, but for now quit the java application window or select the `Stop` button in thelower right.
 
+![NewRunConfiguration](/resources/images/quickstart/intellij/stop-valkyrie-demo.png)
 
-![RunConfigurationVMSettings](/resources/images/quickstart/intellij/edit-run-configuration-menu.png)
+# Edit the Run Configuration
 
-
-Make sure that "ValkyrieDemo" name is selected under "Application".  
-Choose the `Configuration` tab and add `-Xms4096m -Xmx4096m` to the `VM Options:` text area.  Now click `Apply` to save your configuration.  
+Now select `Run/Edit Configurations...` from the menu to open the `Run/Debug Configurations` dialog.
 
 ![RunConfigurationVMSettings](/resources/images/quickstart/intellij/run-configuration.png)
 
-You can now click ![RunConfigurationVMSettings](/resources/images/quickstart/intellij/run-icon.png) from the menu bar at the top to run the simulation.
+Make sure that `ValkyrieDemo` is selected under `Application`.  Now choose the `Configuration` tab, then in the `VM Options:` text field enter `-Xms4096m -Xmx4096m`.  Finally, select `OK` to save your configuration and close the dialog.
+
+# Run the ValkyrieDemo Simulation
+
+You can now run the ValkyrieDemo simulation by right-clicking `ValkyrieDemo.java` and selecting `Run 'ValkyrieDemo.main()'` or by selecting the run icon ![RunConfigurationVMSettings](/resources/images/quickstart/intellij/run-icon.png) from the menu bar at the top to run the simulation while `ValkyrieDemo` is the currently selected run configuration.
 
 

@@ -1,35 +1,38 @@
 ---
 
-title: Setup GradleProject In Your IDE
-full-title: Setup GradleProject In Your IDE
+title: Import GradleProject
+full-title: Import GradleProject
 order: 2
 category: quickStart
 tab: IntelliJ
 
 ---
 
-IntelliJ IDEA supports Gradle SDK version 1.2. and later.
-The Gradle plugin is bundled with IntelliJ IDEA and activated by default. 
+# Gradle Plugin Support
 
-If the plugin is not activated, enable it on the `Plugins` tab of the `File > Settings` (Windows and Ubuntu) or `IntelliJ IDEA > Preferences`(OSX) menu.
+IntelliJ IDEA supports Gradle SDK version 1.2 and later, and the Gradle plugin is bundled with IntelliJ IDEA and activated by default.  If the plugin is not activated, enable it on the `Plugins` tab of the `File > Settings` (Windows and Ubuntu) or `IntelliJ IDEA > Preferences`(OSX) menu.
 
-Gradle files are marked with ![icon gradle](/resources/images/quickstart/icon_gradle.png) icon.
+You can find more detailed information about Gradle and IntelliJ on [IntelliJ's website](https://www.jetbrains.com/help/idea/2016.1/getting-started-with-gradle.html). 
 
-In addition to this tutorial, you can find more information about Gradle and IntelliJ on [IntelliJ's website](https://www.jetbrains.com/help/idea/2016.1/getting-started-with-gradle.html). 
+# Opening/Importing GradleProject
 
+If you have just started IntelliJ IDEA, you will be presented with the Welcome screen.
 
-![note](/resources/images/attention-40.png) **NOTE: At this point of the tutorial you can either chose to create a new Gradle Project or use Importing Project from Gradle model.** 
+![welcome screen](/resources/images/quickstart/intellij/welcomeScreen.png)
 
-# Importing Project from Gradle Model
+Choose `Open` from the Welcome screen, or if IntelliJ IDEA is already open choose `File/Open` from the menu bar.
 
-On the main menu, select `File > Open`, from the dialog that opens select `build.gradle` file and click `OK`.  
 ![import build gradle project](/resources/images/quickstart/intellij/open-build-gradle.png)
 
-Specify few settings before importing the project
+From the `Open File or Project` dialog traverse the directory structure and select the `GradleProject` folder or the `build.gradle` file and select `OK`.
+
 ![import build gradle project](/resources/images/quickstart/intellij/import-project-from-gradle.png)
 
-Wait few minutes IntelliJ IDEA will import Gradle project even if the project was not opened or imported before.  
+If you have not already setup Gradle in IntelliJ IDEA, you will have to enter values for `Gradle home:` and `Gradle JVM:`.  Once this is done, select `OK`.
+
 ![downloading dependencies](/resources/images/quickstart/intellij/import-build-gradle.png)
+
+Wait few minutes while IntelliJ IDEA imports GradleProject and obtains the dependencies specified in the `build.gradle` file.
 
 
 

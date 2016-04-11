@@ -1,7 +1,7 @@
 ---
 
-title: Setup GradleProject In Your IDE
-full-title: Setup GradleProject In Your IDE
+title: Import GradleProject
+full-title: Import GradleProject
 order: 2
 category: quickStart
 tab: Eclipse

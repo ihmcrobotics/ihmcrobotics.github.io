@@ -1,7 +1,7 @@
 ---
 
-title: Run Configuration ValkyrieDemo
-full-title: Run Configuration ValkyrieDemo
+title: ValkyrieDemo Run Configuration
+full-title: Create the Run Configuration for ValkyrieDemo
 order: 4
 category: quickStart
 tab: Eclipse
