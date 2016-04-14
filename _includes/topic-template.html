@@ -30,7 +30,11 @@
                     <span id="{{ sorted-page.title }}"> </span>
 
                     <div class="part-header">
+                        {% if sorted-page.full-title %}
+                        <h2> {{ sorted-page.full-title }}</h2>
+                        {% else %}
                         <h2> {{ sorted-page.title }}</h2>
+                        {% endif %}
                     </div>
 
                     <div class="step-content">
@@ -44,16 +48,16 @@
 
     <div class="topic-header">
         <h1>{{page.title}}</h1>
-        <div class="topic-summary">
+        <div class="topic-toc">
             <ul>
                 <span>Contents:</span> <!--TODO ADD NUMBER OF PARTS -->
                 {{ table-of-contents }}
             </ul>
         </div>
         {% if summary %}
-        <p>
+        <div class="topic-summary">
             {{ summary }}
-        </p>
+        </div>
         {% endif %}
     </div>
     {{ part-contents }}

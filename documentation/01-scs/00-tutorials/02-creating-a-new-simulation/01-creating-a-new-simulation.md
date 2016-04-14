@@ -1,52 +1,58 @@
 ---
-title: Creating a new simulation
+
+title: Create a New Project
+
 ---
 
-This tutorial assumes you know a little about your IDE (Eclipse or IntelliJ), and a little about Java. In parallel with these tutorials, you should also experiment with your IDE to learn how to use its features. 
-You should also learn Java, if you haven't already, by picking up a good Java book or two. We recommend Bruce Eckel's "Thinking in Java", which can be downloaded for free at [bruceeckel.com](http://www.mindview.net/Books/TIJ/) , or purchased. 
-In this tutorial, we will create a simple simulation of a simple pendulum. By the end of the tutorial you should be able to create and simulate simple passive systems with pin joints.
+First you need to create the `SimulationConstructionSetTutorial` *Gradle project* which references some IHMC Maven artifacts.  This project will also be used by all the other SCS tutorials. If you need a reminder of how to create the project, checkout the [Quick Start].
 
-1. Start your editor.  
-2. Create a new Java Project as described in the Quickstart guide using the Gradle build script below, and name it "SimulationConstructionSetTutorial". All exercises in this tutorial will be contained in this project.  
-    
-    {% highlight groovy %}
-    
-    apply plugin: 'java'  
-      
-    sourceCompatibility = 1.5  
-      
-    repositories {
-        maven {
-            url  "http://dl.bintray.com/ihmcrobotics/maven-release" // IHMC Code releases
-        }
-    
-        maven {
-            url  "http://dl.bintray.com/ihmcrobotics/maven-vendor" // Third-party libraries that we have vendored for various reasons
-        }
-    
-        /*
-         *  Maven repos hosted at IHMC for some legacy vendored
-         *  dependencies we have not been able to vendor on Bintray yet.
-         *  This will be going away eventually.
-         */
-        maven {
-            url "https://bengal.ihmc.us/nexus/content/repositories/thirdparty/"
-        }
-    
-        jcenter() // One of the central Maven repos. You can also use mavenCentral() instead or in addition to.
+# Create the Project Directory Structure and the `build.gradle` File
+
+Create a directory called `SimulationConstructionSetTutorial` and create the Gradle folder structure as follows:
+
+    SimulationConstructionSetTutorial
+    └── src
+        └── main
+            └── java
+
+# Create the `build.gradle` File
+
+In your `SimulationConstructionSetTutorial` folder create a file named `build.gradle` with the following contents:
+
+{% highlight groovy %}
+
+apply plugin: 'java'  
+
+sourceCompatibility = 1.5  
+
+repositories {
+    maven {
+        url  "http://dl.bintray.com/ihmcrobotics/maven-release" // IHMC Code releases
     }
+
+    maven {
+        url  "http://dl.bintray.com/ihmcrobotics/maven-vendor" // Third-party libraries that we have vendored for various reasons
+    }
+
+    /*
+     *  Maven repos hosted at IHMC for some legacy vendored
+     *  dependencies we have not been able to vendor on Bintray yet.
+     *  This will be going away eventually.
+     */
+    maven {
+        url "https://bengal.ihmc.us/nexus/content/repositories/thirdparty/"
+    }
+
+    jcenter() // One of the central Maven repos. You can also use mavenCentral() instead or in addition to.
+}
 
 dependencies {
     compile 'us.ihmc:SimulationConstructionSet:0.7.4' 
 }
 
 {% endhighlight %}
+<br>
+Now import this Gradle project into your IDE as you did in the [Quick Start].
 
-3. Make sure that the project dependencies have been correctly imported by expanding the "Gradle Projects" tool window. You should see a full list of dependencies under the Dependencies folder.   
-4. For our first tutorial we are going to learn how to create a simple simulation. In the java directory fo your project. under `src/main/java`, create a new package named `exampleSimulations.simplePendulum`. 
-5. Every simulation requires a Robot class and a Simulation class; Therefore in the `simplePendulum` package we will create a two new Java classes named **SimplePendulumRobot** and **SimplePendulumSimulation**.
-
-
-
-
+[Quick Start]: /quickstart
 

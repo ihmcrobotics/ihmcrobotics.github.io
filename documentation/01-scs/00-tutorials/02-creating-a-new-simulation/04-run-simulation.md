@@ -2,14 +2,10 @@
 title: Run the simulation
 ---
 
-1. Before compiling, make sure that the Simulation Construction Set Libraries are referenced properly in Eclipse. Go to Project->Properties on the menu. Click on Java Build Path on the left. 
-Select the Libraries tab. Make sure that all the required .jar files are included in the libraries.
-2. Open DoublePendulumSimulation and click on  in the top bar of buttons. Alternatively, on the menu, select Run->Run As->Java Application. This should compile and run the project.
- If there are any problems, they should appear in the Problems Tab on the bottom of the Eclipse IDE.
-3. A simulation of the DoublePendulumRobot should appear if there weren't any troubles in compiling.
-4. Start running the simulation. Note that the pendulum doesn't do anything as it is perfectly (and unrealistically) suspended straight up. Stop the simulation.
-Then put q_joint1 in a numeric entry box. Change its value from 0.0 to 0.01. Alternatively, you may change the first value in **pin1.setInitialState(0.0,0.0);** in the DoublePendulumRobot class.
-5. Run the simulation again. Now the pendulum will fall and flop around. Notice that its behavior is chaotic, as this is a chaotic system. 
-However, even though it is a chaotic system, if run twice in a row, it will produce the exact same trajectories due to starting from exactly the same initial conditions.
- If start from slightly different conditions, it should produce different behavior.
-6. Experiment with different lengths, masses, and center of mass locations until you are comfortable with this simulation and compiling simulations with Eclipse.
+Now run `SimplePendulumSimulation`. You should see the SCS interface and it should look something like this:
+
+![pendulum interface](/resources/images/documentation/scsTutorial/pendulum-simulation.png)
+
+1. Press the Simulate button ![simulate](/resources/images/scs-tutorials/scsSimulateButton.png) and the pendulum will move and stop hanging at the bottom. In simulate mode, SCS will run as fast as possible, in this case, faster than real-time.  Since we specified the duration to be 60 seconds it also stops rather quickly.  If you press the Play button ![play](/resources/images/scs-tutorials/scsReplayButton.png) the simulation will playback in real-time.
+2. In the Variable Search field press the space bar.  This will show all ten variables in the SCS system. Press the Goto In Point button ![gotoIn](/resources/images/scs-tutorials/scsGotoInPointButton.png) to reset the simulation to time 0, change a value such as `b_damp_FulcrumPinJoint` and press the Simulate button again to see how it affects the robot.
+3. In the robot class experiment with different lengths, damping values, masses, and center of mass locations until you are comfortable with this simulation.

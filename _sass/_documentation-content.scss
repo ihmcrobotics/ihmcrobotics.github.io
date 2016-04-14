@@ -451,7 +451,7 @@ $tabs-text-color: $nav-category-text-color;
 
         }
 
-        .topic-summary {
+        .topic-toc {
             background-color: #f6f8f7;
 
         }
@@ -490,13 +490,14 @@ $tabs-text-color: $nav-category-text-color;
             color:$topic-text-color;
         }
 
-        p {
+
+        .topic-summary {
             //border: 1px solid $topic-summary-border-color;
             //border-right: 5px solid #73AD21;
             background-color: #fff;
-            font-weight: bold;
+//            font-weight: bold;
             text-align: justify;
-            padding: 10px 20px 20px 20px;
+            padding: 20px 20px 20px 20px;
         }
 
     }
