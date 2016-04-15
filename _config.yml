@@ -32,4 +32,4 @@ show_drafts: FALSE
 markdown: kramdown
 
 collections:
-- overview
+

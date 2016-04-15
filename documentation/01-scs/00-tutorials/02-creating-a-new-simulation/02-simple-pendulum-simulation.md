@@ -101,4 +101,4 @@ If you run the simulation now, it will not look any different, but what you have
 
 Now it's time to add a robot.
 
-[Quick Start]: /quickstart
+[Quick Start]: /documentation/00-installation/03-quickstart/00-quickstart

@@ -16,5 +16,5 @@ This tutorial assumes that you have followed the [Quick Start] guide and have th
 
 * Note that if you replay the Valkyrie simulation, in order to simulate again without restarting, choose `Run->Goto Out Point` from the menu or press the Goto Out Point toolbar button ![GotoOut](/resources/images/scs-tutorials/scsGotoOutPointButton.png).
 
-[Quick Start]: /quickstart
+[Quick Start]: /documentation/00-installation/03-quickstart/00-quickstart
 [Figure 1]: #figure1

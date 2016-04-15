@@ -54,5 +54,5 @@ dependencies {
 <br>
 Now import this Gradle project into your IDE as you did in the [Quick Start].
 
-[Quick Start]: /quickstart
+[Quick Start]: /documentation/00-installation/03-quickstart/00-quickstart
 

@@ -26,4 +26,4 @@ The most used tab is the `Search` tab.  This is the tab which is visible by defa
 
 ![SearchView](/resources/images/scs-tutorials/svsVariablesSearchSpace.png) ![LeftHipPitchView](/resources/images/scs-tutorials/scsLeftHipPitchChanged.png)
 
-[Quick Start]: /quickstart/#walk
+[Quick Start]: /documentation/00-installation/03-quickstart/00-quickstart/#walk

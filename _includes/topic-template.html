@@ -1,15 +1,10 @@
-
 <div class="topic">
-
     {% assign path = page.url | split:"/" %}
     {% assign category = path[2] %}
     {% assign sub-category = path[3] %}
     {% assign topic = path[4] %}
-
-
     {% assign part-contents = '' %}
     {% assign table-of-contents = '' %}
-
     {% assign sorted-pages = site.pages | sort: 'url' %}
     {% for sorted-page in sorted-pages %}
         {% assign path = sorted-page.url | split:"/" %}
@@ -28,7 +23,6 @@
                 {% capture part-contents %}{{part-contents}}
                 <div class="part-content">
                     <span id="{{ sorted-page.title }}"> </span>
-
                     <div class="part-header">
                         {% if sorted-page.full-title %}
                         <h2> {{ sorted-page.full-title }}</h2>
@@ -36,7 +30,6 @@
                         <h2> {{ sorted-page.title }}</h2>
                         {% endif %}
                     </div>
-
                     <div class="step-content">
                         {{ sorted-page.content }}
                     </div>
@@ -45,7 +38,6 @@
             {% endif %}
         {% endif %}
     {% endfor %}
-
     <div class="topic-header">
         <h1>{{page.title}}</h1>
         <div class="topic-toc">
