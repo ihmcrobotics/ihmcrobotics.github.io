@@ -2,7 +2,8 @@
 title: SimplePendulumRobot.java
 ---
 
-
+To start with this tutorial on Simulation Contruction Set we will create one of the simplest robot possible: a Pendulum.  
+   
 
 <!--The pendulum will be stationary. You will shortly learn how to change its initial condition have it move.-->
 
@@ -15,7 +16,6 @@ title: SimplePendulumRobot.java
 <!--On Eclipse for OS X, select the project, _SimplePendulum_, click the drop down next to the run arrow and select _Run Configuration_. -->
 <!--In the new window that appears, select the Arguments tab and uncheck _'Use the -XstartOnFirstThread argument when launching with SWT'_.-->
   
-The robot we are going to build now is a simple pendulum.  
 
 ## Description of the robot
   
@@ -99,7 +99,7 @@ This part defines the parameters of the robot using constants and some initial c
 `static` means that there's only one copy of these variables, no matter how many SimplePendulumRobots are created.  
 `final` means that the values cannot be changed.
 
-The combination of these three modifiers is used to define constants. We will use this constants later on to build our links. 
+The combination of these three modifiers is used to define constants. We will use these constants later on to build our links. 
 
 `private` means that these variables can only be accessed in this file.   
 
@@ -198,7 +198,7 @@ The method **pendulumLink()** which returns a **Link** object is used to create 
 `Link pendulumLink = new Link("PendulumLink");` This line creates a new Link named "PendulumLink".
 
 * **Set its physical properties:**  
-`pendulumLink.setMomentOfInertia(0.0, Iyy1, 0.0);` This line sets the moment of inertial. Note that the moment of inertia is defined about the center of mass.
+`pendulumLink.setMomentOfInertia(0.0, Iyy1, 0.0);` This line sets the moment of inertia. Note that the moment of inertia is defined about the center of mass.
 Therefore, if the moment of inertia is set to zero, the link will be a point mass.  
 `pendulumLink.setMass(BALL_MASS);` This line sets the mass of the link to 1.0 kg.  
 `pendulumLink.setComOffset(0.0, 0.0, -ROD_LENGTH);` This line sets the center of mass offset of the link to be located at the tip at the center of the ball at the end of the rod.
@@ -212,8 +212,6 @@ The coordinate system for these translations is based on those that preceded it.
 `pendulumGraphics.addSphere(BALL_RADIUS, YoAppearance.Chartreuse());`Adding the ball at the end of the rod.   
 `pendulumLink.setLinkGraphics(pendulumGraphics);` This line associates our link object with the linkGraphics object.
  
-
-Now you should have a enough elements in your robot and your simulation to make it run!
 
 ## Full code for the class:  
 <details>

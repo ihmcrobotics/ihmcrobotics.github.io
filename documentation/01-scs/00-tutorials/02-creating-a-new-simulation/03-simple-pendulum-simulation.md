@@ -1,8 +1,6 @@
 ---
 title: SimplePendulumSimulation.java
 ---
-To start with this tutorial on Simulation Contruction Set we will create one of the simplest robot possible: a Pendulum.  
-Going through this first tutorial will help you familiarize with the structure of a simulation program.     
 
 1. Add a new class, right click on the package `simplePendulum` then select `New => Java Class` on the menu. For the Class Name enter "SimplePendulumSimulation". 
 2. Fill in SimplePendulumSimulation.java as shown below:
@@ -54,8 +52,10 @@ public class SimplePendulumSimulation
 {% endhighlight %}
 </details>
 
-1. When your simulation is run **(NOTE: You need to actually add the SimplePendulumRobot class first before you can run the above code)**, first the main method will be called.   
+1. When your simulation is run, first the main method will be called.   
 It creates a new SimplePendulumSimulation. In creating a SimplePendulumSimulation, a SimplePendulumRobot is first created, and then a SimulationConstructionSet object is created with that robot.
 A Thread is then created using the SimulationConstructionSet runnable object. Finally the Thread is started, thereby starting your simulation.
 This simple template can be used for creating any simulation using the Simulation Construction Set.  
 You can find more about the methods used in this first class in the [SimulationConstructionSet API](/documentation/01-scs/01-api/00-api/) page.
+
+Now you should have a enough elements in your robot and your simulation to make it run!
