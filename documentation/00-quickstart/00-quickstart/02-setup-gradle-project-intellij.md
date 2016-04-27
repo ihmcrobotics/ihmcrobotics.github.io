@@ -1,0 +1,76 @@
+---
+
+title: Import GradleProject
+full-title: Import GradleProject
+order: 2
+category: quickStart
+tab: IntelliJ
+
+---
+
+# Gradle Plugin Support
+
+IntelliJ IDEA supports Gradle SDK version 1.2 and later, and the Gradle plugin is bundled with IntelliJ IDEA and activated by default.  If the plugin is not activated, enable it on the `Plugins` tab of the `File > Settings` (Windows and Ubuntu) or `IntelliJ IDEA > Preferences`(OSX) menu.
+
+You can find more detailed information about Gradle and IntelliJ on [IntelliJ's website](https://www.jetbrains.com/help/idea/2016.1/getting-started-with-gradle.html). 
+
+# Opening/Importing GradleProject
+
+If you have just started IntelliJ IDEA, you will be presented with the Welcome screen.
+
+![welcome screen](/resources/images/quickstart/intellij/welcomeScreen.png)
+
+Choose `Open` from the Welcome screen, or if IntelliJ IDEA is already open choose `File/Open` from the menu bar.
+
+![import build gradle project](/resources/images/quickstart/intellij/open-build-gradle.png)
+
+From the `Open File or Project` dialog traverse the directory structure and select the `GradleProject` folder or the `build.gradle` file and select `OK`.
+
+![import build gradle project](/resources/images/quickstart/intellij/import-project-from-gradle.png)
+
+If you have not already setup Gradle in IntelliJ IDEA, you will have to enter values for `Gradle home:` and `Gradle JVM:`.  Once this is done, select `OK`.
+
+![downloading dependencies](/resources/images/quickstart/intellij/import-build-gradle.png)
+
+Wait few minutes while IntelliJ IDEA imports GradleProject and obtains the dependencies specified in the `build.gradle` file.
+
+
+
+<!--Alternatively you can chose to create a new project and copy the content of your `build.gradle` script. -->
+ <!---->
+ <!--Select `File > New Project...` to open the Project Wizard.  -->
+ <!--On the left pane select **Gradle**   -->
+ <!--On the right side of the panel specify your project SDK(JDK) and make sure that the *Java* checkbox is selected in the **Additional Libraries and Frameworks** area.   -->
+ <!--Click `Next`.  -->
+ <!---->
+<!--On the next page of the wizard specify the following setting:-->
+
+<!--**GroupId** - specify groupId of the new project, which will be added to the build.gradle file.  -->
+<!--**ArtifactId** - specify artifactId of the new project.  -->
+<!--**Version** - specify version of the new project, which will be added to the build.gradle file.  -->
+
+<!--[IMAGE HERE]-->
+
+<!--Click `Next`.-->
+
+<!--On the next page, specify the Gradle Settings:-->
+
+<!--[IMAGE HERE]-->
+
+<!--Select "Create directories for empty content roots automatically" checkbox.  -->
+<!--Select "Use default gradle wrapper(recommended)" radio button.  -->
+<!--Make sure that "Gradle JMV" contains the path to your JDK. If this is not the case, you probably need to specify the JAVA_HOME environment variable.   -->
+<!--Click `Next`.   -->
+
+<!--On the next page, specify the name and location settings. -->
+<!--[IMAGE HERE]-->
+
+<!--At this point IntelliJ IDEA automatically creates a project with a default 'build.gradle' file.-->
+
+<!--Your environment should now look like this: -->
+<!--[IMAGE HERE]-->
+
+<!--Double click on build.gradle to open it. -->
+<!--Edit it so that it contains the fields that you specified in the build.gradle script you defined earlier. -->
+<!--[IMAGE HERE]-->
+
