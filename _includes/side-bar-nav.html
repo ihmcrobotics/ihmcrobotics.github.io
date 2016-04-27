@@ -1,0 +1,78 @@
+{% assign debug-info = '' %}
+{% assign table-of-contents = '' %}
+{% assign path = page.url | split:"/" %}
+{% assign is-not-top-level = true %}
+{% if path.size <= 2 %}
+    {% assign is-not-top-level = false %}
+{% endif %}
+{% assign page-group = path[1] %}
+{% assign sorted-pages = site.pages | sort: 'url' %}
+{% assign prev-path = path[0] | append:"/" | append:path[1] | split:"/" %}
+{% capture debug-info %}PARENT: [{{path.size}}]{{page.url}}<br/>
+{{debug-info}}{% endcapture %}
+{% assign page-list = '' %}
+{% for sorted-page in sorted-pages %}
+    {% assign path = sorted-page.url | split:"/" %}
+    {% assign page-type = sorted-page.url | slice: -1 %}                  {% comment %} page type will be folder '\' or html 'l' {% endcomment %}
+    {% if path[1] != page-group or page-type != "/" or path.size < 3 %}
+        {% continue %}
+    {% endif %}
+    {% capture page-list %}{{page-list}} {{forloop.index0}}{% endcapture %}
+{% endfor %}
+{% assign page-list = page-list | split:" " %}
+{% for page-index in page-list %}
+    {% assign current-index = page-index | plus:0 %}
+    {% assign next-index = page-list[forloop.index] | plus:0 %}
+    {% assign current-page = sorted-pages[current-index] %}
+    {% assign next-page = sorted-pages[next-index] %}
+    {% assign current-path = current-page.url | split:"/" %}
+    {% assign next-path = next-page.url | split:"/" %}
+    {% assign option-title = current-page.title %}
+    {% if next-path.size == 0 %}
+        {% assign next-path = current-path[0] | append:"/" | append:current-path[1] | append:"/" | append:current-path[2] | split:"/" %}
+    {% endif %}
+    {% if current-path.size >= next-path.size %}
+{% capture table-of-contents %}{{ table-of-contents }}
+                        <li class="tree-content"><a href="{{current-page.url}}">{{option-title}}</a></li>{% endcapture %}
+{% capture debug-info %}{{debug-info}}
+<div class="nav-content">
+    <p>
+        <a href="{{current-page.url}}">{{option-title}}</a><br/>
+        - [{{current-path.size}}] [{{prev-path.size}}] [{{next-path.size}}] - {{current-page.url}}
+    </p>
+</div>{% endcapture %}
+        {% if current-path.size > next-path.size %}
+            {% assign end-index = current-path.size | minus:1 %}
+            {% for p-index in (next-path.size..end-index) reversed %}
+                {% assign cat-index = p-index | minus:1 %}
+                {% if cat-index == 2 %}
+{% capture table-of-contents %}{{ table-of-contents }}
+       <!-- end of category item -->{% endcapture %}
+                {% else %}
+{% capture table-of-contents %}{{ table-of-contents }}
+                    </ol> <!-- end of sub-category list -->
+                </li> <!-- end of sub-category item -->{% endcapture %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% elsif current-path.size == 3 %}
+{% capture table-of-contents %}{{ table-of-contents }}
+        <h2> {{ option-title }} </h2>{% endcapture %}
+    {% else %}
+        {% assign is-checked = "" %}
+        {% assign parent-url = current-page.url | truncate: page.url.size, "" %}
+        {% assign page-url = page.url | truncate: parent-url.size, "" %}
+        {% if is-not-top-level and parent-url == page-url %}
+            {% assign is-checked = "checked" %}
+        {% endif %}
+{% capture table-of-contents %}{{ table-of-contents }}
+                <li> <!-- start of sub-category item -->
+                    <input type="checkbox" id="-{{ current-page.url }}" {{is-checked}} />
+                    <label for="-{{ current-page.url }}"><svg class="svg-checked"><polygon points="0,5 12,5 6,13"/></svg><svg class="svg-not-checked"><polygon points="2,2 10,8 2,14"/></svg>{{ option-title }}</label>
+                    <ol>{% endcapture %}
+    {% endif %}
+    {% assign prev-path = current-path %}
+{% endfor %}
+<div class="accordion-tree">
+{{ table-of-contents }}
+</div>

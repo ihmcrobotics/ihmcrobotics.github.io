@@ -1,0 +1,32 @@
+{% assign table-of-contents = '' %}
+{% assign path = page.url | split:"/" %}
+{% assign page-group = path[1] %}
+{% assign sorted-pages = site.pages | sort: 'url' %}
+{% assign prev-page-length = 0 %}
+{% for sorted-page in sorted-pages reversed %}
+    {% assign path = sorted-page.url | split:"/" %}
+    {% assign page-type = sorted-page.url | slice: -1 %}                  {% comment %} page type will be folder '\' or html 'l' {% endcomment %}
+    {% if path[1] != page-group or page-type != "/" or path.size < 3 %}
+        {% continue %}
+    {% endif %}
+    {% assign option-title = sorted-page.title %}
+    {% for part in path offset:3 %}
+        {% capture option-title %}{{ option-title | prepend:'&nbsp;&nbsp;' }}{% endcapture %}
+    {% endfor %}
+    {% if path.size >= prev-page-length %}
+{% capture table-of-contents %}            <option value="{{sorted-page.url}}">{{option-title}}</option>
+{{ table-of-contents }}{% endcapture %}
+    {% else %}
+{% capture table-of-contents %}            <optgroup style="font-weight:bold;" label="{{option-title}}"></optgroup>
+{{ table-of-contents }}{% endcapture %}
+    {% endif %}
+    {% assign prev-page-length = path.size %}
+{% endfor%}
+<nav class="meta-selector">
+    <form name="form">
+        <select name = "Tutorial_Menu_{{page-group}}" onChange="top.location.href = this.form.Tutorial_Menu_{{page-group}}.options[this.form.Tutorial_Menu_{{page-group}}.selectedIndex].value;">
+            <option selected="selected" disabled="disabled">Select one...</option>
+            {{ table-of-contents }}
+        </select>
+    </form>
+</nav>

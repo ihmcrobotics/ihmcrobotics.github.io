@@ -35,8 +35,6 @@ $nav-topic-text-color: #777;
 $nav-topic-text-hover-color: #000;
 */
 
-
-
 $nav-accordion-background: #FBFBFB;
 
 $nav-category-background-color: #585;
@@ -60,6 +58,120 @@ $tabs-base-color: lighten($nav-category-background-color, 5);
 $tabs-text-color: $nav-category-text-color;
 
 /**
+    Accordion Tree Nav Bar
+*/
+
+.accordion-tree {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  background: $nav-accordion-background;
+  box-shadow: 0px 0px 10px $topic-title-background-shadow;
+}
+
+.accordion-tree h2 {
+    color: $nav-category-text-color;
+    background: $nav-category-background-color;
+    padding: 5px 5px;
+    margin: 0 auto;
+    opacity: 0.8;
+    text-shadow: 0px 0px 1px $topic-title-background-shadow;
+}
+
+.accordion-tree ol {
+  list-style: none;
+  margin: 0 auto;
+  margin-left: 15px;
+  padding: 0;
+}
+
+.accordion-tree li {
+  list-style: none;
+  margin: 0 auto;
+  padding-bottom: 0px;
+}
+
+.accordion-tree input[type=checkbox] {
+  display: none;
+}
+
+.accordion-tree li label {
+      display: block;
+      font-size: 16px;
+      line-height: 16px;
+      text-indent: 5px;
+      color: $nav-sub-category-text-color;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 8px 0;
+}
+
+.accordion-tree li input[type=checkbox] + label + ol > li
+{
+  display: none;
+  height: 0px;
+  overflow: hidden;
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+}
+
+.accordion-tree li input[type=checkbox]:checked + label + ol > li
+{
+  display: block;         /* display submenu on click */
+  height: auto;
+}
+
+.accordion-tree li input[type=checkbox] + label .svg-checked
+{
+  width: 0px;
+  height: 0px;
+}
+
+.accordion-tree li input[type=checkbox]:checked + label .svg-checked
+{
+  fill: $nav-sub-category-text-color;
+  width: 16px;
+  height: 14px;
+}
+
+.accordion-tree li input[type=checkbox] + label .svg-not-checked
+{
+  fill: $nav-sub-category-text-color;
+  width: 16px;
+  height: 14px;
+}
+
+.accordion-tree li input[type=checkbox]:checked + label .svg-not-checked
+{
+  width: 0px;
+  height: 0px;
+}
+
+.accordion-tree .tree-content {
+  height: auto;
+  padding: 3px 5px 3px 10px;
+  overflow: hidden;
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  font-size: 14px;
+  color: #333;
+}
+
+.accordion-tree .tree-content a {
+  color: $nav-topic-text-color;
+  background-color: $nav-topic-background-color;
+  font-weight: 500;
+}
+
+.accordion-tree .tree-content a:hover {
+  text-decoration: none;
+  color: $nav-topic-text-hover-color;
+  background-color: $nav-topic-background-hover-color;
+}
+
+
+/**
     NAVIGATION BAR
 */
 
@@ -67,34 +179,55 @@ $tabs-text-color: $nav-category-text-color;
    >> OUTTER
 */
 
-.outter-accordion {
+.nav-bar-container {
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
     background: $nav-accordion-background;
     box-shadow: 0px 0px 10px $topic-title-background-shadow;
+
+    ul {
+        list-style:none;
+        margin:0 auto;
+        padding:0;
+    }
+
+    li {
+        margin:0 auto;
+        padding-bottom:0px;
+    }
+
+    h2 {
+        color: $nav-category-text-color;
+        background: $nav-category-background-color;
+        padding: 5px 5px;
+        margin:0 auto;
+        opacity: 0.8;
+        text-shadow: 0px 0px 1px $topic-title-background-shadow;
+    }
 }
 
-.outter-accordion ul {
-    list-style:none;
-    margin:0;
-    padding:0;
-}
 
-.outter-accordion li {
-    margin:0;
-    padding-bottom:0px;
+.nav-content {
+    height:auto;
+    padding:5px 5px 5px 10px;
+    overflow:hidden;
+    //border:1px solid #fff;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    font-size:16px;
+    color:#333;
 
-
-}
-
-
-.outter-accordion h2 {
-    color: $nav-category-text-color;
-    background: $nav-category-background-color;
-    padding: 5px 5px;
-    margin:0;
-    opacity: 0.8;
-    text-shadow: 0px 0px 1px $topic-title-background-shadow;
+    a {
+        color: $nav-topic-text-color;
+        background-color:$nav-topic-background-color;
+        font-weight:500;
+    }
+    a:hover {
+        text-decoration: none;
+        color: $nav-topic-text-hover-color;
+        background-color:$nav-topic-background-hover-color;
+    }
 }
 
 /**
@@ -106,268 +239,80 @@ $tabs-text-color: $nav-category-text-color;
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
     background: $nav-accordion-background;
-    margin:0;
-}
-
-.accordion ul {
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-
-.accordion li {
-    margin:0;
-    padding:0;
-}
-
-.accordion [type=radio], .accordion [type=checkbox] {
-    display:none;
-}
-.accordion label {
-    display:block;
-    font-size:16px;
-    line-height:16px;
-    text-indent: 5px;
-    background:$nav-sub-category-background-color;
-    color:$nav-sub-category-text-color;
-    font-weight:700;
-    cursor:pointer;
-
-
-}
-.accordion ul li label:hover,.accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
-
-    background:$nav-sub-category-background-hover-color;
-
-    color:$nav-sub-category-text-hover-color;
-    opacity: 0.6;
-
-}
-.accordion .content {
-    padding:0 10px;
-    overflow:hidden;
-    //border:1px solid #fff;
-    -webkit-transition: all .1s linear;
-    -moz-transition: all .1s linear;
-}
-.accordion p {
-    color:#333;
-    //margin:0 0 10px;
-}
-
-
-
-
-
-.accordion a {
-    color: $nav-topic-text-color;
-    background-color:$nav-topic-background-color;
-    font-weight:500;
-}
-
-.accordion a:hover {
-    text-decoration: none;
-    color: $nav-topic-text-hover-color;
-    background-color:$nav-topic-background-hover-color;
-}
-
-
-
-
-
-.vertical ul li {
-    overflow:hidden;
-    margin:0 0 1px;
-}
-.vertical ul li label {
-    padding: 10px 0;
-}
-.vertical [type=radio]:checked ~ label, [type=checkbox]:checked ~ label {
-    //border-bottom:0;
-}
-.vertical ul li label:hover {
-    //border:1px solid #542437;
-}
-.vertical ul li .content {
-    height:0px;
-    transition: all .1s linear;
-}
-.vertical [type=radio]:checked ~ label ~ .content, [type=checkbox]:checked ~ label ~ .content {
-    height:auto;
-    padding-top: 10px;
-
-}
-
-
-
-
-
-.site-side-bar-nav {
-
-    width: 100%;
-    border-radius: 10px;
-    line-height: 15px;
-
-    padding-bottom: 5px;
-
-    border: 3px solid #73AD21;
-
-    background-color: $sub-category-background;
-    //border-style: outset;
-
-    .menu-icon {
-        display: none;
-    }
+    margin:0 auto;
 
     ul {
-        list-style-position: inside;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+        list-style:none;
+        margin:0 auto;
+        padding:0;
     }
 
-    .categories {
-        border-radius: 3px;
-        background-color: $topic-title-background;
-        line-height: 30px;
-        font-size:18px;
-        font-weight:500;
-        text-align: left;
-        color: $topic-text-color;
-        margin-left:0px;
-        padding-left:5px;
+    li {
+        overflow:hidden;
+
+        [type=radio], [type=checkbox] {
+            display:none;
+        }
+
+        [type=radio]:checked ~ label ~ .nav-content, [type=checkbox]:checked ~ label ~ .nav-content {
+            height:auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        [type=radio]:checked ~ label, [type=checkbox]:checked ~ label {
+            .svg-checked {
+                width: 16px;
+                height: 14px;
+            }
+
+            .svg-not-checked {
+                width: 0px;
+                height: 0px;
+            }
+        }
+
+        .nav-content {
+            height:0px;
+            padding:0 10px;
+            font-size:14px;
+        }
+
+        label {
+            display:block;
+            font-size:16px;
+            line-height:16px;
+            text-indent: 5px;
+            background:$nav-sub-category-background-color;
+            color:$nav-sub-category-text-color;
+            font-weight:700;
+            cursor:pointer;
+            padding: 10px 0;
+
+            .svg-checked {
+                width: 0px;
+                height: 0px;
+                fill: $nav-sub-category-text-color;
+            }
+
+            .svg-not-checked {
+                width: 16px;
+                height: 14px;
+                fill: $nav-sub-category-text-color;
+            }
+        }
+
+        label:hover, [type=radio]:checked ~ label, [type=checkbox]:checked ~ label {
+    //        background:$nav-sub-category-background-hover-color;
+            color:$nav-sub-category-text-hover-color;
+            opacity: 0.6;
+        }
+
+        [type=radio]:checked ~ label, [type=checkbox]:checked ~ label {
+            cursor:default;
+        }
     }
-
-    li hr {
-        border-width:1px;
-        width:99%;
-        margin-left:0px;
-    }
-
-    li a {
-        display: block;
-        font-weight: 400;
-        font-size:16px;
-        color: $sub-category-text-color;
-        padding: 8px 0 8px 16px;
-        margin: 0;
-    }
-
-    /* Change the link color on hover */
-    li a:hover {
-
-       background-color: $sub-category-hover-background;
-       display: block;
-       color: $sub-category-hover-text-color;
-       text-decoration: none;
-    }
-
-    @include media-query($on-palm) {
-        display: none;
-    }
-
-
-
-
-
-
-    /*Define Accordion box*/
-    .accordion {
-         width:400px;
-         overflow:hidden;
-         margin:10px auto;
-         color:#474747;
-         background:#474747;
-         padding:10px;
-
-    }
-
-    .accordion section{
-
-          float:left;
-          overflow:hidden;
-          color:#333;
-          cursor:pointer;
-          background:$topic-title-background;
-          margin:3px;
-
-
-
-          width:100%;
-           height:40px;
-           -webkit-transition:height 0.2s ease-out;
-           -moz-transition:height 0.2s ease-out;
-           -o-transition:height 0.2s ease-out;
-           transition:height 0.2s ease-out;
-
-    }
-
-    /*Set height of the slide*/
-    .accordion :target{
-         height:250px;
-         width:97%;
-    }
-
-    .accordion section:hover {
-          background:#444;
-    }
-
-   .accordion p:hover {
-
-           font-weight:bold;
-
-    }
-
-   .accordion section p {
-          display:none;
-    }
-
-    .accordion section:after{
-          position:relative;
-          font-size:24px;
-          color:#000;
-          font-weight:bold;
-    }
-
-
-
-    .accordion section:target {
-          background:#FFF;
-          padding:10px;
-    }
-    .accordion section:target:hover {
-          background:#FFF;
-    }
-    .accordion section:target h3 {
-          width:100%;
-    }
-    .accordion section:target h3 a{
-          color:#333;
-          padding:0;
-    }
-    .accordion section:target p {
-          display:block;
-    }
-    .accordion section h3 a{
-
-          padding:8px 10px;
-          display:block;
-          font-size:16px;
-          font-weight:normal;
-          color:$topic-text-color;
-          text-decoration:none;
-    }
-
-
-
-
-
-
-
-
-
 }
-
 
 /**
     SELECTOR MOBILE PHONE
@@ -384,7 +329,7 @@ $tabs-text-color: $nav-category-text-color;
 
         position: absolute;
         top: 110px;
-        left: 10px;
+        right: 20px;
         border: 0;
 
         display: block;
