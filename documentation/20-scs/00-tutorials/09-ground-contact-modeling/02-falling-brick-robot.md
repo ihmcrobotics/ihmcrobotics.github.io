@@ -72,7 +72,8 @@ public class FallingBrickRobot extends Robot implements RobotController
       floatingJoint.addGroundContactPoint(gc10);
       this.setController(this); // tells the simulator to call the local doControl() method
       // instantiate ground contact model
-      GroundContactModel groundModel = new LinearGroundContactModel(this, 1422, 150.6, 50.0, 1000.0, this.getRobotsYoVariableRegistry());
+      GroundContactModel groundModel = new LinearGroundContactModel(this, 1422, 150.6, 50.0, 1000.0,
+                                                                    this.getRobotsYoVariableRegistry());
       // GroundContactModel groundModel = new CollisionGroundContactModel(this, 0.5, 0.7);
       GroundProfile3D profile = new WavyGroundProfile();
       groundModel.setGroundProfile3D(profile);

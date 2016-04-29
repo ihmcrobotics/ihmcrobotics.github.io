@@ -185,6 +185,12 @@ This line adds `fulcrumPinJoint` as a rootJoint of the robot.
 In order to be part of a robot, a joint must either be added as a root joint, or be attached to a parent joint. 
 This ensures the tree structure (forest structure if there are multiple root joints) of the robot.
 
+
+![note](/resources/images/attention-40.png) **Note on reference frames:**
+*In SCS, like the URDF robot description file format, when a joint is created its reference frame is calculated relative to the previous joint's reference frame.
+One exception is that joints added as **root joints** of a robot are positioned relative to the world reference frame. The reference frame of each `Link` attached to a `Joint` is identical to the reference frame of the `Joint`.* 
+ 
+
 ## 7. Create the 3D Graphics which Represent the Link and Joint in SCS
 
 Add the following to the end of the constructor:
@@ -196,7 +202,6 @@ Add the following to the end of the constructor:
       pendulumGraphics.addSphere(FULCRUM_RADIUS, YoAppearance.BlueViolet());
       pendulumGraphics.translate(0.0, 0.0, -ROD_LENGTH);
       pendulumGraphics.addCylinder(ROD_LENGTH, ROD_RADIUS, YoAppearance.Black());
-      pendulumGraphics.translate(0.0, 0.0, 0.0);
       pendulumGraphics.addSphere(BALL_RADIUS, YoAppearance.Chartreuse());
       pendulumLink.setLinkGraphics(pendulumGraphics);
 {% endhighlight %}
@@ -320,7 +325,6 @@ public class SimplePendulumRobot extends Robot // SimplePendulumRobot inherits s
       pendulumGraphics.addSphere(FULCRUM_RADIUS, YoAppearance.BlueViolet());
       pendulumGraphics.translate(0.0, 0.0, -ROD_LENGTH);
       pendulumGraphics.addCylinder(ROD_LENGTH, ROD_RADIUS, YoAppearance.Black());
-      pendulumGraphics.translate(0.0, 0.0, 0.0);
       pendulumGraphics.addSphere(BALL_RADIUS, YoAppearance.Chartreuse());
       pendulumLink.setLinkGraphics(pendulumGraphics);
    }

@@ -33,15 +33,14 @@ public class SimplePendulumController implements RobotController
 }
 {% endhighlight %}
 
-* **Interfaces Implementations**  
-
-   The `RobotControlElement` interface requires its implementation to contain the following methods:  
-   - `initialize()` Not used at this point.   
-   - `getYoVariableRegistry()` returns a YoVariableRegistry object that you need to instantiate in the controller. This object will give you access to the control variables.   
-   - `getName()` and `getDescription()` not used at this point.  
-    
+* **Interface Implementations**  
+ 
    The `RobotController` interface requires you to implement:  
-   - `doControl()` This method gets called each update, that's where your control code is written.    
+   - `initialize()` Not used at this point.   
+   - `doControl()` This method gets called each update, that's where your control code is written.
+   - `getYoVariableRegistry()` returns a YoVariableRegistry object that you need to instantiate in the controller. This object will give you access to the control variables.   
+   - `getName()` and `getDescription()` not used at this point.
+       
 
 
 ## 2. Add properties and create a constructor for SimplePendulumController
@@ -175,7 +174,7 @@ Now that we have access to these variables, we can use them in our `doControl()`
 
    @Override public void doControl()
    {
-      // ERROR term: Compute the difference between the desired position the pendulum and its current position
+      // ERROR term: Compute the difference between the desired position of the pendulum and its current position
       positionError = desiredPositionRadians.getDoubleValue() - robot.getFulcrumAngularPosition();
 
       // INTEGRAL term: Compute a simple numerical integration of the position error

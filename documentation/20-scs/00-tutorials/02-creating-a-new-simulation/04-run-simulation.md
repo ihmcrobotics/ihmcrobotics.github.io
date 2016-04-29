@@ -19,7 +19,7 @@ The simulation should stop shortly after the pendulum position has converged. Th
 If you remember we had set the simulation time parameter to 60 seconds and in simulate mode, SCS will run as fast as possible, in this case, faster than real-time.  
 
 ![pendulum initial state](/resources/images/scs-tutorials/simple-pendulum/pendulum-after-run-sim.png)  
-**Initial state of the pendulum - Starting from an angle of 90 degrees (q_Pinjoint value of 1.57 or π/2), converges to 0 degrees after few seconds:**
+*Initial state of the pendulum - Starting from an angle of 90 degrees (q_Pinjoint value of 1.57 or π/2), converges to 0 degrees after few seconds:*
 
 Zoom in a little while sliding the graph to the left, notice that the graph accurately shows the oscillations of the pendulum at each time step.   
 
@@ -27,7 +27,7 @@ Zoom in a little while sliding the graph to the left, notice that the graph accu
 
 Click and drag your mouse cursor on the graph to position the current time stamp to the beginning of the simulation (a black vertical bar should follow your movement as you drag the mouse on the graph and the pendulum should also move).  
 or 
-Press the Goto In Point button ![gotoIn](/resources/images/scs-tutorials/scsGotoInPointButton.png) to reset the simulation to time 0.
+Press the Goto In Point button ![gotoIn](/resources/images/scs-tutorials/scsGotoInPointButton.png) to rewind to the start of the simulation.
 
 If you press the Play button ![play](/resources/images/scs-tutorials/scsReplayButton.png) the simulation will playback in real-time.
 Click on the play button, now the pendulum will swing back and forth and stop after 60 seconds. Interestingly you will notice that if you run the same simulation code twice in a row, it will produce the exact same trajectories due to starting from exactly the same initial conditions.  

@@ -4,7 +4,7 @@ title: Create Your First GradleProject
 full-title: Setting Up Your First GradleProject with a build.gradle File
 order: 1
 category: quickStart
-
+tab: Eclipse
 ---
 
 Once you have the prerequisites installed, we'll get started by setting up a project that depends on the IHMC `Valkyrie` package, which contains all of the code needed to simulate the [NASA Johnson Space Center Valkyrie](http://nasa-jsc-robotics.github.io/valkyrie/) Humanoid robot in IHMC's Simulation Construction Set, as well as the code needed to run our software on the real Valkyrie robot. We'll do this by setting up a *Gradle project* which references some IHMC Maven artifacts.
@@ -53,3 +53,8 @@ dependencies {
 }
 
 {% endhighlight %}
+
+
+
+
+

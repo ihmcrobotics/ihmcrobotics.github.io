@@ -53,7 +53,8 @@ public class MobileRobot extends Robot
        
       this.addStaticLink(topLink);
       // create first gimbal joint at the top of the mobile
-      GimbalJoint firstGimbal = new GimbalJoint("gimbal_x", "gimbal_y", "gimbal_z", new Vector3d(0.0, 0.0, 1.0), this, Axis.X, Axis.Y, Axis.Z);
+      GimbalJoint firstGimbal = new GimbalJoint("gimbal_x", "gimbal_y", "gimbal_z", 
+                                                new Vector3d(0.0, 0.0, 1.0), this, Axis.X, Axis.Y, Axis.Z);
       // attach a crossbar to the top gimbal joint
       Link bar1 = crossBar(M1, L1, R1, Ixx1, Iyy1, Izz1);
       firstGimbal.setLink(bar1);

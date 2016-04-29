@@ -31,5 +31,5 @@ show_drafts: FALSE
 # Build settings
 markdown: kramdown
 
-collections:
+
 
