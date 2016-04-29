@@ -3,6 +3,8 @@
 category: Summary
 
 ---
+ ![Duration](/resources/images/clock-50.png) **Duration:** 15-20 min  
+ ![Keywords](/resources/images/concept-50.png) **Keywords:** Simulation, Robot, Link, Joint, YoVariable 
 
 This tutorial assumes that you have followed the [Quick Start] guide, know a little about your IDE (Eclipse or IntelliJ), and a little about Java. If you do not know how to program in Java, pick up a good book or two. We recommend Bruce Eckel's "Thinking in Java", which can be downloaded for free at [bruceeckel.com](http://www.mindview.net/Books/TIJ/).
  

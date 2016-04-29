@@ -6,7 +6,7 @@ title: Create a New Project
 
 First you need to create the `SimulationConstructionSetTutorial` *Gradle project* which references some IHMC Maven artifacts.  This project will also be used by all the other SCS tutorials. If you need a reminder of how to create the project, checkout the [Quick Start].
 
-# Create the Project Directory Structure and the `build.gradle` File
+## 1. Create the Project Directory Structure and the `build.gradle` File
 
 Create a directory called `SimulationConstructionSetTutorial` and create the Gradle folder structure as follows:
 
@@ -15,7 +15,7 @@ Create a directory called `SimulationConstructionSetTutorial` and create the Gra
         └── main
             └── java
 
-# Create the `build.gradle` File
+## 2. Create the `build.gradle` File
 
 In your `SimulationConstructionSetTutorial` folder create a file named `build.gradle` with the following contents:
 

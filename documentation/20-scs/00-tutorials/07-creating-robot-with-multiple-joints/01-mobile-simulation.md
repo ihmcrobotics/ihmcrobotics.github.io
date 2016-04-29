@@ -4,8 +4,9 @@ title: Mobile Simulation
 
 ---
 
-1. Create a new project in Eclipse with the name Mobile.
-2. Add the class MobileSimulation and fill it in as follows:
+1\. Create a new project in Eclipse with the name Mobile.
+
+2\. Add the class MobileSimulation and fill it in as follows:
 {%highlight java%}
 package us.ihmc.exampleSimulations.mobile;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
@@ -40,12 +41,14 @@ public class MobileSimulation
 }
 {%endhighlight%}
 
-3. Note that the integration time step is set to 0.02 seconds: sim.setDT(0.02, 1);. This is a fairly large time step, but in this case is possible since there are no high-frequency interactions in the system. In general, to set the integration time step, experiment with different values. As the time step gets higher, you will see different behavior due to numerical instabilities. Choose a time step which is low enough that making it any lower does not change the outcome of the simulation. The second parameter to setDT is 1, meaning that every integration step will be recorded.
-4. Note that the ground is set to be invisible, camera tracking and dollying are turned off, and that the camera position and fix are set to get a good view of the mobile:
-    * **sim.setGroundVisible(false);**
-    * **sim.setCameraTracking(false,false,false,false);**
-    * **sim.setCameraDolly(false,false,false,false);**
-    * **sim.setCameraPosition(1.0,1.0,0.5);**
-    * **sim.setCameraFix(0.0,0.0,0.8);**
+3\. Note that the integration time step is set to 0.02 seconds: sim.setDT(0.02, 1);. This is a fairly large time step, but in this case is possible since there are no high-frequency interactions in the system. In general, to set the integration time step, experiment with different values. As the time step gets higher, you will see different behavior due to numerical instabilities. Choose a time step which is low enough that making it any lower does not change the outcome of the simulation. The second parameter to setDT is 1, meaning that every integration step will be recorded.
+
+4\. Note that the ground is set to be invisible, camera tracking and dollying are turned off, and that the camera position and fix are set to get a good view of the mobile:
+
+* **sim.setGroundVisible(false);**
+* **sim.setCameraTracking(false,false,false,false);**
+* **sim.setCameraDolly(false,false,false,false);**
+* **sim.setCameraPosition(1.0,1.0,0.5);**
+* **sim.setCameraFix(0.0,0.0,0.8);**
 
 
