@@ -77,28 +77,44 @@ layout: default
 /**
     DOCUMENTATION PAGE LAYOUT CONTENT AND NAVIGATION BAR
 */
-
     .flex-container {
 
-         display: -webkit-flex;
-         display: flex;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
 
-         justify-content: space-between;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+
          width: 100%;
 
 
        .flex-content {
 
+            -webkit-box-flex: 4;
+            -moz-box-flex: 4;
+            -webkit-flex: 4;
+            -ms-flex: 4;
             flex: 4;
+            overflow: hidden;
+            width: 100%;
 
             // DEBUG
             //background-color: #337799;
-
        }
 
 
        .flex-side-bar {
 
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
             flex: 1;
             margin-left: 20px;
             min-width: 260px;
