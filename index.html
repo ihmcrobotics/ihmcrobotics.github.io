@@ -47,20 +47,22 @@ layout: default
 
     <br>
 
-    <h2>Target audience</h2>
+    <div id="intro-text">
+        <h2>Target audience</h2>
 
-    <p> Our tools and algorithms are targeted at the many research labs that are interested in perception and planning, high level control,
-        operator interfaces, and other research areas, but do not have expertise in bipedal walking and whole body control.
-        But also to control experts that are interested in developing robot simulations in java in a user friendly environment.  </p>
+        <p> Our tools and algorithms are targeted at the many research labs that are interested in perception and planning, high level control,
+            operator interfaces, and other research areas, but do not have expertise in bipedal walking and whole body control.
+            But also to control experts that are interested in developing robot simulations in java in a user friendly environment.  </p>
 
-    <!--<h2>Features</h2>-->
-    <!--<ul>-->
-        <!--<li> Feature 1 TODO </li>-->
-        <!--<li> Feature 2 </li>-->
-        <!--<li> Feature 3 </li>-->
-        <!--<li> API for compatibility with ROS </li>-->
+        <!--<h2>Features</h2>-->
+        <!--<ul>-->
+            <!--<li> Feature 1 TODO </li>-->
+            <!--<li> Feature 2 </li>-->
+            <!--<li> Feature 3 </li>-->
+            <!--<li> API for compatibility with ROS </li>-->
 
-    <!--</ul>-->
+        <!--</ul>-->
+    </div>
 
     <hr>
 
@@ -68,33 +70,35 @@ layout: default
 
     <!--<p> TODO progress bar, status of documentation, phase, scope  </p>-->
 
-    <h2>Latest posts</h2>
+    <div id="intro-text">
+        <h2>Latest posts</h2>
 
-    <ul class="post-list">
-        {% for post in site.posts %}
-        <li>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <p>
-                {{ post.description }}
-            </p>
-        </li>
-        {% endfor %}
-    </ul>
+        <ul class="post-list">
+            {% for post in site.posts %}
+            <li>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <p>
+                    {{ post.description }}
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
 
-    <br>
+        <br>
 
-    <!--<div class="auto-resizable-iframe">-->
-    <!--<div>-->
-    <!--<iframe src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>-->
-    <!--</div>-->
-    <!--</div>-->
-    <br>
+        <!--<div class="auto-resizable-iframe">-->
+        <!--<div>-->
+        <!--<iframe src="https://www.youtube.com/embed/2nFwbyfQAkM" frameborder="0" allowfullscreen></iframe>-->
+        <!--</div>-->
+        <!--</div>-->
+        <br>
 
-    <p class="rss-subscribe">
-        <a href="{{ "/feed.xml" | prepend: site.baseurl }}"> <img width="35px" src="resources/images/rss-logo-50.png" label="IHMC Robotics on GitHub subscribe rss logo"> </a>
-        <b> Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a> </b>
-    </p>
+        <p class="rss-subscribe">
+            <a href="{{ "/feed.xml" | prepend: site.baseurl }}"> <img width="35px" src="resources/images/rss-logo-50.png" label="IHMC Robotics on GitHub subscribe rss logo"> </a>
+            <b> Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a> </b>
+        </p>
+    </div>
 </div>
 
 
