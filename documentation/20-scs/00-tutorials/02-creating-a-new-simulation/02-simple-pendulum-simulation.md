@@ -112,4 +112,6 @@ Specifies that the simulation will only run for a duration of 60 seconds.  For t
 
 Now it's time to add a robot.
 
-[Quick Start]: /documentation/00-quickstart/00-quickstart
+{% assign QuickStart = site.data.constants["QuickStart"] %}
+ 
+[Quick Start]: {{QuickStart.url}}

@@ -7,6 +7,8 @@ category: quickStart
 tab: Eclipse
 ---
 
+{% assign OpenSourceVersion = site.data.constants["OpenSource"].version %}
+
 Once you have the prerequisites installed, we'll get started by setting up a project that depends on the IHMC `Valkyrie` package, which contains all of the code needed to simulate the [NASA Johnson Space Center Valkyrie](http://nasa-jsc-robotics.github.io/valkyrie/) Humanoid robot in IHMC's Simulation Construction Set, as well as the code needed to run our software on the real Valkyrie robot. We'll do this by setting up a *Gradle project* which references some IHMC Maven artifacts.
 
 # Create the Project Directory Structure and the `build.gradle` File
@@ -49,7 +51,7 @@ repositories {
 }
 
 dependencies {
-   compile 'us.ihmc:Valkyrie:0.7.4' // <- Group: us.ihmc, Artifact: Valkyrie, Version: 0.7.4
+   compile 'us.ihmc:Valkyrie:{{OpenSourceVersion}}' // <- Group: us.ihmc, Artifact: Valkyrie, Version: {{OpenSourceVersion}}
 }
 
 {% endhighlight %}

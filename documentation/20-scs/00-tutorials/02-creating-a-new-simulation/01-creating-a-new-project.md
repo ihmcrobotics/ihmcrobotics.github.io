@@ -4,6 +4,8 @@ title: Create a New Project
 
 ---
 
+{% assign OpenSourceVersion = site.data.constants["OpenSource"].version %}
+
 First you need to create the `SimulationConstructionSetTutorial` *Gradle project* which references some IHMC Maven artifacts.  This project will also be used by all the other SCS tutorials. If you need a reminder of how to create the project, checkout the [Quick Start].
 
 ## 1. Create the Project Directory Structure and the build.gradle File
@@ -47,12 +49,14 @@ repositories {
 }
 
 dependencies {
-    compile 'us.ihmc:SimulationConstructionSet:0.7.4' 
+    compile 'us.ihmc:SimulationConstructionSet:{{OpenSourceVersion}}' 
 }
 
 {% endhighlight %}
 <br>
 Now import this Gradle project into your IDE as you did in the [Quick Start].
 
-[Quick Start]: /documentation/00-quickstart/00-quickstart
+{% assign QuickStart = site.data.constants["QuickStart"] %}
+
+[Quick Start]: {{QuickStart.url}}
 

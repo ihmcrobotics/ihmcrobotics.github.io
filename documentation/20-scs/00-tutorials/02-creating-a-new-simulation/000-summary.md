@@ -10,4 +10,6 @@ This tutorial assumes that you have followed the [Quick Start] guide, know a lit
  
 In this tutorial, we will create a simple simulation of a simple pendulum. Going through this first tutorial will help familiarize you with the structure of an SCS simulation program, and by the end of the tutorial you should be able to create and simulate simple passive systems with pin joints.
 
-[Quick Start]: /documentation/00-quickstart/00-quickstart
+{% assign QuickStart = site.data.constants["QuickStart"] %}
+ 
+[Quick Start]: {{QuickStart.url}}
