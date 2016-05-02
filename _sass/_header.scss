@@ -31,7 +31,9 @@
 
     @include media-query($on-palm) {
          margin-bottom:5px;
-         margin-top:0px;
+         margin-top:6px;
+         margin-left:110px;
+         width: 100px;
     }
 }
 

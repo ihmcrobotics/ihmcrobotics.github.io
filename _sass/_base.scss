@@ -192,10 +192,10 @@ pre {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
-    margin-left: auto;
+//    margin-left: auto;
 
     padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
+    padding-left: $spacing-unit * 2;
     //padding-left: calc(#{$spacing-unit} + (#{$content-width} - #{$header-footer-width} ));
 
     @extend %clearfix;
@@ -205,7 +205,7 @@ pre {
         max-width:         calc(#{$content-width} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         //padding-left: $spacing-unit / 2;
-        padding-left: calc(#{$spacing-unit} / 2 + (#{$content-width} - #{$header-footer-width}));
+//        padding-left: calc(#{$spacing-unit} / 2 + (#{$content-width} - #{$header-footer-width}));
     }
 
     @include media-query($on-palm) {
