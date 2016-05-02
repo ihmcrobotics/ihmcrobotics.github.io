@@ -1,9 +1,14 @@
 <header class="site-header">
 
-  <div class="wrapper">
-    <a class="site-title" href="{{ site.baseurl }}/">
-      <img src="/resources/images/ihmc-robotics-white-70.png" alt="IHMC Running Man Logo" title="{{ site.title }}"/>
+  <a class="site-title" href="{{ site.baseurl }}/">
+    <img src="/resources/images/ihmc-robotics-white-70.png" alt="IHMC Running Man Logo" title="{{ site.title }}"/>
+  </a>
+
+  <div class="site-title-right">
+    <a href="https://github.com/ihmcrobotics/ihmcrobotics.github.io/issues">
+      <img src="/resources/images/issue-tracker.png" alt="Issue Tracking" title="Issue Tracking"/>
     </a>
+  </div>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -17,18 +22,18 @@
       <div class="trigger">
         {% assign sorted_pages = site.pages | sort:"order" %}
         {% for my_page in sorted_pages %}
-          {% if my_page.header-navigation-title %}
-
+          {% if my_page.header-navigation-title or my_page.header-navigation-title-image %}
             <div id="link-container">
-              <!--<a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>-->
-              <a class="page-link" href="{{ my_page.permalink | prepend: site.baseurl }}">{{ my_page.header-navigation-title }}</a>
-            </div>
+            {% if my_page.header-navigation-title %}
+                <a class="page-link" href="{{ my_page.permalink | prepend: site.baseurl }}">{{ my_page.header-navigation-title }}</a>
             {% endif %}
-
+            {% if my_page.header-navigation-title-image %}
+                <a class="page-link" href="{{ my_page.permalink | prepend: site.baseurl }}"><img src="{{ my_page.header-navigation-title-image }}"/></a>
+            {% endif %}
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     </nav>
-
-  </div>
 
 </header>
