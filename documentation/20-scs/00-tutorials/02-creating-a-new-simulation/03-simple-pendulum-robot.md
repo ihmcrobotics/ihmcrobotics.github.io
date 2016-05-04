@@ -303,7 +303,7 @@ public class SimplePendulumRobot extends Robot // SimplePendulumRobot inherits s
    public SimplePendulumRobot()
    {
       // a. Call parent class "Robot" constructor. The string "SimplePendulum" will be the name of the robot.  
-      super("pendulum");
+      super("SimplePendulum");
 
       // b. Create a link
       Link pendulumLink = new Link("PendulumLink");
