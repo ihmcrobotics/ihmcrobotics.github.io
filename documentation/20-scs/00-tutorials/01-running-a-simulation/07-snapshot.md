@@ -10,7 +10,7 @@ To save a snapshot of the 3D graphics view as an image in jpeg format, select `F
 
 ### Export a Video
 
-To save a QuickTime movie of the 3D view which plays from the data buffer in point to the out point, select `File->Export Movie` on the menu or click on the Export Movie button ![ExportMovie](/resources/images/scs-tutorials/scsExportMovieButton.png). If this is the first time exporting video you will have to accept the OpenH264 Video Codec License to proceed.
+To save a MP4 movie of the 3D view which plays from the data buffer in point to the out point, select `File->Export Movie` on the menu or click on the Export Movie button ![ExportMovie](/resources/images/scs-tutorials/scsExportMovieButton.png). If this is the first time exporting video you will have to accept the OpenH264 Video Codec License to proceed.
 
 ![ExportVideoDialog](/resources/images/scs-tutorials/scsExportVideoDialog.png)
 

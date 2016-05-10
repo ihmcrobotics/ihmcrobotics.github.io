@@ -3,7 +3,7 @@
 title: Running a simulation
 
 ---
-This tutorial assumes that you have followed the [Quick Start] guide and have the ValkyrieDemo Simulation up and running.  If you have not, please do so before you continue.  You should now have the Simulation Construction Set (SCS) graphical user interface (GUI) up as shown in **[Figure 1]**.  Now that you are ready, let's try running a simulation. The following tutorial will take you through some of the features of SCS's GUI which provides a 3D graphical image of the Simulation, and allows for the changing of variables using numerical entry boxes, real-time plotting of variables, exporting and importing of data, and the creation of jpeg snapshots and QuickTime movies.
+This tutorial assumes that you have followed the [Quick Start] guide and have the ValkyrieDemo Simulation up and running.  If you have not, please do so before you continue.  You should now have the Simulation Construction Set (SCS) graphical user interface (GUI) up as shown in **[Figure 1]**.  Now that you are ready, let's try running a simulation. The following tutorial will take you through some of the features of SCS's GUI which provides a 3D graphical image of the Simulation, and allows for the changing of variables using numerical entry boxes, real-time plotting of variables, exporting and importing of data, and the creation of jpeg snapshots and MP4 movies.
 
 <a name="figure1"></a>![SCSGUI](/resources/images/scs-tutorials/scsGUI.png)
 
