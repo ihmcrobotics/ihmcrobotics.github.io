@@ -20,4 +20,4 @@ If the simulation 'crashes', you will need to quit it and restart from your IDE.
 
 ![Crashing](/resources/images/quickstart/scsValkyrieCrashing.png)
 
-For a more detailed explanation of Gradle Projects, IHMC Robotics Libraries, and SCS, see the [Documentation](/documentation/01-scs/00-tutorials/01-running-a-simulation) pages.
+For a more detailed explanation of Gradle Projects, IHMC Robotics Libraries, and SCS, see the [Documentation](/documentation/20-scs/00-tutorials/01-running-a-simulation/) pages.
