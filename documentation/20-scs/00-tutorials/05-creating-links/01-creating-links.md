@@ -4,18 +4,23 @@ title: Creating Links
 
 ---
 
-In this tutorial, we will create various shapes and add them to a link.  
+In this tutorial we will create various shapes and add them to a link.  
 The next figure shows eleven different shapes, each with a coordinate system at their origin point. 
 
 ![ Eleven example shapes. Coordinate systems are located at the origin of each shape.](/resources/images/documentation/Figure6Shapes-500-300.png)
 
 *Eleven example shapes. Coordinate systems are located at the origin of each shape.*
 
-   1\. Create a new project in Eclipse with the name LinkExamples.  
+## 1. Create a new project in Eclipse with the name LinkExamples
+  This should have the same folder structure that you used in the [Pendulum Example].
    
-   2\. Add the class LinkExamplesSimulation
+## 2. Add the class LinkExamplesSimulation 
+
+Create a new class in the `us.ihmc.exampleSimulations.linkExamples` package called `LinkExamplesSimulation`
      
-   3\.Fill in LinkExamplesSimulation as follows:  
+## 3. Fill in LinkExamplesSimulation as follows:  
+
+These parameters adjust the size of each of the shapes that you will be creating.
 
     {% highlight java %}
     
@@ -62,135 +67,155 @@ The next figure shows eleven different shapes, each with a coordinate system at 
      
        private static final double OFFSET = 1.2, COORD_LENGTH = 0.5;
        
-       private static final double WEDGE_X = 0.4, WEDGE_Y = 0.3, WEDGE_Z = 0.2;
-     
-     
-       public LinkExamplesSimulation()
-       {
-          Robot nullRob = null;
-          sim = new SimulationConstructionSet(nullRob);
-          // position the camera to view links
-          sim.setCameraPosition(6.0, 6.0, 3.0);
-          sim.setCameraFix(0.5, 0.5, 0.0);
-          Link exampleShapes = exampleShapes();
-          sim.addStaticLink(exampleShapes);
-          sim.setGroundVisible(false);
-           
-          Thread myThread = new Thread(sim);
-          myThread.start();
-       }
-       
-      
-       public static void main(String[] args)
-       {
-          new LinkExamplesSimulation();
-       }
-     
-     
-       private Link exampleShapes()
-       {
-          Link ret = new Link("example shapes");
-          Graphics3DObject linkGraphics = new Graphics3DObject();
-          
-          // Cube
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addCube(CUBE_L, CUBE_W, CUBE_H, YoAppearance.Teal());
-          
-          // Sphere
-          linkGraphics.translate(OFFSET, 0.0, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addSphere(SPHERE_R, YoAppearance.Aqua());
-          
-          // Ellipsoid
-          linkGraphics.translate(OFFSET, 0.0, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addEllipsoid(ELLIPSOID_RX,
-                                    ELLIPSOID_RY,
-                                    ELLIPSOID_RZ,
-                                    YoAppearance.Navy());
-          // Hemiellipsoid
-          linkGraphics.translate(-2.0 * OFFSET, OFFSET, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addHemiEllipsoid(HEMI_ELLIPSOID_RX,
-                                        HEMI_ELLIPSOID_RY,
-                                        HEMI_ELLIPSOID_RZ,
-                                        YoAppearance.DarkBlue());
-          // Cylinder
-          linkGraphics.translate(OFFSET, 0.0, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addCylinder(CYLINDER_H, CYLINDER_R, YoAppearance.Green());
-          
-          // Cone
-          linkGraphics.translate(OFFSET, 0.0, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addCone(CONE_H, CONE_R, YoAppearance.DarkGreen());
-          
-          // GenTruncCone
-          linkGraphics.translate(-2.0 * OFFSET, OFFSET, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addGenTruncatedCone( GEN_TRUNCATED_CONE_HEIGHT,
-                                            GEN_TRUNCATED_CONE_BX,
-                                            GEN_TRUNCATED_CONE_BY, 
-                                            GEN_TRUNCATED_CONE_TX, 
-                                            GEN_TRUNCATED_CONE_TY,
-                                            YoAppearance.Red());
-          // ArcTorus
-          linkGraphics.translate(OFFSET, 0.0, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addArcTorus( ARC_TORUS_START_ANG,
-                                    ARC_TORUS_END_ANG,
-                                    ARC_TORUS_MAJ_RAD,
-                                    ARC_TORUS_MIN_RAD,
-                                    YoAppearance.DarkRed());
-          // PyramidCube
-          linkGraphics.translate(OFFSET, 0.0, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          linkGraphics.addPyramidCube(PYRAMID_CUBE_LX,
-                                      PYRAMID_CUBE_LY,
-                                      PYRAMID_CUBE_LZ,
-                                      PYRAMID_CUBE_LH,
-                                      YoAppearance.BlackMetalMaterial());
-           
-          // Extruded Polygon
-          linkGraphics.translate(-2.0 * OFFSET, OFFSET, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          ArrayList<Point2d> polygonPoints = new ArrayList<Point2d>();
-          polygonPoints.add(new Point2d());
-          polygonPoints.add(new Point2d(0.4, 0.0));
-          polygonPoints.add(new Point2d(0.3, 0.3));     
-          double height = 0.25;
-          linkGraphics.addExtrudedPolygon(polygonPoints, height, YoAppearance.Purple());
-           
-          // Mesh Data
-          linkGraphics.translate(OFFSET, 0.0, 0.0);
-          linkGraphics.addCoordinateSystem(COORD_LENGTH);
-          MeshDataHolder meshData = MeshDataGenerator.Wedge(WEDGE_X, WEDGE_Y, WEDGE_Z);
-          AppearanceDefinition meshAppearance = YoAppearance.Gold();
-          linkGraphics.addMeshData(meshData, meshAppearance );
-           
-          // Gridded Polytope
-          //linkGraphics.translate(OFFSET, 0.0, 0.0);
-          //linkGraphics.addGriddedPolytope();
-           
-          ret.setLinkGraphics(linkGraphics);
-           
-          return ret;
-       }
-     
+       private static final double WEDGE_X = 0.4, WEDGE_Y = 0.3, WEDGE_Z = 0.2;   
     }
     {% endhighlight %}
     
-   4\. The structure of this code should now be familiar to you. Notice, however, that this is purely a static graphic we are creating. There is no robot, and thus no dynamics.  
-   This will allow us to focus on creating the graphics of a link.  
+## 4. Add a constructor to your LinkExamplesSimulation class
+   The structure of this code should now be familiar to you. Notice, however, that this is purely a static graphic we are creating. There is no robot, and thus no dynamics.  
+   This will allow us to focus on creating the graphics of a link.
    
-   5\. Run LinkExampleSimulation. You should get a view resembling that of the figure above.  
+   {% highlight java %}
    
-   6\.Modify the values of the parameters of the shape and notice how it changes the shapes.  
+   public LinkExamplesSimulation()
+   {
+       Robot nullRob = null;
+       sim = new SimulationConstructionSet(nullRob);
+       // position the camera to view links
+       sim.setCameraPosition(6.0, 6.0, 3.0);
+       sim.setCameraFix(0.5, 0.5, 0.0);
+       Link exampleShapes = exampleShapes();
+       sim.addStaticLink(exampleShapes);
+       sim.setGroundVisible(false);
    
-   7\. Notice the location of the coordinate systems relative to each shape. The origin of each coordinate system is at the origin of each shape.  
+       Thread myThread = new Thread(sim);
+       myThread.start();
+   }
+   {% endhighlight %}
    
-   8\. Add rotations and more translation and notice their effects.  
+## 5. Next add the method exampleShapes to your LinkExampleSimulation class
+   This method will show you examples of how to create simple shapes, assign a color, and add them to your simulation.
+    
+    {% highlight java %}
+    private Link exampleShapes()
+        {
+            Link ret = new Link("example shapes");
+            Graphics3DObject linkGraphics = new Graphics3DObject();
+    
+            // Cube
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addCube(CUBE_L, CUBE_W, CUBE_H, YoAppearance.Black());
+    
+            // Sphere
+            linkGraphics.translate(OFFSET, 0.0, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addSphere(SPHERE_R, YoAppearance.Black());
+    
+            // Ellipsoid
+            linkGraphics.translate(OFFSET, 0.0, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addEllipsoid(ELLIPSOID_RX,
+                    ELLIPSOID_RY,
+                    ELLIPSOID_RZ,
+                    YoAppearance.Black());
+            // Hemiellipsoid
+            linkGraphics.translate(-2.0 * OFFSET, OFFSET, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addHemiEllipsoid(HEMI_ELLIPSOID_RX,
+                    HEMI_ELLIPSOID_RY,
+                    HEMI_ELLIPSOID_RZ,
+                    YoAppearance.Black());
+            // Cylinder
+            linkGraphics.translate(OFFSET, 0.0, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addCylinder(CYLINDER_H, CYLINDER_R, YoAppearance.Black());
+    
+            // Cone
+            linkGraphics.translate(OFFSET, 0.0, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addCone(CONE_H, CONE_R, YoAppearance.Black());
+    
+            // GenTruncCone
+            linkGraphics.translate(-2.0 * OFFSET, OFFSET, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addGenTruncatedCone( GEN_TRUNCATED_CONE_HEIGHT,
+                    GEN_TRUNCATED_CONE_BX,
+                    GEN_TRUNCATED_CONE_BY,
+                    GEN_TRUNCATED_CONE_TX,
+                    GEN_TRUNCATED_CONE_TY,
+                    YoAppearance.Black());
+            // ArcTorus
+            linkGraphics.translate(OFFSET, 0.0, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addArcTorus( ARC_TORUS_START_ANG,
+                    ARC_TORUS_END_ANG,
+                    ARC_TORUS_MAJ_RAD,
+                    ARC_TORUS_MIN_RAD,
+                    YoAppearance.Black());
+            // PyramidCube
+            linkGraphics.translate(OFFSET, 0.0, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            linkGraphics.addPyramidCube(PYRAMID_CUBE_LX,
+                    PYRAMID_CUBE_LY,
+                    PYRAMID_CUBE_LZ,
+                    PYRAMID_CUBE_LH,
+                    YoAppearance.Black());
+    
+            // Extruded Polygon
+            linkGraphics.translate(-2.0 * OFFSET, OFFSET, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            ArrayList<Point2d> polygonPoints = new ArrayList<Point2d>();
+            polygonPoints.add(new Point2d());
+            polygonPoints.add(new Point2d(0.4, 0.0));
+            polygonPoints.add(new Point2d(0.3, 0.3));
+            double height = 0.25;
+            linkGraphics.addExtrudedPolygon(polygonPoints, height, YoAppearance.Black());
+    
+            // Mesh Data
+            linkGraphics.translate(OFFSET, 0.0, 0.0);
+            linkGraphics.addCoordinateSystem(COORD_LENGTH);
+            MeshDataHolder meshData = MeshDataGenerator.Wedge(WEDGE_X, WEDGE_Y, WEDGE_Z);
+            AppearanceDefinition meshAppearance = YoAppearance.Black();
+            linkGraphics.addMeshData(meshData, meshAppearance );
+    
+            // Gridded Polytope
+            //linkGraphics.translate(OFFSET, 0.0, 0.0);
+            //linkGraphics.addGriddedPolytope();
+    
+            ret.setLinkGraphics(linkGraphics);
+    
+            return ret;
+        }
+        {% endhighlight %}
    
-   9\. Notice that all of the shapes are black. Try creating some with different appearances using the YoAppearance utility API.  
+## 6. Add the a main method to your class
+   This method should just simply create a new `LinkExamplesSimulation`.
+    
+   Just as follows:
+     {% highlight java %}
+     public static void main(String[] args)
+     {
+        new LinkExamplesSimulation();
+     }
+    {% endhighlight %}
+
+## 7. Run LinkExampleSimulation. You should get a view resembling that of the figure below.  
+![ Eleven example shapes. Coordinate systems are located at the origin of each shape.](/resources/images/documentation/Black6Figures.png)
+
+## 8. Modify the values of the parameters of some of the shapes and notice how it changes them.  
+
+   For example, try modifying the value of the cube:
+   {% highlight java %}
+   private static final double CUBE_L = 0.2, CUBE_W = 0.1, CUBE_H = 0.3;
+   {% endhighlight %}
    
-   10\. Once you are comfortable with the shapes and appearances, try experimenting to make an object, such as a snowman, out of the shapes.  
+## 9. Notice the location of the coordinate systems relative to each shape. The origin of each coordinate system is at the origin of each shape.  
+   
+## 10. Add rotations and more translation and notice their effects.  
+   
+## 11. Notice that all of the shapes are black. Try creating some with different appearances using the YoAppearance utility API.  
+   
+## 12. Once you are comfortable with the shapes and appearances, try experimenting to make an object, such as a snowman, out of the shapes.  
+   
+   
+   [Pendulum Example]: /documentation/20-scs/00-tutorials/02-creating-a-new-simulation
