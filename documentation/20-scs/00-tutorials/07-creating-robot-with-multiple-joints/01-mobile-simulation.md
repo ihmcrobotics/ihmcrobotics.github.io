@@ -6,12 +6,12 @@ title: Mobile Simulation
 
 The next figure shows a screen shot of the mobile simulation.
 
-![mobile](/resources/images/documentation/scsTutorial/scs-tutorial-7-mobile.png)  
+![mobile](/resources/images/documentation/scsTutorial/scs-tutorial-7-mobile.png)
 *Mobile Simulation*
 
-1\. Create a new project in Eclipse with the name Mobile.
+## 1. Create a new project with the name Mobile.
 
-2\. Add the class MobileSimulation and fill it in as follows:
+## 2. Add the class MobileSimulation and fill it in as follows:
 {%highlight java%}
 package us.ihmc.exampleSimulations.mobile;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;

@@ -20,7 +20,9 @@ Create a new class in the `us.ihmc.exampleSimulations.linkExamples` package call
      
 ## 3. Fill in LinkExamplesSimulation as follows:  
 
-These parameters adjust the size and positional offset from each other(`OFFSET` & `COORD_LENGTH`) of each of the shapes that you will be creating.
+   The following code is where you will be declaring final variables for shapes like a sphere, ellipsoid, cylinder, arc torus, and wedge.
+   
+   We typically declare these variables separately than the creation of the shapes so that they can can be more easily changed and found.
 
     {% highlight java %}
     
@@ -57,6 +59,9 @@ These parameters adjust the size and positional offset from each other(`OFFSET` 
     }
     {% endhighlight %}
     
+   The parameters that adjust placement and spacing of the shapes are the `OFFSET` and `COORD_LENGTH`.
+
+    
 ## 4. Add a constructor to your LinkExamplesSimulation class
    The structure of this code should now be familiar to you. Notice, however, that this is purely a static graphic we are creating. There is no robot, and thus no dynamics.  
    This will allow us to focus on creating the graphics of a link.
@@ -79,7 +84,7 @@ These parameters adjust the size and positional offset from each other(`OFFSET` 
    }
    {% endhighlight %}
    
-## 5. Next add the method exampleShapes to your LinkExampleSimulation class
+## 5. Next add the method `exampleShapes` to your LinkExampleSimulation class
    This method will show you examples of how to create simple shapes, assign a color, and add them to your simulation.
    
    In this method there are examples of a Sphere, Ellipsoid, Cylinder, ArcTorus, Extruded Polygon, Mesh Data, and a Gridded Polytope.
@@ -152,6 +157,7 @@ These parameters adjust the size and positional offset from each other(`OFFSET` 
      }
     {% endhighlight %}
    
+   
 ## Full code for the class
 <details>
 <summary> Link Examples Simulation </summary>
@@ -169,7 +175,6 @@ import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
 import us.ihmc.simulationconstructionset.Link;
 import us.ihmc.simulationconstructionset.Robot;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
-
 
 
 public class LinkExamplesSimulation
@@ -260,10 +265,6 @@ public class LinkExamplesSimulation
         MeshDataHolder meshData = MeshDataGenerator.Wedge(WEDGE_X, WEDGE_Y, WEDGE_Z);
         AppearanceDefinition meshAppearance = YoAppearance.Black();
         linkGraphics.addMeshData(meshData, meshAppearance );
-
-        // Gridded Polytope
-        //linkGraphics.translate(OFFSET, 0.0, 0.0);
-        //linkGraphics.addGriddedPolytope();
 
         ret.setLinkGraphics(linkGraphics);
 

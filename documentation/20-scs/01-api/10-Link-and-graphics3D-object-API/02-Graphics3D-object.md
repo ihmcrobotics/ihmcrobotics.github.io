@@ -34,6 +34,6 @@ public static final int Axis.Y;
 public static final int Axis.Z;
 {% endhighlight %}
 
-[Back to Creating Links Tutorial]
+[Example of how Graphics3DObject is used]
 
-[Back to Creating Links Tutorial]: /documentation/20-scs/00-tutorials/05-creating-links/#Run%20the%20Simulation
+[How Graphics3DObject is used]: /documentation/20-scs/00-tutorials/05-creating-links/#Run%20the%20Simulation
