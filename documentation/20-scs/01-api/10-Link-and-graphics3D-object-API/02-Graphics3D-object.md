@@ -36,4 +36,4 @@ public static final int Axis.Z;
 
 [Example of how Graphics3DObject is used]
 
-[How Graphics3DObject is used]: /documentation/20-scs/00-tutorials/05-creating-links/#Run%20the%20Simulation
+[Example of how Graphics3DObject is used]: /documentation/20-scs/00-tutorials/05-creating-links

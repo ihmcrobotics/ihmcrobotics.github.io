@@ -11,9 +11,10 @@ The next figure shows eleven different shapes, each with a coordinate system at 
 
 *Eleven example shapes. Coordinate systems are located at the origin of each shape.*
 
-## 1. Create a new project in with the name LinkExamples
+## 1. Create a new package with the name LinkExamples
   This should have the same folder structure that you used in the [Pendulum Example].
-   
+  Your new `LinkExamples` package should be within your `us.ihmc.exampleSimulations` package. 
+  
 ## 2. Add the class LinkExamplesSimulation 
 
 Create a new class in the `us.ihmc.exampleSimulations.linkExamples` package called `LinkExamplesSimulation`

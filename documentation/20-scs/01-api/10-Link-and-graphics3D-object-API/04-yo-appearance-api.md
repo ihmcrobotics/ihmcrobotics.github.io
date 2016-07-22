@@ -55,4 +55,4 @@ Appearance YoAppearance.StoneTexture(Component comp);
 
 [Example of how YoAppearance is used]
 
-[Example of how YoAppearance is used]: /documentation/20-scs/00-tutorials/05-creating-links/#Run%20the%20Simulation
+[Example of how YoAppearance is used]: /documentation/20-scs/00-tutorials/05-creating-links

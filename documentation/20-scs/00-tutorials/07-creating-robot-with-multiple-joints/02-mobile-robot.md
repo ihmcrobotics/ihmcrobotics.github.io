@@ -4,8 +4,10 @@ title: MobileRobot.class
 
 ---
 
-Add the class MobileRobot and fill it in as follows:
+Add the class **MobileRobot** and fill it in as follows:
 
+<details>
+<summary>MobilRobot Class</summary>
 {%highlight java%}
 
 package us.ihmc.exampleSimulations.mobile;
@@ -238,3 +240,4 @@ public class MobileRobot extends Robot
 }
 
 {%endhighlight%}
+</details>
