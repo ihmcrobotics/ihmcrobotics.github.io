@@ -6,7 +6,7 @@ title: MobileRobot.class
 
 Add the class **MobileRobot** and fill it in as follows:
 
-<details>
+<details open>
 <summary>MobilRobot Class</summary>
 {%highlight java%}
 

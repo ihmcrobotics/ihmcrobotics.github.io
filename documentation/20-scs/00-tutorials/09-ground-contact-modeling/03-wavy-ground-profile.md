@@ -1,9 +1,14 @@
 ---
 
-title: WavyGroundProfile.class
+title: Create a New Class WavyGroundProfile
 
 ---
 
+## 4. Lastly Create a Class Named `WavyGroundProfile`
+   Fill the class with the following:
+
+<details open>
+<summary>WavyGroundProfile Class</summary>
 {% highlight java %}
 package us.ihmc.exampleSimulations.fallingBrick;
 import javax.vecmath.Point3d;
@@ -74,3 +79,4 @@ public class WavyGroundProfile implements GroundProfile3D, HeightMapWithNormals
 }
 
 {%endhighlight%}
+</details>

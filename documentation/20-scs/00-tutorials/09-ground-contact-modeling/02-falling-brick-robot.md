@@ -1,9 +1,14 @@
 ---
 
-title: FallingBrickRobot.class
+title: Create a New Class FallingBrickRobot
 
 ---
 
+## 3. Create a New Separate Class Called `FallingBrickRobot`
+   Fill the class with the following:
+
+<details open>
+<summary>FallingBrinkRobot Class</summary>
 {%highlight java%}
 package us.ihmc.exampleSimulations.fallingBrick;
 import javax.vecmath.Vector3d;
@@ -175,3 +180,4 @@ public class FallingBrickRobot extends Robot implements RobotController
    }
 }
 {%endhighlight%}
+</details>

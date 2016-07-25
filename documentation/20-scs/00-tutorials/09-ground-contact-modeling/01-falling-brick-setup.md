@@ -1,9 +1,17 @@
 ---
 
-title: FallingBrickSimulation.class
+title: Create a New Package and new Class FallingBrickSimulation
 
 ---
 
+## 1. Create a New Package in your `us.ihmc.exampleSimulations` Package
+   Name the new package **FallingBrick**.
+
+## 2. Create a New Java Class Named `FallingBrickSimulation`
+   Fill the class with the following:
+
+<details open>
+<summary>FallingBrickSimulation Class</summary>
 {%highlight java%}
 package us.ihmc.exampleSimulations.fallingBrick;
 import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
@@ -19,9 +27,8 @@ public class FallingBrickSimulation
    public FallingBrickSimulation()
    {
       GROUND_APPEARANCE appearance = GROUND_APPEARANCE.EARTH;
-      FallingBrickRobot FallingBrick = new FallingBrickRobot();
-      //      sim = new SimulationConstructionSet(FallingBrick, new JMEGraphics3dAdapter(), 16342);
-      sim = new SimulationConstructionSet(FallingBrick, 16342);
+      FallingBrickRobot = fallingBrick = new FallingBrickRobot();
+      sim = new SimulationConstructionSet(fallingBrick, 16342);
       sim.setDT(0.001, 20);
       sim.setCameraPosition(-1.5, -2.5, 0.5);
       sim.setCameraFix(0.0, 0.0, 0.4);
@@ -57,4 +64,5 @@ public class FallingBrickSimulation
 }
 
 {%endhighlight%}
+</details>
 

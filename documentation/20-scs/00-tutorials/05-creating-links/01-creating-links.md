@@ -85,7 +85,7 @@ Create a new class in the `us.ihmc.exampleSimulations.linkExamples` package call
    }
    {% endhighlight %}
    
-## 5. Next add the method `exampleShapes` to your LinkExampleSimulation class
+## 5. Next add the method exampleShapes to your LinkExampleSimulation class
    This method will show you examples of how to create simple shapes, assign a color, and add them to your simulation.
    
    In this method there are examples of a Sphere, Ellipsoid, Cylinder, ArcTorus, Extruded Polygon, Mesh Data, and a Gridded Polytope.

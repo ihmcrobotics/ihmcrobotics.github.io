@@ -9,11 +9,13 @@ The next figure shows a screen shot of the mobile simulation.
 ![mobile](/resources/images/documentation/scsTutorial/scs-tutorial-7-mobile.png)
 *Mobile Simulation*
 
-## 1. Create a new package with the name Mobile.
+## 1. Create a new package with the name Mobile
    This package should be placed in the `us.ihmc.exampleSimulation` package.
 
 ## 2. Add the class MobileSimulation and fill it in as follows:
 
+<details open>
+<summary>MobileSimulation Class</summary>
 {%highlight java%}
 package us.ihmc.exampleSimulations.mobile;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
@@ -47,6 +49,7 @@ public class MobileSimulation
    }
 }
 {%endhighlight%}
+</details>
 
 ## 3. Note that the integration time step is set to 0.02 seconds: 
 * **sim.setDT(0.02, 1);**

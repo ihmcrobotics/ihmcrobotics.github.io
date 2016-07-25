@@ -19,4 +19,4 @@ You can also change the camera parameters by using the dialog accessed through `
 
 * If tracking is enabled, then the camera will track the location specified by the simulation variables q_x, q_y, q_z. 
 * If dolly is enabled, then the camera will move at an offset from the location specified by the simulation variables q_x, q_y, q_z. 
-* The variables used for tracking or dolly can also be set using the [SimulationConstructionSet API](/documentation/01-scs/01-api/00-api/#Camera%20Methods).
+* The variables used for tracking or dolly can also be set using the [SimulationConstructionSet API](/documentation/20-scs/01-api/00-api/#Camera%20Methods).
