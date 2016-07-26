@@ -3,7 +3,8 @@
 category: Summary
 
 ---
- ![Duration](/resources/images/clock-50.png) **Duration:** 20 min
+ ![Duration](/resources/images/clock-50.png) **Duration:** 15 min
+ 
  ![Keywords](/resources/images/concept-50.png) **Keywords:** Joints, Gimbal
 
 In the previous tutorial we had created various shapes and added them to a link.

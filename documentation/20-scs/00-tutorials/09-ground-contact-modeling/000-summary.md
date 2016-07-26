@@ -4,6 +4,7 @@ category: Summary
 
 ---
  ![Duration](/resources/images/clock-50.png) **Duration:** 20 min
+ 
  ![Keywords](/resources/images/concept-50.png) **Keywords:** Ground Contact, Terrain, Damping
 
 In the previous tutorial we had created a model of a child's toy mobile using links, shapes, and gimbal joints.
