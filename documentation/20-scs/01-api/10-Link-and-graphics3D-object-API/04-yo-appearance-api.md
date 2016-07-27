@@ -53,6 +53,7 @@ Returns a texture mapped stone Appearance. The stone graphics are taken from the
 Appearance YoAppearance.StoneTexture(Component comp);
 {% endhighlight %}
 
+### Related Example:
 [Example of how YoAppearance is used]
 
 [Example of how YoAppearance is used]: /documentation/20-scs/00-tutorials/05-creating-links

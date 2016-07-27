@@ -1,14 +1,12 @@
 ---
 
-title: FlyballGovernorCommonControlParameters class
+title: FlyballGovernorCommonControlParameters Class
 
 ---
 
-## 5. Create another class called FlyballGovernorCommonControlParameters
+## Create another class called FlyballGovernorCommonControlParameters
    Fill the class with the following:
    
-<details open>
-<summary>FlyballGovernorCommonControlParameters Class</summary>
 {%highlight java%}
 package us.ihmc.exampleSimulations.FlyballGovernor;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
@@ -44,4 +42,3 @@ public class FlyballGovernorCommonControlParameters
     }
 }
 {%endhighlight%}
-</details>

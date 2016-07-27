@@ -1,17 +1,14 @@
 ---
 
-title: Create a New Package and new Class FallingBrickSimulation
+title: Create a New Class FallingBrickSimulation
 
 ---
-
-## 1. Create a New Package in your `us.ihmc.exampleSimulations` Package
-   Name the new package **FallingBrick**.
-
-## 2. Create a New Java Class Named `FallingBrickSimulation`
+## Create a New Java Class Named FallingBrickSimulation
    Fill the class with the following:
+   
+   These are just the initial variables and environment setup.
 
-<details open>
-<summary>FallingBrickSimulation Class</summary>
+
 {%highlight java%}
 package us.ihmc.exampleSimulations.fallingBrick;
 import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
@@ -64,5 +61,4 @@ public class FallingBrickSimulation
 }
 
 {%endhighlight%}
-</details>
 

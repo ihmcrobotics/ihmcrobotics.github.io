@@ -44,3 +44,8 @@ Sets the camera offset vector from the object it is dollying relative to.
 void setCameraDollyVars(String xName, String yName, String zName)
 {% endhighlight %}
 Sets the variable names of the object the camera is dollying relative to. Default is q_x, q_y, q_z.
+
+### Related Example:
+[Example of Camera Methods]
+
+[Example of Camera Methods]: /documentation/20-scs/00-tutorials/02-creating-a-new-simulation

@@ -47,6 +47,7 @@ public abstract double getXTiles();
 public abstract double getYTiles();
 {%endhighlight%}
 
+### Related Example: 
 [Example of GroundProfile in Use]
 
 [Example of GroundProfile in Use]: /documentation/20-scs/00-tutorials/09-ground-contact-modeling

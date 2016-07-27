@@ -35,3 +35,8 @@ Adds a static link with no physics. For creating the surrounding static world.
 public void setFastSimulate(boolean fastSimulate)
 {% endhighlight %}
 If fastSimulate is true, makes the GUI less responsive during simulation in order to increase simulation speed.
+
+### Related Example:
+[Example of Simulation Parameters]
+
+[Example of Simulation Parameters]: /documentation/20-scs/00-tutorials/02-creating-a-new-simulation

@@ -1,14 +1,12 @@
 ---
 
-title: FlyballGovernorSimulation
+title: FlyballGovernorSimulation Class
 
 ---
 
-## 2. Create a class called FlyballGovernorSimulation
-   Fill the class with the following:
-
-<details open>
-<summary>FlyballGovernorSimulation</summary>
+## Create a class called FlyballGovernorSimulation
+   Fill the class with the following:  
+   This class simply creates a FlyballGovernorSimulation and performs the basic setup of the simulation.
 {%highlight java%}
 package us.ihmc.exampleSimulations.FlyballGovernor;
 
@@ -45,4 +43,3 @@ public class FlyballGovernorSimulation
     }
 }
 {%endhighlight%}
-</details>

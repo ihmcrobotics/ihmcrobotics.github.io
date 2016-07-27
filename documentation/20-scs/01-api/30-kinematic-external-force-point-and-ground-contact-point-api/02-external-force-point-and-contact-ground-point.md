@@ -37,3 +37,9 @@ Touch-down position and footswitch. fs.val = 1.0 during foot contact and 0.0 oth
 {%highlight java%}
 public YoVariable fs;
 {%endhighlight%}
+
+
+### Related Example:
+[Example of ExternalForcePoint in use]
+
+[Example of ExternalForcePoint in use]: /documentation/20-scs/00-tutorials/10-implementing-closed-chain-mechanisms-using-external-force-points

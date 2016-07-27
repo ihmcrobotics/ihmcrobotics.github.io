@@ -145,6 +145,7 @@ Adds limit stops to the indicated axis of the GimbalJoint.
 void setLimitStops(int axis, double q_min, double q_max, double k_limit, double b_limit)
 {%endhighlight%}
 
+### Related Example:
 [Example of Joint Constructor use]
 
 [Example of Joint Constructor use]: /documentation/20-scs/00-tutorials/07-creating-robot-with-multiple-joints

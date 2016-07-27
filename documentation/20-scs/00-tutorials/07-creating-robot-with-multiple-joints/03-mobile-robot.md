@@ -1,6 +1,6 @@
 ---
 
-title: MobileRobot Class
+title: Initial Variables in MobileRobot Class
 
 ---
 

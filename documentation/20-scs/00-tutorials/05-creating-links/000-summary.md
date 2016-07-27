@@ -3,7 +3,7 @@
 category: Summary
 
 ---
- ![Duration](/resources/images/clock-50.png) **Duration:** 15 min
+ ![Duration](/resources/images/clock-50.png) **Duration:** 15 min  
  ![Keywords](/resources/images/concept-50.png) **Keywords:** Link, Graphic, YoAppearance
 
 In the previous tutorial we had illustrated the action of a controller on joints by forcing the pendulum to keep a horizontal position.

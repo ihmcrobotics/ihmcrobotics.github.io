@@ -93,3 +93,8 @@ Adds a coordinate system with rods of the given length. The x axis is red, the y
 {% highlight java %}
 void addCoordinateSystem (double length)
 {% endhighlight %}
+
+### Related Example:
+[Example of Adding Shapes]
+
+[Example of Adding Shapes]: /documentation/20-scs/01-api/10-Link-and-graphics3D-object-API

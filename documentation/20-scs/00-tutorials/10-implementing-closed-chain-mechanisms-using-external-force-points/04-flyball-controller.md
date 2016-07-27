@@ -1,14 +1,11 @@
 ---
 
-title: FlyballGovernorSimpleClosedLoopConstraintController class
+title: FlyballGovernorSimpleClosedLoopConstraintController Class
 
 ---
 
-## 4. Create another class called FlyballGovernorSimpleClosedLoopConstraintController
+## Create another class called FlyballGovernorSimpleClosedLoopConstraintController
    Fill the class with the following:
-
-<details open>
-<summary>FlyballGovernorSimpleClosedLoopConstraintController Class</summary>
 
 {%highlight java%}
 package us.ihmc.exampleSimulations.FlyballGovernor;
@@ -75,24 +72,7 @@ public class FlyballGovernorSimpleClosedLoopConstraintController implements Robo
         doConstraint(position1A, position1B, velocity1A, velocity1B, force1A, force1B, positionErrorMagnitude1);
         doConstraint(position2A, position2B, velocity2A, velocity2B, force2A, force2B, positionErrorMagnitude2);
     }
-    private void doConstraint(YoFramePoint positionA, YoFramePoint positionB, YoFrameVector velocityA, YoFrameVector velocityB,
-                              YoFrameVector forceA, YoFrameVector forceB, DoubleYoVariable positionErrorMagnitude)
-    {
-        positionA.get(posA);
-        positionB.get(posB);
-        velocityA.get(velA);
-        velocityB.get(velB);
-        springForceA.sub(posB, posA);
-        positionErrorMagnitude.set(springForceA.length());
-        springForceA.scale(constraintGain.getDoubleValue());
-        dampingForceA.sub(velB, velA);
-        dampingForceA.scale(constraintDamp.getDoubleValue());
-        newForceA.add(springForceA, dampingForceA);
-        newForceB.scale(-1.0, newForceA);
 
-        forceA.set(newForceA);
-        forceB.set(newForceB);
-    }
     public YoVariableRegistry getYoVariableRegistry()
     {
         return registry;
@@ -108,4 +88,3 @@ public class FlyballGovernorSimpleClosedLoopConstraintController implements Robo
 }
 
 {%endhighlight%}
-</details>

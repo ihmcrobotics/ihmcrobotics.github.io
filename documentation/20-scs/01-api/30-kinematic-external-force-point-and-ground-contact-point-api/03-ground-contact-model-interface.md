@@ -20,3 +20,8 @@ Sets and returns the GroundProfile.
 public abstract void setGroundProfile(GroundProfile profile); 
 public abstract GroundProfile getGroundProfile();
 {%endhighlight%}
+
+### Related Example: 
+[Example of GroundContactModel in Use]
+
+[Example of GroundContactModel in Use]: /documentation/20-scs/00-tutorials/09-ground-contact-modeling
