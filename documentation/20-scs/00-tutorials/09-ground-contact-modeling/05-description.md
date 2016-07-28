@@ -231,6 +231,7 @@ Since `WavyGroundProfile` implements the interface `GroundProfile`, it defines t
 
 ## 7. Study the doGroundContact and resolveContactForceZUp methods
    These can be found in the file LinearStickSlipGroundContactModel.java  
+   
    Notice that the ground is modeled as a linear spring-damper in the x and y directions and a non-linear spring and a linear damper in the z direction.
    Using a non-linear (hardening) spring in the z direction is a standard way to prevent ground chatter or bounce while still simulating a stiff ground. This `GroundContactModel` is a simple one and does not take into consideration the surface normal of the ground, or ground slipping. 
    For this example simulation, that is ok, but in many instances, these effects are important. If so, then you should use one of the other ground contact models in the `com.yobotics.simulationconstructionset.utils` package, or create your own.

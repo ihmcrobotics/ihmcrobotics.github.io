@@ -5,8 +5,9 @@ title: Initial Variables in MobileRobot Class
 ---
 
 ## Create and add the class MobileRobot 
-   Fill it in with the following:
+   Fill it in with the following:  
 
+   These are the separately declared variables that are meant to be easily changed if needed.
 
 {%highlight java%}
 
@@ -60,4 +61,3 @@ public class MobileRobot extends Robot
 
 {%endhighlight%}
 
-These are the separately declared variables that are meant to be easily changed if needed.

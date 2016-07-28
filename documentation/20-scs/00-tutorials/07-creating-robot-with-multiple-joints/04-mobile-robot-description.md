@@ -95,7 +95,9 @@ Examine the lines where the 3 different levels of gimbal joints are defined. Not
 Note that the joint offsets are completely independent of any translations or rotations which are performed while specifying links:
    
    `firstGimbal = new GimbalJoint("gimbal_x", "gimbal_y","gimbal_z", new Vector3d(0.0,0.0,1.0), this, Axis.X, Axis.Y, Axis.Z);`  
+   
    `nextGimbal = new GimbalJoint("gimbal1_" + i + "_x", "gimbal1_" + i + "_y", "gimbal1_" + i + "_z", new Vector3d(xOffset, yOffset, -L1 / 2.0), this, Axis.X, Axis.Y, Axis.Z);`  
+   
    `finalGimbal = new GimbalJoint("gimbal2_" + i + "_" + j + "_x", "gimbal2_" + i + "_" + j + "_y", "gimbal2_" + i + "_" + j + "_z", new Vector3d(xOffset, yOffset, -L2 / 2.0), this, Axis.X, Axis.Y, Axis.Z);`
     
     
