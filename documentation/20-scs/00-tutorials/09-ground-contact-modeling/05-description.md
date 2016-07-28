@@ -476,6 +476,7 @@ public class FallingBrickRobot extends Robot implements RobotController
     {
         return getName();
     }
+}
 {%endhighlight%}
 </details>
 
