@@ -16,4 +16,4 @@ Alternatives to locks are:
 
 -Atomic variables (`AtomicBoolean`, `AtomicLong`, `AtomicInteger`, `AtomicReference`, `AtomicDouble`). If you only need to communicate a single variable between threads, use these classes. Remember that if you want to communicate several booleans, you can also encode that in an `AtomicInteger`. Read and set to a default value using `getAndSet()` if necessary. `getAndSet()` is an atomic operation.
 - For sporadic data transfer between threads, use a `ConcurrentLinkedQueue` (do NOT use the blocking variant). Note that the `ConcurrentLinkedQueue` creates a small amount of garbage on insertion.
-- For high performance data transfer, use either the `ConcurrentCopier` or the `ConcurrentRingBuffer` classes in [https://github.com/ihmcrobotics/ihmc-realtime](IHMCRealtime).
+- For high performance data transfer, use either the `ConcurrentCopier` or the `ConcurrentRingBuffer` classes in [https://github.com/ihmcrobotics/ihmc-realtime](https://github.com/ihmcrobotics/ihmc-realtime).

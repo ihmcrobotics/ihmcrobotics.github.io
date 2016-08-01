@@ -46,3 +46,8 @@ Returns the number of tilings to perform in both the x and y direction if the gr
 public abstract double getXTiles(); 
 public abstract double getYTiles();
 {%endhighlight%}
+
+### Related Example: 
+[Example of GroundProfile in Use]
+
+[Example of GroundProfile in Use]: /documentation/20-scs/00-tutorials/09-ground-contact-modeling

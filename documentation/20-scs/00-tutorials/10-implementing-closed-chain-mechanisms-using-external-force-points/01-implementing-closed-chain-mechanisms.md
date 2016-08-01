@@ -11,4 +11,7 @@ A "glue" force can then be computed based on the error in position between the t
 In this tutorial, you'll see how to construct a Flyball Governor simulation, like the one shown in Figure 8. 
 Since this is a closed-loop mechanism, we use ExternalForcePoints to hold the cross links to the rotating blue cylinder. 
 
-1. Run Eclipse and create a new project called **FlyballGovernor**. Create four classes using the following code:
+![Figure 8](/resources/images/documentation/Figure8Flyball.PNG)
+
+## Create a new package called FlyballGovernor 
+   The package should be located within your us.ihmc.exampleSimulations package.

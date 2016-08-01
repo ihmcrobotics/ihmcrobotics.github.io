@@ -41,3 +41,7 @@ YoVariable efp1_fz = point1.fz;
 efp1_fz.val = 1.0;
 {%endhighlight%}
 
+### Related Example:
+[Example of special points in use]
+
+[Example of special points in use]: /documentation/20-scs/00-tutorials/10-implementing-closed-chain-mechanisms-using-external-force-points
