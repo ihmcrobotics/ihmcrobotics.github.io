@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Welcome"
-date:   2016-04-29 6:46:19 -0600
+title:  "Tutorials are Updated"
+date:   2016-08-01 2:50:19 -0600
 description: The SCS tutorials have been updated!
 
 ---
 
-## Welcome!
+## Tutorials are Updated!
 
 The SCS tutorials have been updated! Click [here] to check out what is new!
 
