@@ -8,7 +8,7 @@ title: FlyballGovernorCommonControlParameters Class
    Fill the class with the following:
    
 {%highlight java%}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
 

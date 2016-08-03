@@ -253,7 +253,7 @@ in order to determine the model and profile best for your simulation, and to und
 <details>
 <summary>FallingBrickSimulation</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.FallingBrick  ;
+package us.ihmc.exampleSimulations.fallingBrick  ;
 import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
 import us.ihmc.simulationconstructionset.SimulationConstructionSetParameters;
@@ -309,7 +309,7 @@ public class FallingBrickSimulation
 <details>
 <summary>FallingBrickRobot</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.FallingBrick;
+package us.ihmc.exampleSimulations.fallingBrick;
 import javax.vecmath.Vector3d;
 import us.ihmc.graphics3DAdapter.GroundProfile3D;
 import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
@@ -484,7 +484,7 @@ public class FallingBrickRobot extends Robot implements RobotController
 <details>
 <summary>WavyGroundProfile</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.FallingBrick;
+package us.ihmc.exampleSimulations.fallingBrick;
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
 import us.ihmc.graphics3DAdapter.GroundProfile3D;

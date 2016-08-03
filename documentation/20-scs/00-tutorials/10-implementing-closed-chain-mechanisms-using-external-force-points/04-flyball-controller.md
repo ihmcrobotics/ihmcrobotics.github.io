@@ -8,7 +8,7 @@ title: FlyballGovernorSimpleClosedLoopConstraintController Class
    Fill the class with the following:
 
 {%highlight java%}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;

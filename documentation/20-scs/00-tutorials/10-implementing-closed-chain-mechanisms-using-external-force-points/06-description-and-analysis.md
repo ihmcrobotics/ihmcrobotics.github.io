@@ -171,7 +171,7 @@ private Link centerRod()
 <details>
 <summary>FlyballGovernorSimulation</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Vector3d;
 import us.ihmc.simulationconstructionset.Robot;
@@ -211,7 +211,7 @@ public class FlyballGovernorSimulation
 <details>
 <summary>FlyballGovernorRobot</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Vector3d;
 import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
@@ -404,7 +404,7 @@ public class FlyballGovernorRobot extends Robot implements RobotController
 <details>
 <summary>FlyballGovernorSimpleClosedLoopConstraintController</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
@@ -505,7 +505,7 @@ public class FlyballGovernorSimpleClosedLoopConstraintController implements Robo
 <details>
 <summary>FlyballGovernorCommonControlParameters</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
 

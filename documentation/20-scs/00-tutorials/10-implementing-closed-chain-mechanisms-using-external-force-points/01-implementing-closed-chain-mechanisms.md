@@ -13,5 +13,5 @@ Since this is a closed-loop mechanism, we use ExternalForcePoints to hold the cr
 
 ![Figure 8](/resources/images/documentation/Figure8Flyball.PNG)
 
-## Create a new package called FlyballGovernor 
+## Create a new package called flyballGovernor 
    The package should be located within your us.ihmc.exampleSimulations package.

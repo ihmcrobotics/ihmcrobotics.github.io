@@ -11,7 +11,7 @@ title: Initial Variables in MobileRobot Class
 
 {%highlight java%}
 
-package us.ihmc.exampleSimulations.Mobile;
+package us.ihmc.exampleSimulations.mobile;
  
 import javax.vecmath.Vector3d;
 import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;

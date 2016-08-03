@@ -8,7 +8,7 @@ title: FlyballGovernorSimulation Class
    Fill the class with the following:  
    This class simply creates a FlyballGovernorSimulation and performs the basic setup of the simulation.
 {%highlight java%}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Vector3d;
 import us.ihmc.simulationconstructionset.Robot;

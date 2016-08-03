@@ -316,7 +316,7 @@ For more detailed information on joints check out the [Robots and Joint API Page
 <details>
 <summary>MobileSimulation Class</summary>
 {%highlight java%}
-package us.ihmc.exampleSimulations.Mobile;
+package us.ihmc.exampleSimulations.mobile;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
 /**
  * A simulation of a child’s mobile toy that uses a tree structure of 21 gimbal
@@ -353,7 +353,7 @@ public class MobileSimulation
 <summary>MobilRobot Class</summary>
 {%highlight java%}
 
-package us.ihmc.exampleSimulations.Mobile;
+package us.ihmc.exampleSimulations.mobile;
  
 import javax.vecmath.Vector3d;
 import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;

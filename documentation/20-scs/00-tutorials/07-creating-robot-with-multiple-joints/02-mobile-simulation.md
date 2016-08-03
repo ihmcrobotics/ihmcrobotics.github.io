@@ -8,7 +8,7 @@ title: Mobile Simulation
    Fill it in as follows:
 
 {%highlight java%}
-package us.ihmc.exampleSimulations.Mobile;
+package us.ihmc.exampleSimulations.mobile;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
 /**
  * A simulation of a child’s mobile toy that uses a tree structure of 21 gimbal

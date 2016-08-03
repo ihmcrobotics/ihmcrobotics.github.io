@@ -9,7 +9,7 @@ title: FlyballGovernorRobot Class
    This class simply creates the initControl and doControl methods and declares initial variables that can be easily changed later on.
 
 {% highlight java %}
-package us.ihmc.exampleSimulations.FlyballGovernor;
+package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Vector3d;
 import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
