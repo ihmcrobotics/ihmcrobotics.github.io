@@ -4,7 +4,7 @@ title: Requirements
 
 ---
 
-*IHMCOpenRoboticsSoftware* uses the [Gradle build system](/documentation/00-installation/01-gradle/00-installing-gradle), and requires [JDK 7 or 8](/documentation/00-installation/00-java/00-installing-java).
+*IHMCOpenRoboticsSoftware* uses the [Gradle build system](/documentation/10-installation/01-gradle/00-installing-gradle), and requires [JDK 8](/documentation/10-installation/00-java/00-installing-java).
 
 Gradle is a build system for Java. It has the benefit of being able to integrate with other Java technology that is used for dependency resolution like Ivy and Maven; if you're coming from a C/C++ world, you can think of it as CMake with a built-in package manager. Currently, we require **Gradle 2.10+**. We provide a versioned [Gradle wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) for getting started quickly. The Gradle wrapper will always reflect the minimum version of Gradle required to build the software; if we adopt features only present in newer versions of Gradle as they are release we will update the wrapper.
 
@@ -12,9 +12,9 @@ We also strongly suggest an IDE, either [Eclipse Mars.1+](http://www.eclipse.org
 
 Required:
 
-* [Java 7 or 8](/documentation/00-installation/00-java/00-installing-java)
-* [Gradle 2.10+](/documentation/00-installation/01-gradle/00-installing-gradle)
+* [Java 8u111 or higher](/documentation/10-installation/00-java/00-installing-java)
+* [Gradle 2.10+](/documentation/10-installation/01-gradle/00-installing-gradle)
 
 Optional:
 
-* [IDE](/documentation/00-installation/02-ide/00-install-an-ide)
+* [IDE](/documentation/10-installation/02-ide/00-install-an-ide)

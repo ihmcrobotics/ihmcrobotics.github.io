@@ -87,13 +87,12 @@ Before continuing, make sure you have added the following classes to your import
 <details open>
 <summary> Required Imports </summary>
 {% highlight java %}
-import us.ihmc.simulationconstructionset.Link;  
-import us.ihmc.simulationconstructionset.PinJoint;  
-
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.robotics.Axis;
-
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
+import us.ihmc.simulationconstructionset.Link;
+import us.ihmc.simulationconstructionset.PinJoint;
+import us.ihmc.simulationconstructionset.Robot;
 
 import javax.vecmath.Vector3d;
 {% endhighlight %}
@@ -198,7 +197,7 @@ Add the following to the end of the constructor:
 <summary> 3D Object Creation </summary>
 {% highlight java %}
       // e. Add 3D objects
-      Graphics3DObject pendulumGraphics = new Graphics3DObject();
+      LinkGraphicsDescription pendulumGraphics = new LinkGraphicsDescription();
       pendulumGraphics.addSphere(FULCRUM_RADIUS, YoAppearance.BlueViolet());
       pendulumGraphics.translate(0.0, 0.0, -ROD_LENGTH);
       pendulumGraphics.addCylinder(ROD_LENGTH, ROD_RADIUS, YoAppearance.Black());
@@ -207,9 +206,9 @@ Add the following to the end of the constructor:
 {% endhighlight %}
 </details>   
 
-* **Create a new Graphics3DObject:**  
-`Graphics3DObject pendulumGraphics = new Graphics3DObject();`  
-This line creates a new instance of the Graphics3DObject class which, once attached to its `LinkGraphics`, is used to visually represent links in the SCS 3D view. 
+* **Create a new LinkGraphicsDescription:**  
+`LinkGraphicsDescription pendulumGraphics = new LinkGraphicsDescription();`  
+This line creates a new instance of the LinkGraphicsDescription class which, once attached to its `LinkGraphics`, is used to visually represent links in the SCS 3D view. 
  
 * **Add the pivot:**  
 `pendulumGraphics.addSphere(FULCRUM_RADIUS, YoAppearance.BlueViolet());`  
@@ -225,7 +224,7 @@ Adds a 1m long black cylinder representing the rod.
 `pendulumGraphics.addSphere(BALL_RADIUS, YoAppearance.Chartreuse());`  
 Adds a yellow sphere representing the ball at the end of the rod.   
 
-* **Attach the Graphics3DObject to its Link:**  
+* **Attach the LinkGraphicsDescription to its Link:**  
 `pendulumLink.setLinkGraphics(pendulumGraphics);`  
 This line associates our `pendulumGraphics` object with the `pendulumLink` object and in doing so, translates and rotate the graphic components to be in the same frame of reference as the `pendulumLink`.   
  
@@ -256,15 +255,12 @@ with
 {% highlight java %}
 package us.ihmc.exampleSimulations.simplePendulum;
 
-import us.ihmc.simulationconstructionset.Robot;
-
-import us.ihmc.simulationconstructionset.Link;  
-import us.ihmc.simulationconstructionset.PinJoint;  
-
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.robotics.Axis;
-
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
+import us.ihmc.simulationconstructionset.Link;
+import us.ihmc.simulationconstructionset.PinJoint;
+import us.ihmc.simulationconstructionset.Robot;
 
 import javax.vecmath.Vector3d;
 
@@ -276,9 +272,9 @@ public class SimplePendulumRobot extends Robot // SimplePendulumRobot inherits s
       - Lengths are in meters (m)
       - Masses are in kilograms (kg)
    */
-   
+
    public static final double FULCRUM_RADIUS = 0.02;
-   
+
    public static final double ROD_LENGTH = 1.0;
    public static final double ROD_RADIUS = 0.01;
    public static final double ROD_MASS = 0.01;
@@ -287,7 +283,7 @@ public class SimplePendulumRobot extends Robot // SimplePendulumRobot inherits s
    public static final double BALL_MASS = 1.0;
 
    // I = mrˆ2 pendulum's resistance to changes to its rotation in kg.mˆ2
-   public static final double FULCRUM_MOMENT_OF_INERTIA_ABOUT_Y = ROD_LENGTH * ROD_LENGTH * BALL_MASS; 
+   public static final double FULCRUM_MOMENT_OF_INERTIA_ABOUT_Y = ROD_LENGTH * ROD_LENGTH * BALL_MASS;
 
    /*
       Initial state of the pendulum
@@ -302,7 +298,7 @@ public class SimplePendulumRobot extends Robot // SimplePendulumRobot inherits s
    */
    public SimplePendulumRobot()
    {
-      // a. Call parent class "Robot" constructor. The string "SimplePendulum" will be the name of the robot.  
+      // a. Call parent class "Robot" constructor. The string "SimplePendulum" will be the name of the robot.
       super("SimplePendulum");
 
       // b. Create a link
@@ -315,13 +311,13 @@ public class SimplePendulumRobot extends Robot // SimplePendulumRobot inherits s
       PinJoint fulcrumPinJoint = new PinJoint("FulcrumPinJoint", new Vector3d(0.0, 0.0, 1.5), this, Axis.Y);
       fulcrumPinJoint.setInitialState(fulcrumInitialPositionRadians, fulcrumInitialVelocity);
       fulcrumPinJoint.setDamping(0.3);
-      fulcrumPinJoint.setLink(pendulumLink); 
-      
+      fulcrumPinJoint.setLink(pendulumLink);
+
       // d. Add fulcrumPinJoint as the root joint of the robot
       this.addRootJoint(fulcrumPinJoint);
 
       // e. Add 3D objects
-      Graphics3DObject pendulumGraphics = new Graphics3DObject();
+      LinkGraphicsDescription pendulumGraphics = new LinkGraphicsDescription();
       pendulumGraphics.addSphere(FULCRUM_RADIUS, YoAppearance.BlueViolet());
       pendulumGraphics.translate(0.0, 0.0, -ROD_LENGTH);
       pendulumGraphics.addCylinder(ROD_LENGTH, ROD_RADIUS, YoAppearance.Black());

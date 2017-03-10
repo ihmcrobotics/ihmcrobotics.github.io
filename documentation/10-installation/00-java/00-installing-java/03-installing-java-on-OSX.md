@@ -5,9 +5,9 @@ title: Installing Java on OSX
 ---
 
 
-We currently provide support for OS X 10.11 El Capitan***\**** via the Oracle JDK, version 7 or higher: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
+We currently test all software on OS X 10.12 Sierra***\**** via the Oracle JDK, version 8u111 or higher: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
 
-***\****The software may work on OS X versions as far back as Mavericks, but we do not currently actively build/test on Mavericks or Yosemite machines.
+***\****The software may work on OS X versions as far back as Mavericks, but we do not currently actively build/test on Mavericks/Yosemite/El Capitan machines.
 
 
 * Cleaning up Apple Java/Resolving Java3D Errors

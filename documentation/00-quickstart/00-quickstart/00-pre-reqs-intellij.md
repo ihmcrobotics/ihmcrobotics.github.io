@@ -8,7 +8,7 @@ tab: IntelliJ
 ---
 
 # 1. Install Java JDK
-- [Java JDK 7 or Higher is required](/documentation/10-installation/00-java/00-installing-java/)
+- [Java JDK8u111 or higher is required](/documentation/10-installation/00-java/00-installing-java/)
 
 # 2. Install Gradle
 - [Gradle 2.10+](/documentation/10-installation/01-gradle/00-installing-gradle/)
