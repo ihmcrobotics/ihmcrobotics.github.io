@@ -11,7 +11,7 @@ title: Create a New Class FallingBrickSimulation
 
 {%highlight java%}
 package us.ihmc.exampleSimulations.fallingBrick  ;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
 import us.ihmc.simulationconstructionset.SimulationConstructionSetParameters;
 import us.ihmc.simulationconstructionset.examples.FallingBrickRobot;

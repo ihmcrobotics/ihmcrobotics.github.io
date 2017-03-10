@@ -57,7 +57,7 @@ title: Description and Analysis
         ret.setMass(M1);
         ret.setMomentOfInertia(Ixx1, Iyy1, Izz1);
         ret.setComOffset(0.0, 0.0, 0.0);
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.translate(0.0, 0.0, -B1);
         // linkGraphics.addCube((float)BASE_L, (float)BASE_W, (float)BASE_H, appearance);
         // linkGraphics.addCone((float)BASE_L,(float)BASE_W);
@@ -254,7 +254,7 @@ in order to determine the model and profile best for your simulation, and to und
 <summary>FallingBrickSimulation</summary>
 {%highlight java%}
 package us.ihmc.exampleSimulations.fallingBrick  ;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
 import us.ihmc.simulationconstructionset.SimulationConstructionSetParameters;
 import us.ihmc.simulationconstructionset.examples.FallingBrickRobot;
@@ -311,10 +311,10 @@ public class FallingBrickSimulation
 {%highlight java%}
 package us.ihmc.exampleSimulations.fallingBrick;
 import javax.vecmath.Vector3d;
-import us.ihmc.graphics3DAdapter.GroundProfile3D;
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.AppearanceDefinition;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.jMonkeyEngineToolkit.GroundProfile3D;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
+import us.ihmc.graphicsDescription.appearance.AppearanceDefinition;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
 import us.ihmc.simulationconstructionset.FloatingJoint;
 import us.ihmc.simulationconstructionset.GroundContactModel;
@@ -323,7 +323,7 @@ import us.ihmc.simulationconstructionset.Joint;
 import us.ihmc.simulationconstructionset.Link;
 import us.ihmc.simulationconstructionset.Robot;
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
-import us.ihmc.simulationconstructionset.robotController.RobotController;
+import us.ihmc.robotics.robotController.RobotController;
 import us.ihmc.simulationconstructionset.util.LinearGroundContactModel;
 import us.ihmc.simulationconstructionset.util.ground.WavyGroundProfile;
 public class FallingBrickRobot extends Robot implements RobotController
@@ -394,7 +394,7 @@ public class FallingBrickRobot extends Robot implements RobotController
         ret.setMass(M1);
         ret.setMomentOfInertia(Ixx1, Iyy1, Izz1);
         ret.setComOffset(0.0, 0.0, 0.0);
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.translate(0.0, 0.0, -B1);
         // linkGraphics.addCube((float)BASE_L, (float)BASE_W, (float)BASE_H, appearance);
         // linkGraphics.addCone((float)BASE_L,(float)BASE_W);
@@ -487,8 +487,8 @@ public class FallingBrickRobot extends Robot implements RobotController
 package us.ihmc.exampleSimulations.fallingBrick;
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
-import us.ihmc.graphics3DAdapter.GroundProfile3D;
-import us.ihmc.graphics3DAdapter.HeightMapWithNormals;
+import us.ihmc.jMonkeyEngineToolkit.GroundProfile3D;
+import us.ihmc.jMonkeyEngineToolkit.HeightMapWithNormals;
 import us.ihmc.robotics.geometry.BoundingBox3d;
 
 public class WavyGroundProfile implements GroundProfile3D, HeightMapWithNormals

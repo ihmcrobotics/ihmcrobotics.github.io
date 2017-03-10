@@ -28,7 +28,7 @@ Sets the center of mass offset of the link with respect to its corresponding joi
 void setComOffset(double xOffset, double yOffset, double zOffset)
 {% endhighlight %}
 
-Sets the associated graphics properties object for this link
+Sets the associated graphics properties object for this link. Graphics3DObject is an abstraction that LinkGraphicsDescription implements.
 {% highlight java %}
 Void setLinkGraphics(Graphics3DObject linkGraphics)
 {% endhighlight %}

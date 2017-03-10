@@ -12,8 +12,8 @@ title: FlyballGovernorRobot Class
 package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Vector3d;
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.robotics.Axis;
 import us.ihmc.simulationconstructionset.CylinderJoint;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
@@ -22,7 +22,7 @@ import us.ihmc.simulationconstructionset.Link;
 import us.ihmc.simulationconstructionset.PinJoint;
 import us.ihmc.simulationconstructionset.Robot;
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
-import us.ihmc.simulationconstructionset.robotController.RobotController;
+import us.ihmc.robotics.robotController.RobotController;
 
 @SuppressWarnings("unused")
 public class FlyballGovernorRobot extends Robot implements RobotController

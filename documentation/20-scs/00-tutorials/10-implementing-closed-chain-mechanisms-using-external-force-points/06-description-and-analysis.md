@@ -76,7 +76,7 @@ private Link centerRod()
         ret.setMomentOfInertia(0.0, 0.0, Izz1);
         ret.setComOffset(0.0, 0.0, L1 / 2.0);
 
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.addCylinder(L1, R1, YoAppearance.Red());
         ret.setLinkGraphics(linkGraphics);
 
@@ -89,7 +89,7 @@ private Link centerRod()
         ret.setMomentOfInertia(Ixx2, Iyy2, Izz2);
         ret.setComOffset(0.0, 0.0, -L2);
 
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.translate(0.0, 0.0, -L2);
         linkGraphics.addCylinder(L2, R2);
         linkGraphics.addSphere(SPHERE_R, YoAppearance.DarkGreen());
@@ -104,7 +104,7 @@ private Link centerRod()
         ret.setMass(M3);
         ret.setMomentOfInertia(Ixx3, Iyy3, Izz3);
         ret.setComOffset(0.0, 0.0, -L3 / 2.0);
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.translate(0.0, 0.0, -L3);
         linkGraphics.addCylinder(L3, R3);
         ret.setLinkGraphics(linkGraphics);
@@ -116,7 +116,7 @@ private Link centerRod()
         ret.setMass(M4);
         ret.setMomentOfInertia(Ixx4, Iyy4, Izz4);
         ret.setComOffset(0.0, 0.0, L4 / 2.0);
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.addCylinder(L4, R4, YoAppearance.DarkBlue());
         linkGraphics.addCylinder(L4 / 8.0, 1.1 * R4);
         linkGraphics.translate(0.0, 0.0, 7.0 / 8.0 * L4);
@@ -214,8 +214,8 @@ public class FlyballGovernorSimulation
 package us.ihmc.exampleSimulations.flyballGovernor;
 
 import javax.vecmath.Vector3d;
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.robotics.Axis;
 import us.ihmc.simulationconstructionset.CylinderJoint;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
@@ -224,7 +224,7 @@ import us.ihmc.simulationconstructionset.Link;
 import us.ihmc.simulationconstructionset.PinJoint;
 import us.ihmc.simulationconstructionset.Robot;
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
-import us.ihmc.simulationconstructionset.robotController.RobotController;
+import us.ihmc.robotics.robotController.RobotController;
 
 @SuppressWarnings("unused")
 public class FlyballGovernorRobot extends Robot implements RobotController
@@ -318,7 +318,7 @@ public class FlyballGovernorRobot extends Robot implements RobotController
         ret.setMomentOfInertia(0.0, 0.0, Izz1);
         ret.setComOffset(0.0, 0.0, L1 / 2.0);
 
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.addCylinder(L1, R1, YoAppearance.Red());
         ret.setLinkGraphics(linkGraphics);
 
@@ -331,7 +331,7 @@ public class FlyballGovernorRobot extends Robot implements RobotController
         ret.setMomentOfInertia(Ixx2, Iyy2, Izz2);
         ret.setComOffset(0.0, 0.0, -L2);
 
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.translate(0.0, 0.0, -L2);
         linkGraphics.addCylinder(L2, R2);
         linkGraphics.addSphere(SPHERE_R, YoAppearance.DarkGreen());
@@ -346,7 +346,7 @@ public class FlyballGovernorRobot extends Robot implements RobotController
         ret.setMass(M3);
         ret.setMomentOfInertia(Ixx3, Iyy3, Izz3);
         ret.setComOffset(0.0, 0.0, -L3 / 2.0);
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.translate(0.0, 0.0, -L3);
         linkGraphics.addCylinder(L3, R3);
         ret.setLinkGraphics(linkGraphics);
@@ -358,7 +358,7 @@ public class FlyballGovernorRobot extends Robot implements RobotController
         ret.setMass(M4);
         ret.setMomentOfInertia(Ixx4, Iyy4, Izz4);
         ret.setComOffset(0.0, 0.0, L4 / 2.0);
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+        LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
         linkGraphics.addCylinder(L4, R4, YoAppearance.DarkBlue());
         linkGraphics.addCylinder(L4 / 8.0, 1.1 * R4);
         linkGraphics.translate(0.0, 0.0, 7.0 / 8.0 * L4);
@@ -412,7 +412,7 @@ import us.ihmc.robotics.referenceFrames.ReferenceFrame;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
 import us.ihmc.simulationconstructionset.ExternalForcePoint;
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
-import us.ihmc.simulationconstructionset.robotController.RobotController;
+import us.ihmc.robotics.robotController.RobotController;
 import us.ihmc.robotics.math.frames.YoFramePoint;
 import us.ihmc.robotics.math.frames.YoFrameVector;
 

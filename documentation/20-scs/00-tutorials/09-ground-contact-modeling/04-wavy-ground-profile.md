@@ -11,8 +11,8 @@ title: Create a New Class WavyGroundProfile
 package us.ihmc.exampleSimulations.fallingBrick;
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
-import us.ihmc.graphics3DAdapter.GroundProfile3D;
-import us.ihmc.graphics3DAdapter.HeightMapWithNormals;
+import us.ihmc.jMonkeyEngineToolkit.GroundProfile3D;
+import us.ihmc.jMonkeyEngineToolkit.HeightMapWithNormals;
 import us.ihmc.robotics.geometry.BoundingBox3d;
  
 public class WavyGroundProfile implements GroundProfile3D, HeightMapWithNormals

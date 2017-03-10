@@ -35,7 +35,7 @@ title: Run the Simulation
    
    Try testing this method out on some of your already created shapes.  Notice how they are effected.
    
-   For more information you can look at the [Graphics3DObject API Page].
+   For more information you can look at the [LinkGraphicsDescription API Page].
    
 ## 5. Try creating some shapes with different appearances
    To change the appearance of some of the shapes take a look at the [YoAppearance Utility API].
@@ -49,10 +49,10 @@ title: Run the Simulation
 <details>
 <summary> Snowman example code </summary>
 {% highlight java %}
-package us.ihmc.exampleSimulations;
+package us.ihmc.exampleSimulations.linkExamples;
 
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
 import us.ihmc.simulationconstructionset.Link;
 import us.ihmc.simulationconstructionset.Robot;
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
@@ -61,61 +61,61 @@ import us.ihmc.simulationconstructionset.SimulationConstructionSet;
 
 public class LinkExamplesSimulation
 {
-    private SimulationConstructionSet sim;
+   private SimulationConstructionSet sim;
 
-    private static final double SPHERE_R = 0.15;
+   private static final double SPHERE_R = 0.15;
 
-    private static final double OFFSET = 1.5, COORD_LENGTH = 0.5;
-
-
-    public LinkExamplesSimulation()
-    {
-        Robot nullRob = null;
-        sim = new SimulationConstructionSet(nullRob);
-        // position the camera to view links
-        sim.setCameraPosition(10.0, 6.0, 3.0);
-        sim.setCameraFix(0.5, 0.5, 0.0);
-        Link exampleShapes = exampleShapes();
-        sim.addStaticLink(exampleShapes);
-        sim.setGroundVisible(false);
-
-        Thread myThread = new Thread(sim);
-        myThread.start();
-    }
+   private static final double OFFSET = 1.5, COORD_LENGTH = 0.5;
 
 
-    public static void main(String[] args)
-    {
-        new LinkExamplesSimulation();
-    }
+   public LinkExamplesSimulation()
+   {
+      Robot nullRob = null;
+      sim = new SimulationConstructionSet(nullRob);
+      // position the camera to view links
+      sim.setCameraPosition(10.0, 6.0, 3.0);
+      sim.setCameraFix(0.5, 0.5, 0.0);
+      Link exampleShapes = exampleShapes();
+      sim.addStaticLink(exampleShapes);
+      sim.setGroundVisible(false);
+
+      Thread myThread = new Thread(sim);
+      myThread.start();
+   }
 
 
-    private Link exampleShapes()
-    {
-        Link ret = new Link("example shapes");
-        Graphics3DObject linkGraphics = new Graphics3DObject();
+   public static void main(String[] args)
+   {
+      new LinkExamplesSimulation();
+   }
 
-        // Sphere
-        linkGraphics.translate(0.0 * OFFSET, 0.0, 0.0);
-        linkGraphics.addCoordinateSystem(COORD_LENGTH);
-        linkGraphics.addSphere(SPHERE_R + 0.1, YoAppearance.White());
 
-        linkGraphics.translate(0.0 * OFFSET, 0.0, -0.6);
-        linkGraphics.addCoordinateSystem(COORD_LENGTH);
-        linkGraphics.addSphere(SPHERE_R + 0.3, YoAppearance.White());
+   private Link exampleShapes()
+   {
+      Link ret = new Link("example shapes");
+      LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
 
-        linkGraphics.translate(0.0 * OFFSET, 0.0, -0.9);
-        linkGraphics.addCoordinateSystem(COORD_LENGTH);
-        linkGraphics.addSphere(SPHERE_R + 0.55, YoAppearance.White());
+      // Sphere
+      linkGraphics.translate(0.0 * OFFSET, 0.0, 0.0);
+      linkGraphics.addCoordinateSystem(COORD_LENGTH);
+      linkGraphics.addSphere(SPHERE_R + 0.1, YoAppearance.White());
 
-        ret.setLinkGraphics(linkGraphics);
+      linkGraphics.translate(0.0 * OFFSET, 0.0, -0.6);
+      linkGraphics.addCoordinateSystem(COORD_LENGTH);
+      linkGraphics.addSphere(SPHERE_R + 0.3, YoAppearance.White());
 
-        return ret;
-    }
+      linkGraphics.translate(0.0 * OFFSET, 0.0, -0.9);
+      linkGraphics.addCoordinateSystem(COORD_LENGTH);
+      linkGraphics.addSphere(SPHERE_R + 0.55, YoAppearance.White());
+
+      ret.setLinkGraphics(linkGraphics);
+
+      return ret;
+   }
 
 }
 {% endhighlight %}
 </details>
    
-   [YoAppearance Utility API]: /documentation/20-scs/01-api/10-Link-and-graphics3D-object-API/#YoAppearance%20helper%20API
-   [Graphics3DObject API Page]: /documentation/20-scs/01-api/10-Link-and-graphics3D-object-API/#Graphics3DObject%20constructor%20and%20methods
+   [YoAppearance Utility API]: /documentation/20-scs/01-api/10-Link-and-LinkGraphicsDescription-API/#YoAppearance%20helper%20API
+   [LinkGraphicsDescription API Page]: /documentation/20-scs/01-api/10-Link-and-LinkGraphicsDescription-API/#LinkGraphicsDescription%20constructor%20and%20methods

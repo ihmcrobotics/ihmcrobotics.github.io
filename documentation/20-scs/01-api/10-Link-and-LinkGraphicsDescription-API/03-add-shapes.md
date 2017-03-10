@@ -97,4 +97,4 @@ void addCoordinateSystem (double length)
 ### Related Example:
 [Example of Adding Shapes]
 
-[Example of Adding Shapes]: /documentation/20-scs/01-api/10-Link-and-graphics3D-object-API
+[Example of Adding Shapes]: /documentation/20-scs/01-api/10-Link-and-LinkGraphicsDescription-API

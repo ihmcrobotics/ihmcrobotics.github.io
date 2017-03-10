@@ -133,7 +133,7 @@ Creation of the joints, including their offsets, damping, and initialization sho
 // create the top (fixed) link that serves as the base of the mobile
       Link topLink = new Link("top");
        
-      Graphics3DObject topLinkGraphics = new Graphics3DObject();
+      LinkGraphicsDescription topLinkGraphics = new LinkGraphicsDescription();
       topLinkGraphics.translate(0.0, 0.0, 1.0 + R1 / 2.0);
       topLinkGraphics.addCylinder(L1 / 60.0, L1 / 3.0, YoAppearance.DarkBlue());
       topLink.setLinkGraphics(topLinkGraphics);
@@ -147,7 +147,7 @@ We add it to the robot using `Robot.addStaticLink(Link)` since it is not attache
 Since the first joint of the robot had an offset of `(0.0, 0.0, 1.0)`, we need to translate to `(0.0, 0.0, 1.0+R1/2.0)` before adding this link:
 
    `Link topLink = new Link("top");`      
-   `Graphics3DObject topLinkGraphics = new Graphics3DObject();`  
+   `LinkGraphicsDescription topLinkGraphics = new LinkGraphicsDescription();`  
    `topLinkGraphics.translate(0.0, 0.0, 1.0+R1/2.0);`  
    `topLinkGraphics.addCylinder(L1/60.0, L1/3.0, YoAppearance.DarkBlue());`  
    `topLink.setLinkGraphics(topLinkGraphics);`  
@@ -167,7 +167,7 @@ Since the first joint of the robot had an offset of `(0.0, 0.0, 1.0)`, we need t
       ret.setMass(mass);
       ret.setComOffset(0.0, 0.0, -length / 2.0);
       ret.setMomentOfInertia(Ixx, Iyy, Izz);
-      Graphics3DObject linkGraphics = new Graphics3DObject();
+      LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
       linkGraphics.addSphere(R1, YoAppearance.Red());
       linkGraphics.translate(0.0, 0.0, -length / 2.0);
       linkGraphics.addCylinder(length / 2.0, radius);
@@ -242,7 +242,7 @@ If not, try to experiment with it, or try making a simulation of a different sty
       // assume a massless string
       ret.setComOffset(0.0, 0.0, -stringLength);
       ret.setMomentOfInertia(Ixx3, Iyy3, Izz3);
-      Graphics3DObject linkGraphics = new Graphics3DObject();
+      LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
       linkGraphics.translate(0.0, 0.0, -stringLength);
       linkGraphics.addCylinder(stringLength, R3);
       AppearanceDefinition app = YoAppearance.Black();
@@ -350,15 +350,15 @@ public class MobileSimulation
 {%endhighlight%}
 </details>
 <details>
-<summary>MobilRobot Class</summary>
+<summary>MobileRobot Class</summary>
 {%highlight java%}
 
 package us.ihmc.exampleSimulations.mobile;
  
 import javax.vecmath.Vector3d;
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
-import us.ihmc.graphics3DAdapter.graphics.appearances.AppearanceDefinition;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
+import us.ihmc.graphicsDescription.appearance.AppearanceDefinition;
 import us.ihmc.robotics.Axis;
 import us.ihmc.simulationconstructionset.ExternalForcePoint;
 import us.ihmc.simulationconstructionset.GimbalJoint;
@@ -391,7 +391,7 @@ public class MobileRobot extends Robot
       // create the top (fixed) link that serves as the base of the mobile
       Link topLink = new Link("top");
        
-      Graphics3DObject topLinkGraphics = new Graphics3DObject();
+      LinkGraphicsDescription topLinkGraphics = new LinkGraphicsDescription();
       topLinkGraphics.translate(0.0, 0.0, 1.0 + R1 / 2.0);
       topLinkGraphics.addCylinder(L1 / 60.0, L1 / 3.0, YoAppearance.DarkBlue());
       topLink.setLinkGraphics(topLinkGraphics);
@@ -484,7 +484,7 @@ public class MobileRobot extends Robot
       ret.setMass(mass);
       ret.setComOffset(0.0, 0.0, -length / 2.0);
       ret.setMomentOfInertia(Ixx, Iyy, Izz);
-      Graphics3DObject linkGraphics = new Graphics3DObject();
+      LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
       linkGraphics.addSphere(R1, YoAppearance.Red());
       linkGraphics.translate(0.0, 0.0, -length / 2.0);
       linkGraphics.addCylinder(length / 2.0, radius);
@@ -518,7 +518,7 @@ public class MobileRobot extends Robot
       // assume a massless string
       ret.setComOffset(0.0, 0.0, -stringLength);
       ret.setMomentOfInertia(Ixx3, Iyy3, Izz3);
-      Graphics3DObject linkGraphics = new Graphics3DObject();
+      LinkGraphicsDescription linkGraphics = new LinkGraphicsDescription();
       linkGraphics.translate(0.0, 0.0, -stringLength);
       linkGraphics.addCylinder(stringLength, R3);
       AppearanceDefinition app = YoAppearance.Black();
