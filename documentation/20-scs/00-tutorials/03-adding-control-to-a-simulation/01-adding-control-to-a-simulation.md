@@ -16,7 +16,7 @@ package us.ihmc.exampleSimulations.simplePendulum;
 
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
-import us.ihmc.simulationconstructionset.robotController.RobotController;
+import us.ihmc.robotics.robotController.RobotController;
 
 public class SimplePendulumController implements RobotController
 { 
@@ -113,9 +113,9 @@ Add some more lines of code to the constructor to access to the joint's properti
    {
       ...
       // Hold references to some properties of this joint using DoubleYoVariables
-      q_fulcrum = fulcrumPinJoint.getQ();
-      qd_fulcrum = fulcrumPinJoint.getQD();
-      tau_fulcrum = fulcrumPinJoint.getTau();
+      q_fulcrum = fulcrumPinJoint.getQYoVariable();
+      qd_fulcrum = fulcrumPinJoint.getQDYoVariable();
+      tau_fulcrum = fulcrumPinJoint.getTauYoVariable();
    }
 {% endhighlight %}
 
@@ -217,8 +217,7 @@ package us.ihmc.exampleSimulations.simplePendulum;
 
 import us.ihmc.robotics.dataStructures.registry.YoVariableRegistry;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
-import us.ihmc.simulationconstructionset.robotController.RobotController;
-
+import us.ihmc.robotics.robotController.RobotController;
 
 public class SimplePendulumController implements RobotController
 {
@@ -278,8 +277,8 @@ public class SimplePendulumController implements RobotController
 
       // P.I.D
       torque = p_gain.getDoubleValue() * positionError +
-               i_gain.getDoubleValue() * integralError +
-               d_gain.getDoubleValue() * (0 - robot.getFulcrumAngularVelocity());
+            i_gain.getDoubleValue() * integralError +
+            d_gain.getDoubleValue() * (0 - robot.getFulcrumAngularVelocity());
 
       robot.setFulcrumTorque(torque);
 
@@ -300,23 +299,19 @@ public class SimplePendulumController implements RobotController
       return name;
    }
 }
-    
 {% endhighlight %}
 </details>
-
-
 
 <details>
 <summary> Simple Pendulum Robot </summary>
 
 {% highlight java %} 
-
 package us.ihmc.exampleSimulations.simplePendulum;
 
-import us.ihmc.graphics3DAdapter.graphics.Graphics3DObject;
-import us.ihmc.graphics3DAdapter.graphics.appearances.YoAppearance;
+import us.ihmc.graphicsDescription.appearance.YoAppearance;
 import us.ihmc.robotics.Axis;
 import us.ihmc.robotics.dataStructures.variable.DoubleYoVariable;
+import us.ihmc.robotics.robotDescription.LinkGraphicsDescription;
 import us.ihmc.simulationconstructionset.Link;
 import us.ihmc.simulationconstructionset.PinJoint;
 import us.ihmc.simulationconstructionset.Robot;
@@ -370,9 +365,9 @@ public class SimplePendulumRobot extends Robot
       fulcrumPinJoint.setLink(pendulumLink());// pendulumLink() method defined next.
       fulcrumPinJoint.setDamping(0.3);
 
-      q_fulcrum = fulcrumPinJoint.getQ();
-      qd_fulcrum = fulcrumPinJoint.getQD();
-      tau_fulcrum = fulcrumPinJoint.getTau();
+      q_fulcrum = fulcrumPinJoint.getQYoVariable();
+      qd_fulcrum = fulcrumPinJoint.getQDYoVariable();
+      tau_fulcrum = fulcrumPinJoint.getTauYoVariable();
 
       this.addRootJoint(fulcrumPinJoint);
    }
@@ -423,7 +418,7 @@ public class SimplePendulumRobot extends Robot
       pendulumLink.setMass(BALL_MASS);
       pendulumLink.setComOffset(0.0, 0.0, -ROD_LENGTH);
 
-      Graphics3DObject pendulumGraphics = new Graphics3DObject();
+      LinkGraphicsDescription pendulumGraphics = new LinkGraphicsDescription();
       pendulumGraphics.addSphere(FULCRUM_RADIUS, YoAppearance.BlueViolet());
       pendulumGraphics.translate(0.0, 0.0, -ROD_LENGTH);
       pendulumGraphics.addCylinder(ROD_LENGTH, ROD_RADIUS, YoAppearance.Black());
@@ -434,7 +429,6 @@ public class SimplePendulumRobot extends Robot
    }
 
 }
-
 {% endhighlight %}
 
 </details>
@@ -446,7 +440,6 @@ public class SimplePendulumRobot extends Robot
 <summary> Simple Pendulum Simulation </summary>
 
 {% highlight java %}
- 
 package us.ihmc.exampleSimulations.simplePendulum;
 
 import us.ihmc.simulationconstructionset.SimulationConstructionSet;
@@ -484,7 +477,6 @@ public class SimplePendulumSimulation
       new SimplePendulumSimulation();
    }
 }
- 
 {% endhighlight %}
 </details>
 
