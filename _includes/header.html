@@ -20,6 +20,9 @@
       </a>
 
       <div class="trigger">
+        <div id="link-container">
+            <a class="page-link" href="/documentation/00-quickstart/00-quickstart/">Quick Start</a>
+        </div>
         {% assign sorted_pages = site.pages | sort:"order" %}
         {% for my_page in sorted_pages %}
           {% if my_page.header-navigation-title or my_page.header-navigation-title-image %}
