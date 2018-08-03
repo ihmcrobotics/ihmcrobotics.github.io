@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ihmcrobotics.github.io/blog</id>
+    <title>IHMC Robotics Blog</title>
+    <updated>2017-04-10T06:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="https://ihmcrobotics.github.io/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest IHMC Robotics news and events.</subtitle>
+    <logo>https://ihmcrobotics.github.io/img/running-man-logo.png</logo>
+    <rights>Copyright © 2018 IHMC Robotics </rights>
+    <entry>
+        <title type="html"><![CDATA[New Blog Post]]></title>
+        <id>https://ihmcrobotics.github.io/blog/2017/04/10/blog-post-two.html</id>
+        <link href="https://ihmcrobotics.github.io/blog/2017/04/10/blog-post-two.html">
+        </link>
+        <updated>2017-04-10T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.</p>
+]]></summary>
+        <author>
+            <name>Blog Author</name>
+            <uri>http://twitter.com/</uri>
+        </author>
+    </entry>
+</feed>
