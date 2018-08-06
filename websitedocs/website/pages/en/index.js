@@ -124,7 +124,7 @@ const LearnHow = props => (
           'operator interfaces, and other research areas, but do not have expertise '+
            'in bipedal walking and whole body control. But also to control experts '+
            'that are interested in developing robot simulations in java in a user '+
-           'friendly environment. [Get started](https://ihmcroboticsdocs.github.io/docs/quickstarthome.html) or view our [documentation](https://ihmcrobotics.github.io/docs/docshome.html) to learn ' +
+           'friendly environment. [Get started](https://ihmcrobotics.github.io/ihmc-open-robotics-software/docs/quickstarthome.html) or view our [documentation](https://ihmcrobotics.github.io/docs/docshome.html) to learn ' +
            'more about our software.',
         image: imgUrl('ihmc-software.png'),
         imageAlign: 'right',
