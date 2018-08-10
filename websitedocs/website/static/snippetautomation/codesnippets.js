@@ -65,8 +65,6 @@ Promise
                 .substring(startIndex);
             } else {
               currentString = codeBlock.getAttribute('data-end');
-              console.log(currentString);
-              console.log(j);
               if (currentString.startsWith("/") && currentString.endsWith("/")) {
                 substringFromStart = dataFromSource.substring(startIndex);
                 regex = eval(currentString);
@@ -88,6 +86,8 @@ Promise
               .getAttribute('data-portions'));
             for (j = 0; j < portions.length; j++) {
               currrentString = portions[j][0];
+              console.log(currentString);
+              console.log(j);
               if (currrentString.startsWith("/") && currrentString.endsWith("/")) {
                 startIndex = dataFromSource.search(eval(currrentString));
               } else {
