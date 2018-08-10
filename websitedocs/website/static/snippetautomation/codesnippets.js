@@ -85,6 +85,7 @@ Promise
             var portions = eval(codeBlock
               .getAttribute('data-portions'));
             for (j = 0; j < portions.length; j++) {
+              (function(j){
               currrentString = portions[j][0];
               if (currentString.startsWith("/") && currentString.endsWith("/")) {
                 startIndex = dataFromSource.search(eval(currentString));
@@ -119,7 +120,8 @@ Promise
                   dataFromSource.substring(
                     startIndex, endIndex);
               }
-            }
+            }(j))
+          }
           }
           codeBlock.innerHTML = hljs.highlight('java',
             codeChunk).value;
