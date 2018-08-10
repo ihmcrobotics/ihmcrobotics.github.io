@@ -65,6 +65,8 @@ Promise
                 .substring(startIndex);
             } else {
               currentString = codeBlock.getAttribute('data-end');
+              console.log(currentString);
+              console.log(j);
               if (currentString.startsWith("/") && currentString.endsWith("/")) {
                 substringFromStart = dataFromSource.substring(startIndex);
                 regex = eval(currentString);
@@ -85,12 +87,11 @@ Promise
             var portions = eval(codeBlock
               .getAttribute('data-portions'));
             for (j = 0; j < portions.length; j++) {
-              //(function(j){
-              //currrentString = portions[j][0];
-              if (portions[j][0].startsWith("/") && portions[j][0].endsWith("/")) {
-                startIndex = dataFromSource.search(eval(portions[j][0]));
+              currrentString = portions[j][0];
+              if (currrentString.startsWith("/") && currrentString.endsWith("/")) {
+                startIndex = dataFromSource.search(eval(currrentString));
               } else {
-                startIndex = dataFromSource.indexOf(portions[j][0]);
+                startIndex = dataFromSource.indexOf(currrentString);
               }
               if (startIndex < 0) throw "Start string not found at element id: " + codeBlock.id;
 
@@ -104,14 +105,14 @@ Promise
               } else {
 
                 currentString = portions[j][1];
-                if (currentString.startsWith("/") && currentString.endsWith("/")) {
+                if ( currrentString.startsWith("/") &&  currrentString.endsWith("/")) {
                   substringFromStart = dataFromSource.substring(startIndex);
-                  regex = eval(currentString);
+                  regex = eval( currrentString);
                   endExists = substringFromStart.search(regex);
                   endIndex = endExists + regex.exec(substringFromStart)[0].length;
                 } else {
-                  endExists = dataFromSource.indexOf(currentString, startIndex);
-                  endIndex = endExists + currentString.length;
+                  endExists = dataFromSource.indexOf( currrentString, startIndex);
+                  endIndex = endExists +  currrentString.length;
                 }
 
                 if (endExists < 0) throw "End string not found at element id: " + codeBlock.id;
@@ -120,7 +121,6 @@ Promise
                   dataFromSource.substring(
                     startIndex, endIndex);
               }
-          //  }(j))
           }
           }
           codeBlock.innerHTML = hljs.highlight('java',
