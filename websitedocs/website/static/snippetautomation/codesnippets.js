@@ -86,8 +86,8 @@ Promise
               .getAttribute('data-portions'));
             for (j = 0; j < portions.length; j++) {
               currrentString = portions[j][0];
-              console.log(currentString);
-              console.log(j);
+              //console.log(currentString);
+              //console.log(j);
               if (currrentString.startsWith("/") && currrentString.endsWith("/")) {
                 startIndex = dataFromSource.search(eval(currrentString));
               } else {
