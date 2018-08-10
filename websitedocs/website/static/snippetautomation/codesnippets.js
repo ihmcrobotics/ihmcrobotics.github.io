@@ -85,12 +85,12 @@ Promise
             var portions = eval(codeBlock
               .getAttribute('data-portions'));
             for (j = 0; j < portions.length; j++) {
-              (function(j){
-              currrentString = portions[j][0];
-              if (currentString.startsWith("/") && currentString.endsWith("/")) {
-                startIndex = dataFromSource.search(eval(currentString));
+              //(function(j){
+              //currrentString = portions[j][0];
+              if (portions[j][0].startsWith("/") && portions[j][0].endsWith("/")) {
+                startIndex = dataFromSource.search(eval(portions[j][0]));
               } else {
-                startIndex = dataFromSource.indexOf(currentString);
+                startIndex = dataFromSource.indexOf(portions[j][0]);
               }
               if (startIndex < 0) throw "Start string not found at element id: " + codeBlock.id;
 
@@ -120,7 +120,7 @@ Promise
                   dataFromSource.substring(
                     startIndex, endIndex);
               }
-            }(j))
+          //  }(j))
           }
           }
           codeBlock.innerHTML = hljs.highlight('java',
