@@ -44,7 +44,7 @@ Promise
           var typeOfSnippet = codeBlock
             .getAttribute('data-snippet');
           var codeChunk = "";
-          var currentString, startIndex, endIndex, endExists;
+          var currentString, startIndex, endIndex, endExists, substringFromStart, regex;
 
           if (typeOfSnippet == "complete") {
             codeChunk = dataFromSource;
@@ -52,7 +52,7 @@ Promise
 
             currrentString = codeBlock.getAttribute('data-start');
             if (currentString.startsWith("new RegExp(")) {
-              startIndex = dataFromSource.search(currentString);
+              startIndex = dataFromSource.search(eval(currentString));
             } else {
               startIndex = dataFromSource.indexOf(currentString);
             }
@@ -66,11 +66,14 @@ Promise
             } else {
               currentString = codeBlock.getAttribute('data-end');
               if (currentString.startsWith("new RegExp(")) {
-                endExists = dataFromSource.substring(startIndex).search(currentString);
+                substringFromStart = dataFromSource.substring(startIndex);
+                regex = eval(currentString);
+                endExists = substringFromStart.search(regex);
+                endIndex = endExists + regex.exec(substringFromStart)[0].length;
               } else {
                 endExists = dataFromSource.indexOf(currentString, startIndex);
+                endIndex = endExists + currentString.length;
               }
-              endIndex = endExists + currentString.length;
               if (endExists < 0) throw "End string not found at element id: " + codeBlock.id;
               codeChunk = dataFromSource.substring(
                 startIndex, endIndex);
@@ -84,7 +87,7 @@ Promise
             for (j = 0; j < portions.length; j++) {
               currrentString = portions[j][0];
               if (currentString.startsWith("new RegExp(")) {
-                startIndex = dataFromSource.search(currentString);
+                startIndex = dataFromSource.search(eval(currentString));
               } else {
                 startIndex = dataFromSource.indexOf(currentString);
               }
@@ -101,11 +104,14 @@ Promise
 
                 currentString = portions[j][1];
                 if (currentString.startsWith("new RegExp(")) {
-                  endExists = dataFromSource.substring(startIndex).search(currentString);
+                  substringFromStart = dataFromSource.substring(startIndex);
+                  regex = eval(currentString);
+                  endExists = substringFromStart.search(regex);
+                  endIndex = endExists + regex.exec(substringFromStart)[0].length;
                 } else {
                   endExists = dataFromSource.indexOf(currentString, startIndex);
+                  endIndex = endExists + currentString.length;
                 }
-                endIndex = endExists + currentString.length;
 
                 if (endExists < 0) throw "End string not found at element id: " + codeBlock.id;
                 codeChunk = codeChunk +
