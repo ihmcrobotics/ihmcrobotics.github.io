@@ -51,7 +51,7 @@ Promise
           } else if (typeOfSnippet == "portion") {
 
             currrentString = codeBlock.getAttribute('data-start');
-            if (currentString.startsWith("new RegExp(")) {
+            if (currentString.startsWith("/") && currentString.endsWith("/")) {
               startIndex = dataFromSource.search(eval(currentString));
             } else {
               startIndex = dataFromSource.indexOf(currentString);
@@ -65,7 +65,7 @@ Promise
                 .substring(startIndex);
             } else {
               currentString = codeBlock.getAttribute('data-end');
-              if (currentString.startsWith("new RegExp(")) {
+              if (currentString.startsWith("/") && currentString.endsWith("/")) {
                 substringFromStart = dataFromSource.substring(startIndex);
                 regex = eval(currentString);
                 endExists = substringFromStart.search(regex);
@@ -86,7 +86,7 @@ Promise
               .getAttribute('data-portions'));
             for (j = 0; j < portions.length; j++) {
               currrentString = portions[j][0];
-              if (currentString.startsWith("new RegExp(")) {
+              if (currentString.startsWith("/") && currentString.endsWith("/")) {
                 startIndex = dataFromSource.search(eval(currentString));
               } else {
                 startIndex = dataFromSource.indexOf(currentString);
@@ -103,7 +103,7 @@ Promise
               } else {
 
                 currentString = portions[j][1];
-                if (currentString.startsWith("new RegExp(")) {
+                if (currentString.startsWith("/") && currentString.endsWith("/")) {
                   substringFromStart = dataFromSource.substring(startIndex);
                   regex = eval(currentString);
                   endExists = substringFromStart.search(regex);
