@@ -27,7 +27,7 @@ Promise
   .all(urls)
   .then(
     function(values) {
-       var startString, endString startIndex, endIndex, endExists, substringFromStart, regex;
+       var startString, endString, startIndex, endIndex, endExists, substringFromStart, regex;
       for (i = 0; i < numberOfSources; i++) {
         var dataFromSource = values[i];
         var matchIndex = allCodeBlocks.findIndex(function(
