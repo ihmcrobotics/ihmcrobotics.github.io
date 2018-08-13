@@ -27,7 +27,7 @@ Promise
   .all(urls)
   .then(
     function(values) {
-       var startString, endString, startIndex, endIndex, endExists, substringFromStart, regex;
+       var startString, endString, startIndex, endIndex, endExists, regexMatch, regex;
       for (i = 0; i < numberOfSources; i++) {
         var dataFromSource = values[i];
         var matchIndex = allCodeBlocks.findIndex(function(
@@ -68,10 +68,14 @@ Promise
             } else {
               endString = codeBlock.getAttribute('data-end');
               if (endString.startsWith("/") && endString.endsWith("/")) {
-                substringFromStart = dataFromSource.substring(startIndex);
-                regex = new RegExp(endString.substring(1, endString.length-1));
-                endExists = substringFromStart.search(regex);
-                endIndex = endExists + regex.exec(substringFromStart)[0].length;
+                //substringFromStart = dataFromSource.substring(startIndex);
+                regex = new RegExp(endString.substring(1, endString.length-1), 'y'); //matches from lastIndex only
+                regex.lastIndex = startIndex;
+                regexMatch = regex.exec(dataFromSource);
+                endExists = regexMatch.index;
+                endIndex = endExists + regexMatch[0].length;
+                //endExists = dataFromSource.search(regex);
+                //endIndex = endExists + regex.exec(dataFromSource)[0].length;
               } else {
                 endExists = dataFromSource.indexOf(endString, startIndex);
                 endIndex = endExists + endString.length;
@@ -109,10 +113,15 @@ Promise
 
                 endString = portions[j][1];
                 if (endString.startsWith("/") && endString.endsWith("/")) {
-                  substringFromStart = dataFromSource.substring(startIndex);
-                  regex = new RegExp(endString.substring(1, endString.length-1));
-                  endExists = substringFromStart.search(regex);
-                  endIndex = endExists + regex.exec(substringFromStart)[0].length;
+                  regex = new RegExp(endString.substring(1, endString.length-1), 'y'); //matches from lastIndex only
+                  regex.lastIndex = startIndex;
+                  regexMatch = regex.exec(dataFromSource);
+                  endExists = regexMatch.index;
+                  endIndex = endExists + regexMatch[0].length;
+                  //substringFromStart = dataFromSource.substring(startIndex);
+                  //regex = new RegExp(endString.substring(1, endString.length-1));
+                  //endExists = substringFromStart.search(regex);
+                  //endIndex = endExists + regex.exec(substringFromStart)[0].length;
                 } else {
                   endExists = dataFromSource.indexOf(endString, startIndex);
                   endIndex = endExists +  endString.length;
