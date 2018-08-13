@@ -106,7 +106,7 @@ Promise
               // file
               if (portions[j].length == 1) {
                 codeChunk = codeChunk +
-                  "\n" +
+                  "\n\n" +
                   dataFromSource
                   .substring(startIndex);
               } else {
