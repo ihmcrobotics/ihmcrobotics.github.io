@@ -27,6 +27,7 @@ Promise
   .all(urls)
   .then(
     function(values) {
+       var currentString, startIndex, endIndex, endExists, substringFromStart, regex;
       for (i = 0; i < numberOfSources; i++) {
         var dataFromSource = values[i];
         var matchIndex = allCodeBlocks.findIndex(function(
@@ -44,7 +45,7 @@ Promise
           var typeOfSnippet = codeBlock
             .getAttribute('data-snippet');
           var codeChunk = "";
-          var currentString, startIndex, endIndex, endExists, substringFromStart, regex;
+          //var currentString, startIndex, endIndex, endExists, substringFromStart, regex;
 
           if (typeOfSnippet == "complete") {
             codeChunk = dataFromSource;
