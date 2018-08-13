@@ -45,7 +45,6 @@ Promise
           var typeOfSnippet = codeBlock
             .getAttribute('data-snippet');
           var codeChunk = "";
-          //var currentString, startIndex, endIndex, endExists, substringFromStart, regex;
 
           if (typeOfSnippet == "complete") {
             codeChunk = dataFromSource;
@@ -68,14 +67,11 @@ Promise
             } else {
               endString = codeBlock.getAttribute('data-end');
               if (endString.startsWith("/") && endString.endsWith("/")) {
-                //substringFromStart = dataFromSource.substring(startIndex);
                 regex = new RegExp(endString.substring(1, endString.length-1), 'g'); //matches from lastIndex only
                 regex.lastIndex = startIndex;
                 regexMatch = regex.exec(dataFromSource);
                 endExists = regexMatch.index;
                 endIndex = endExists + regexMatch[0].length;
-                //endExists = dataFromSource.search(regex);
-                //endIndex = endExists + regex.exec(dataFromSource)[0].length;
               } else {
                 endExists = dataFromSource.indexOf(endString, startIndex);
                 endIndex = endExists + endString.length;
@@ -92,8 +88,6 @@ Promise
               .getAttribute('data-portions'));
             for (j = 0; j < portions.length; j++) {
               startString = portions[j][0];
-              //console.log(currentString);
-              //console.log(j);
               if (startString.startsWith("/") && startString.endsWith("/")) {
                 regex = new RegExp(startString.substring(1, startString.length-1));
                 startIndex = dataFromSource.search(regex);
@@ -118,10 +112,7 @@ Promise
                   regexMatch = regex.exec(dataFromSource);
                   endExists = regexMatch.index;
                   endIndex = endExists + regexMatch[0].length;
-                  //substringFromStart = dataFromSource.substring(startIndex);
-                  //regex = new RegExp(endString.substring(1, endString.length-1));
-                  //endExists = substringFromStart.search(regex);
-                  //endIndex = endExists + regex.exec(substringFromStart)[0].length;
+
                 } else {
                   endExists = dataFromSource.indexOf(endString, startIndex);
                   endIndex = endExists +  endString.length;
