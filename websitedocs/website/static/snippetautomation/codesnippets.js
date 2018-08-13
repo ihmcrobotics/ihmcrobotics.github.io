@@ -18,7 +18,7 @@ function notValidURL(response) {
 
 // Get and operate on data from source files
 for (i = 0; i < numberOfSources; i++) {
-  urls[i] = fetch(sources[i], {mode: 'no-cors'}).then(notValidURL).then(function(response) {
+  urls[i] = fetch(sources[i]).then(notValidURL).then(function(response) {
     return response.text()
   });
 }
