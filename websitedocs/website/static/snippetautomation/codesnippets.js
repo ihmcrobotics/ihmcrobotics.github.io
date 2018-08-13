@@ -53,7 +53,7 @@ Promise
 
             startString = codeBlock.getAttribute('data-start');
             if (startString.startsWith("/") && startString.endsWith("/")) {
-              regex = new RegExp(startString.substring(1, startString.length-1);
+              regex = new RegExp(startString.substring(1, startString.length-1));
               startIndex = dataFromSource.search(regex);
             } else {
               startIndex = dataFromSource.indexOf(startString);
@@ -69,7 +69,7 @@ Promise
               endString = codeBlock.getAttribute('data-end');
               if (endString.startsWith("/") && endString.endsWith("/")) {
                 substringFromStart = dataFromSource.substring(startIndex);
-                regex = new RegExp(endString.substring(1, endString.length-1);
+                regex = new RegExp(endString.substring(1, endString.length-1));
                 endExists = substringFromStart.search(regex);
                 endIndex = endExists + regex.exec(substringFromStart)[0].length;
               } else {
@@ -91,7 +91,7 @@ Promise
               //console.log(currentString);
               //console.log(j);
               if (startString.startsWith("/") && startString.endsWith("/")) {
-                regex = new RegExp(startString.substring(1, startString.length-1);
+                regex = new RegExp(startString.substring(1, startString.length-1));
                 startIndex = dataFromSource.search(regex);
               } else {
                 startIndex = dataFromSource.indexOf(startString);
@@ -110,7 +110,7 @@ Promise
                 endString = portions[j][1];
                 if (endString.startsWith("/") && endString.endsWith("/")) {
                   substringFromStart = dataFromSource.substring(startIndex);
-                  regex = new RegExp(endString.substring(1, endString.length-1);
+                  regex = new RegExp(endString.substring(1, endString.length-1));
                   endExists = substringFromStart.search(regex);
                   endIndex = endExists + regex.exec(substringFromStart)[0].length;
                 } else {
