@@ -106,7 +106,7 @@ Promise
               // file
               if (portions[j].length == 1) {
                 codeChunk = codeChunk +
-                  "\n\n" +
+                  "\n" +
                   dataFromSource
                   .substring(startIndex);
               } else {
@@ -129,7 +129,7 @@ Promise
 
                 if (endExists < 0) throw "End string not found at element id: " + codeBlock.id;
                 codeChunk = codeChunk +
-                  "\n" +
+                  "\n\n" +
                   dataFromSource.substring(
                     startIndex, endIndex);
               }
