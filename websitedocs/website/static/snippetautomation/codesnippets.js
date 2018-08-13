@@ -69,7 +69,7 @@ Promise
               endString = codeBlock.getAttribute('data-end');
               if (endString.startsWith("/") && endString.endsWith("/")) {
                 //substringFromStart = dataFromSource.substring(startIndex);
-                regex = new RegExp(endString.substring(1, endString.length-1), 'y'); //matches from lastIndex only
+                regex = new RegExp(endString.substring(1, endString.length-1), 'g'); //matches from lastIndex only
                 regex.lastIndex = startIndex;
                 regexMatch = regex.exec(dataFromSource);
                 endExists = regexMatch.index;
@@ -113,7 +113,7 @@ Promise
 
                 endString = portions[j][1];
                 if (endString.startsWith("/") && endString.endsWith("/")) {
-                  regex = new RegExp(endString.substring(1, endString.length-1), 'y'); //matches from lastIndex only
+                  regex = new RegExp(endString.substring(1, endString.length-1), 'g'); //matches from lastIndex only
                   regex.lastIndex = startIndex;
                   regexMatch = regex.exec(dataFromSource);
                   endExists = regexMatch.index;
